@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio | PERSONAL</title>
+    <!-- tailwind css -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.js"
+      integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+      crossorigin="anonymous"
+    ></script>
+    <!-- vanilla css -->
+    <link rel="stylesheet" href="src/input.css" />
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div class="preload-container">
+      <div class="loading-text">
+        <span>E</span>
+        <span>M</span>
+        <span>T</span>
+        <span>E</span>
+        <span>C</span>
+        <span>H</span>
+        <span>.</span>
+      </div>
+    </div>
+    <!-- end of preloader -->
+
+    <!-- navigation -->
+    <nav>
+      <div
+        class="navbar w-4/5 flex items-center justify-between m-auto bg-white py-5 bg-opacity-10"
+      >
+        <div class="logo text-yellow-500 text-4xl pl-2 cursor-pointer">
+          EmTech.
+        </div>
+        <div class="nav-link flex gap-10 text-white">
+          <a
+            href="#"
+            class="hover:bg-yellow-500 p-2 hover:transition-all hover:duration-75 hover:transform origin-bottom"
+            >HOME</a
+          >
+          <a href="about-us.html" class="hover:bg-yellow-500 p-2">ABOUT US</a>
+          <a href="#services" class="hover:bg-yellow-500 p-2">SERVICES</a>
+          <a href="project.html" class="hover:bg-yellow-500 p-2">PROJECTS</a>
+          <a href="#" class="hover:bg-yellow-500 p-2">BLOG</a>
+          <a href="contact.html" class="hover:bg-yellow-500 p-2">CONTACT</a>
+        </div>
+      </div>
+    </nav>
+    <header class="w-4/5 m-auto text-center pt-20 pb-20">
+      <h3 class="pb-10 text-white font-bold text-2xl">Hello, I'M A</h3>
+      <div class="hero">
+        <!-- <div class="text">Hello, I am a</div> -->
+        <h1 class="text text-yellow-500 font-black">Developer</h1>
+        <h1 class="text text-yellow-500 font-black">Designer</h1>
+        <h1 class="text text-yellow-500 font-black">Freelancer</h1>
+      </div>
+      <h4 class="pt-10 text-gray-500 font-bold text-xl">
+        based in Lagos, Nigeria.
+      </h4>
+      <!-- Download CV Button -->
+      <div class="cv-btn bg-yellow-500 hover:bg-opacity-5 flex mt-5">
+        <a
+          href="https://drive.google.com/file/d/1rTIcbuzbVl3lEY0jI18XMCoAkQsdCRZB/view?usp=drive_link"
+          class="download-button"
+          >Download CV
+        </a>
+        <img src="images/download.svg" alt="" width="15" />
+      </div>
+    </header>
+    <div class="services-body w-4/5 m-auto grid grid-cols-3 gap-5">
+      <div class="border"></div>
+      <div class="border"></div>
+      <div class="border"></div>
+    </div>
+    <main class="bg-black py-10">
+      <!-- my services -->
+
+      <section id="services">
+        <div class="services pt-24">
+          <div class="services-header">
+            <h4 class="text-yellow-500 text-center text-xl">MY SERVICES</h4>
+            <h1
+              class="text-white text-center text-4xl font-bold leading-relaxed pb-14"
+            >
+              Crafting stories through <br />
+              design and innovation
+            </h1>
+          </div>
+          <div class="services-body w-4/5 m-auto grid grid-cols-3 gap-5 pt-10">
+            <div class="border border-gray-700 py-10">
+              <img
+                src="images/webdesign.svg"
+                class="mx-auto -mt-20"
+                alt=""
+                width="150"
+              />
+              <h3 class="text-white text-2xl text-center font-bold py-6">
+                WEBSITE DESIGN
+              </h3>
+              <p class="text-gray-500 text-center font-bold text-sm px-5">
+                Our website design projects are more than just buttons, images,
+                and texts. We take into consideration your passion for your
+                business and your customer's need and bring it to life with our
+                four (4) years of web design experience
+              </p>
+            </div>
+            <div class="border border-gray-700 py-10">
+              <img
+                src="images/uiux.svg"
+                class="mx-auto -mt-20"
+                alt=""
+                width="150"
+              />
+              <h3 class="text-white text-2xl text-center font-bold py-6">
+                UI DESIGN
+              </h3>
+              <p class="text-gray-500 text-center font-bold text-sm px-5">
+                Our website design projects are more than just buttons, images,
+                and texts. We take into consideration your passion for your
+                business and your customer's need and bring it to life with our
+                four (4) years of web design experience
+              </p>
+            </div>
+            <div class="border border-gray-700 py-10">
+              <img
+                src="images/itsupport.svg"
+                class="mx-auto -mt-20"
+                alt=""
+                width="150"
+              />
+              <h3 class="text-white text-2xl text-center font-bold py-6">
+                IT SUPPORT
+              </h3>
+              <p class="text-gray-500 text-center font-bold text-sm px-5">
+                Our website design projects are more than just buttons, images,
+                and texts. We take into consideration your passion for your
+                business and your customer's need and bring it to life with our
+                four (4) years of web design experience
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about-me">
+        <div class="about w-4/5 mx-auto flex  justify-between py-20">
+          <div class="about-text w-1/2">
+            <h3 class="text-yellow-500 text-bold text-2xl">ABOUT ME</h3>
+            <h1 class="text-white text-4xl font-bold leading-10 pt-6">
+              Transforming visions into exceptional portfolios
+            </h1>
+            <div class="flex gap-5 items-start py-10">
+              <div class="border-t-2 w-36 mt-2"></div>
+              <p class="text-gray-500 text-sm">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
+                asperiores veniam optio harum autem aspernatur expedita cum
+                voluptatibus nam illum?
+              </p>
+            </div>
+          </h4>
+          <!-- Download CV Button -->
+          <div class="cv-btn bg-yellow-500 hover:bg-opacity-5 flex mt-5 ml-16">
+            <a
+              href="https://drive.google.com/file/d/1rTIcbuzbVl3lEY0jI18XMCoAkQsdCRZB/view?usp=drive_link"
+              class="download-button"
+              >Download CV
+            </a>
+            <img src="images/download.svg" alt="" width="15" />
+          </div>
+          </div>
+          <div class="about-img bg-yellow-500 w-1/4 relative">
+<img src="images/about-img.png" class="bg-black absolute top-3 right-4 z-10" alt="" >
+<div class="caption bg-gray-900 py-5 px-4  absolute -bottom-28 -left-10 z-10">
+  <h3 class="text-white text-2xl font-bold">Nwankwo Emmanuel</h3>
+  <p class="text-gray-500 text-xl font-bold">Software Engineer</p>
+</div>
+          </div>
+        </div>
+        <!-- GET IN TOUCH -->
+        <div class="get-in-touch w-4/5 m-auto grid grid-cols-2 pt-48">
+          <div class="get-in-touch-text">
+            <h1 class="text-white text-4xl font-black">Design and Innovation</h1>
+            <p class="text-gray-500 text-sm font-bold pt-10">My goal is to ensure that I deliver quality and reliable projects while also maintaining a strict timeline for completion</p>
+          </div>
+<div class="get-in-touch-form bg-gray-900 p-10 ">
+  <form action="" class="flex flex-col gap-5">
+    <h1 class="text-white text-2xl font-bold">GET IN TOUCH WITH ME?</h1>
+    <p class="text-gray-500 text-sm font-bold">I will do everything I can to reach out as soon as I can I promise!</p>
+    <input type="text" placeholder="Your Name" class="p-5 border-2 border-yellow-500 outline-0">
+    <input type="text" placeholder="Your Email" class="p-5 border-2 border-yellow-500 outline-0">
+    <input type="text" placeholder="Phone Number" class="p-5 border-2 border-yellow-500 outline-0">
+    <textarea name="" id="" cols="30" rows="7" class="border-2 border-yellow-500 px-5 outline-0" placeholder="Message"></textarea>
+    <input type="submit" value="submit now" class="bg-yellow-500 text-black">
+  </form>
+</div>
+        </div>
+      </section>
+      <!-- EUCATION AND SKILL -->
+      <section class="bg-gray-900   mt-20 ">
+        <div class="edu-skill w-4/5 m-auto">
+          <div class="edu-header text-center leading-6">
+            <h3 class="text-yellow-500 text-2xl font-bold pt-20">EDUCATION & SKILL</h3>
+            <h1 class="text-white text-4xl font-bold">Showcasing my talent <br> amplifying your project</h1>
+          </div>
+          <div class="edu grid grid-cols-2 gap-10 pt-20">
+            <div class="left ">
+<div class="date w-36 py-4 px-6 text-yellow-500 text-center font-bold border-2 border-yellow-500">
+  2023-2024
+</div>
+<div class="left-content">
+  <h1 class="text-white text-2xl font-bold pt-5">Junior Front-End Developer</h1>
+  <p class="text-gray-500 font-bold text-sm pt-5">I interned at ITTECHSKILLS. I worked on frontend projects with HTML, CSS, JS, TAILWIND, JQUERY, REACT. I also worked on server projects with nodeJs, MongoDB, and expressJS.</p>
+</div>
+            </div>
+            <div class="left ">
+<div class="date w-36 py-4 px-6 text-yellow-500 text-center font-bold border-2 border-yellow-500">
+  2023-2024
+</div>
+<div class="left-content">
+  <h1 class="text-white text-2xl font-bold pt-5">Junior Front-End Developer</h1>
+  <p class="text-gray-500 font-bold text-sm pt-5">I interned at ITTECHSKILLS. I worked on frontend projects with HTML, CSS, JS, TAILWIND, JQUERY, REACT. I also worked on server projects with nodeJs, MongoDB, and expressJS.</p>
+</div>
+            </div>
+            <div class="right">
+              <div class="date w-36 py-4 px-6 text-yellow-500 text-center font-bold border-2 border-yellow-500">
+                2022-2023
+              </div>
+              <div class="right-content">
+                <h1 class="text-white text-2xl font-bold pt-5">Javascript Developer</h1>
+                <p class="text-gray-500 font-bold text-sm pt-5">I assisted senior JS developers on SAVECOINSHQ frontend team to implement vannila javascript codes; writing custom and reusable components.</p>
+              </div>
+            </div>
+            <div class="right">
+              <div class="date w-36 py-4 px-6 text-yellow-500 text-center font-bold border-2 border-yellow-500">
+                2022-2023
+              </div>
+              <div class="right-content">
+                <h1 class="text-white text-2xl font-bold pt-5">Javascript Developer</h1>
+                <p class="text-gray-500 font-bold text-sm pt-5">I assisted senior JS developers on SAVECOINSHQ frontend team to implement vannila javascript codes; writing custom and reusable components.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- SKILLS -->
+        <div class="skills w-4/5 m-auto grid grid-cols-2 gap-10 pt-20">
+          <div class="bg-gray-800 flex flex-col">
+            <p class="text-white text-sm py-5 px-5">HTML</p>
+            <div class="w-4/5 border-b-4 border-yellow-500"></div>
+
+          </div>
+          <div class="bg-gray-800 flex flex-col">
+            <p class="text-white text-sm py-5 px-5">CSS</p>
+            <div class="w-4/5 border-b-4 border-yellow-500"></div>
+
+          </div>
+          <div class="bg-gray-800 flex flex-col">
+            <p class="text-white text-sm py-5 px-5">JAVASCRIPT</p>
+            <div class="w-4/5 border-b-4 border-yellow-500"></div>
+
+          </div>
+          <div class="bg-gray-800 flex flex-col">
+            <p class="text-white text-sm py-5 px-5">NODEJS</p>
+            <div class="w-4/5 border-b-4 border-yellow-500"></div>
+
+          </div>
+          <div class="bg-gray-800 flex flex-col">
+            <p class="text-white text-sm py-5 px-5">TAILWIND</p>
+            <div class="w-4/5 border-b-4 border-yellow-500"></div>
+
+          </div>
+          <div class="bg-gray-800 flex flex-col">
+            <p class="text-white text-sm py-5 px-5">REACT</p>
+            <div class="w-4/5 border-b-4 border-yellow-500"></div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="./src/index.js"></script>
+  </body>
+</html>
