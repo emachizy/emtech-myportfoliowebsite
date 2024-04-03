@@ -31,14 +31,15 @@
     <!-- end of preloader -->
 
     <!-- navigation -->
+  
     <nav>
-      <div
-        class="navbar w-4/5 flex items-center justify-between m-auto bg-white py-5 bg-opacity-10"
+      <div id="navbar"
+        class="navbar w-full md:w-4/5 flex items-center justify-between m-auto bg-black py-5 md:fixed md:top-0 md:left-32 fixed"
       >
-        <div class="logo text-yellow-500 text-4xl pl-2 cursor-pointer">
+        <div class="logo text-yellow-500 text-4xl pl-2 cursor-pointer"> 
           EmTech.
         </div>
-        <div class="nav-link flex gap-10 text-white">
+        <div class="nav-link md:flex  gap-10 text-white hidden">
           <a
             href="#"
             class="hover:bg-yellow-500 p-2 hover:transition-all hover:duration-75 hover:transform origin-bottom"
@@ -52,7 +53,7 @@
         </div>
       </div>
     </nav>
-    <header class="w-4/5 m-auto text-center pt-20 pb-20">
+    <header class="md:w-4/5 m-auto text-center pt-60 pb-20">
       <h3 class="pb-10 text-white font-bold text-2xl">Hello, I'M A</h3>
       <div class="hero">
         <!-- <div class="text">Hello, I am a</div> -->
@@ -73,7 +74,7 @@
         <img src="images/download.svg" alt="" width="15" />
       </div>
     </header>
-    <div class="services-body w-4/5 m-auto grid grid-cols-3 gap-5">
+    <div class="services-body w-4/5 m-auto md:grid grid-cols-3 gap-5 hidden">
       <div class="border"></div>
       <div class="border"></div>
       <div class="border"></div>
@@ -92,7 +93,7 @@
               design and innovation
             </h1>
           </div>
-          <div class="services-body w-4/5 m-auto grid grid-cols-3 gap-5 pt-10">
+          <div class="services-body md:w-4/5 m-auto grid md:grid-cols-3 gap-5 pt-10">
             <div class="border border-gray-700 py-10">
               <img
                 src="images/webdesign.svg"
@@ -147,15 +148,16 @@
           </div>
         </div>
       </section>
+      <!-- ABOUT ME -->
       <section id="about-me">
-        <div class="about w-4/5 mx-auto flex  justify-between py-20">
-          <div class="about-text w-1/2">
+        <div class="about md:w-4/5 mx-auto md:flex  justify-between pt-20 pb-20">
+          <div class="about-text px-6 md:w-1/2">
             <h3 class="text-yellow-500 text-bold text-2xl">ABOUT ME</h3>
             <h1 class="text-white text-4xl font-bold leading-10 pt-6">
               Transforming visions into exceptional portfolios
             </h1>
-            <div class="flex gap-5 items-start py-10">
-              <div class="border-t-2 w-36 mt-2"></div>
+            <div class="flex gap-5 md:items-start py-10">
+              <div class="md:border-t-2 md:w-36 mt-2"></div>
               <p class="text-gray-500 text-sm">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus
                 asperiores veniam optio harum autem aspernatur expedita cum
@@ -164,7 +166,7 @@
             </div>
           </h4>
           <!-- Download CV Button -->
-          <div class="cv-btn bg-yellow-500 hover:bg-opacity-5 flex mt-5 ml-16">
+          <div class="cv-btn bg-yellow-500 hover:bg-opacity-5 flex mt-5 md:ml-16 ml-2">
             <a
               href="https://drive.google.com/file/d/1rTIcbuzbVl3lEY0jI18XMCoAkQsdCRZB/view?usp=drive_link"
               class="download-button"
@@ -173,19 +175,19 @@
             <img src="images/download.svg" alt="" width="15" />
           </div>
           </div>
-          <div class="about-img bg-yellow-500 w-1/4 relative">
-<img src="images/about-img.png" class="bg-black absolute top-3 right-4 z-10" alt="" >
-<div class="caption bg-gray-900 py-5 px-4  absolute -bottom-28 -left-10 z-10">
+          <div class="about-img bg-yellow-500 mx-6 md:w-1/4 relative m-auto">
+<img src="images/about-img.png" class="bg-black  relative md:top-4 top-4" alt="" >
+<div class="caption bg-gray-900 py-5 px-4  absolute  md:-bottom-10 md:-left-10 left-8">
   <h3 class="text-white text-2xl font-bold">Nwankwo Emmanuel</h3>
   <p class="text-gray-500 text-xl font-bold">Software Engineer</p>
 </div>
           </div>
         </div>
         <!-- GET IN TOUCH -->
-        <div class="get-in-touch w-4/5 m-auto grid grid-cols-2 pt-48">
+        <div class="get-in-touch md:w-4/5 m-auto md:grid grid-cols-2 md:pt-20 pt-20 px-6">
           <div class="get-in-touch-text">
-            <h1 class="text-white text-4xl font-black">Design and Innovation</h1>
-            <p class="text-gray-500 text-sm font-bold pt-10">My goal is to ensure that I deliver quality and reliable projects while also maintaining a strict timeline for completion</p>
+            <h1 class="text-white text-4xl font-black ">Design <span class="text-xl">and Innovation</span> </h1>
+            <p class="text-gray-500 text-sm font-bold pt-10 pb-10">My goal is to ensure that I deliver quality and reliable projects while also maintaining a strict timeline for completion</p>
           </div>
 <div class="get-in-touch-form bg-gray-900 p-10 ">
   <form action="" class="flex flex-col gap-5">
@@ -202,19 +204,19 @@
       </section>
       <!-- EUCATION AND SKILL -->
       <section class="bg-gray-900   mt-20 ">
-        <div class="edu-skill w-4/5 m-auto">
+        <div class="edu-skill md:w-4/5 md:m-auto mx-4 px-6">
           <div class="edu-header text-center leading-6">
             <h3 class="text-yellow-500 text-2xl font-bold pt-20">EDUCATION & SKILL</h3>
             <h1 class="text-white text-4xl font-bold">Showcasing my talent <br> amplifying your project</h1>
           </div>
-          <div class="edu grid grid-cols-2 gap-10 pt-20">
+          <div class="edu md:grid grid-cols-2 md:gap-10 gap-20 pt-20">
             <div class="left ">
 <div class="date w-36 py-4 px-6 text-yellow-500 text-center font-bold border-2 border-yellow-500">
   2023-2024
 </div>
 <div class="left-content">
   <h1 class="text-white text-2xl font-bold pt-5">Junior Front-End Developer</h1>
-  <p class="text-gray-500 font-bold text-sm pt-5">I interned at ITTECHSKILLS. I worked on frontend projects with HTML, CSS, JS, TAILWIND, JQUERY, REACT. I also worked on server projects with nodeJs, MongoDB, and expressJS.</p>
+  <p class="text-gray-500 font-bold text-sm py-5">I interned at ITTECHSKILLS. I worked on frontend projects with HTML, CSS, JS, TAILWIND, JQUERY, REACT. I also worked on server projects with nodeJs, MongoDB, and expressJS.</p>
 </div>
             </div>
             <div class="left ">
@@ -223,7 +225,7 @@
 </div>
 <div class="left-content">
   <h1 class="text-white text-2xl font-bold pt-5">Junior Front-End Developer</h1>
-  <p class="text-gray-500 font-bold text-sm pt-5">I interned at ITTECHSKILLS. I worked on frontend projects with HTML, CSS, JS, TAILWIND, JQUERY, REACT. I also worked on server projects with nodeJs, MongoDB, and expressJS.</p>
+  <p class="text-gray-500 font-bold text-sm py-5">I interned at ITTECHSKILLS. I worked on frontend projects with HTML, CSS, JS, TAILWIND, JQUERY, REACT. I also worked on server projects with nodeJs, MongoDB, and expressJS.</p>
 </div>
             </div>
             <div class="right">
@@ -232,7 +234,7 @@
               </div>
               <div class="right-content">
                 <h1 class="text-white text-2xl font-bold pt-5">Javascript Developer</h1>
-                <p class="text-gray-500 font-bold text-sm pt-5">I assisted senior JS developers on SAVECOINSHQ frontend team to implement vannila javascript codes; writing custom and reusable components.</p>
+                <p class="text-gray-500 font-bold text-sm py-5">I assisted senior JS developers on SAVECOINSHQ frontend team to implement vannila javascript codes; writing custom and reusable components.</p>
               </div>
             </div>
             <div class="right">
@@ -247,7 +249,7 @@
           </div>
         </div>
         <!-- SKILLS -->
-        <div class="skills w-4/5 m-auto grid grid-cols-2 gap-10 pt-20">
+        <div class="skills md:w-4/5 md:m-auto mx-4 md:space-y-0 space-y-10 md:grid grid-cols-2 gap-10 py-20">
           <div class="bg-gray-800 flex flex-col">
             <p class="text-white text-sm py-5 px-5">HTML</p>
             <div class="w-4/5 border-b-4 border-yellow-500"></div>
@@ -277,6 +279,53 @@
             <p class="text-white text-sm py-5 px-5">REACT</p>
             <div class="w-4/5 border-b-4 border-yellow-500"></div>
 
+          </div>
+        </div>
+      </section>
+      <!-- portfolio project -->
+      <section>
+        <div class="projects md:w-4/5 m-auto py-20 px-6">
+          <div class="project-header">
+            <h3 class="text-xl text-yellow-500 font-bold">MY RECENT PORTFOLIO</h3>
+            <h1 class="text-white text-4xl font-bold">Elevate your brand to new <br> heights with our portfolio expertise</h1>
+          </div>
+          <div class="project-body space-y-6 md:space-y-0 py-20 md:flex md:flex-col gap-8">
+            <div class="top-project space-y-6 md:space-y-0 md:flex gap-8">
+            <div class="item1 project text-white">
+              <img src="images/monito-thumbnail.png" alt="">
+              <div class="desc overlay p-3">
+                <h2 class="text-2xl font-bold">Monito Ecommerce</h2>
+                <p>E-commerce website for selling Dogs</p>
+                <a href="https://monito-ecommerce-nine.vercel.app/" target="_blank">View Project</a>
+              </div>
+            </div>
+            <div class="item2 project text-white">
+              <img src="images/monito-thumbnail.png" alt="">
+              <div class="desc overlay p-3">
+                <h2 class="text-2xl font-bold">Monito Ecommerce</h2>
+                <p>E-commerce website for selling Dogs</p>
+                <a href="https://monito-ecommerce-nine.vercel.app/" target="_blank">View Project</a>
+              </div>
+            </div>
+          </div>
+          <div class="bottom-project space-y-6 md:space-y-0 md:flex md:gap-8">
+            <div class="item1 project text-white">
+              <img src="images/monito-thumbnail.png" alt="">
+              <div class="desc overlay p-3">
+                <h2 class="text-2xl font-bold">Monito Ecommerce</h2>
+                <p>E-commerce website for selling Dogs</p>
+                <a href="https://monito-ecommerce-nine.vercel.app/" target="_blank">View Project</a>
+              </div>
+            </div>
+            <div class="item2 project text-white">
+              <img src="images/monito-thumbnail.png" alt="">
+              <div class="desc overlay p-3">
+                <h2 class="text-2xl font-bold">Monito Ecommerce</h2>
+                <p>E-commerce website for selling Dogs</p>
+                <a href="https://monito-ecommerce-nine.vercel.app/" target="_blank">View Project</a>
+              </div>
+            </div>
+          </div>
           </div>
         </div>
       </section>

@@ -13,6 +13,10 @@ body {
   scroll-behavior: smooth;
 }
 
+nav {
+  z-index: 500;
+}
+
 /* preload */
 
 .preload-container {
@@ -28,6 +32,7 @@ body {
   color: #fff;
   font-size: 54px;
   overflow: hidden;
+  z-index: 1000;
 }
 
 /* Animation */
@@ -102,7 +107,7 @@ body {
   margin: 0 10px;
   /* position: relative; */
   overflow: hidden;
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease-in-out;
 }
 
 /* Animation */
@@ -123,7 +128,15 @@ body {
 }
 
 .navbar a:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
+}
+
+.navbar.scrolled {
+  width: 100%; /* Updated width on scroll */
+  left: 0;
+  transition: 01s ease-in-out;
+  background-color: #000;
+  z-index: 1000;
 }
 
 /* Hero section */
@@ -142,7 +155,7 @@ body {
   transform: translate(-50%, -50%);
   opacity: 0;
   animation-fill-mode: both;
-  animation-duration: 3s;
+  animation-duration: 1s;
   animation-timing-function: cubic-bezier(0.01, 0.99, 0.21, 0.98);
 }
 
@@ -198,21 +211,79 @@ body {
   border-radius: 5px;
 }
 
-.about-img img{
+/* .about-img img {
   width: 400px;
   height: 450px;
-}
-
-.get-in-touch-form input[type=submit] {
-  width: 200px;
-border: none;
-/* color: white; */
-padding: 16px 24px;
-text-decoration: none;
-margin: 4px 2px;
-cursor: pointer;
-}
-
-/* .download-button:hover {
-  background-color: #0056b3;
 } */
+
+.get-in-touch-form input[type="submit"] {
+  width: 200px;
+  border: none;
+  /* color: white; */
+  padding: 16px 24px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.project {
+  position: relative;
+  z-index: -0.5;
+  transition: 0.8s ease-in-out;
+}
+
+.project-body .top-project .item1 {
+  width: 70%;
+}
+
+.project-body .top-project .item2 {
+  width: 30%;
+  height: 100%;
+}
+
+.project-body img {
+  width: 100%;
+}
+
+
+
+/* .project-body .desc:hover{
+  background-color: lightgrey;
+  position: absolute;
+  bottom: 50px;
+} */
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+  color: #fff;
+  padding: 10px;
+  /* border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px; */
+  display: none; /* Initially hidden */
+  /* z-index: 50; */
+  
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .projects {
+    margin: 0 20px;
+  }
+
+  .project-body .top-project .item1 {
+    width: 100%;
+  }
+
+  .project-body .top-project .item2 {
+    width: 100%;
+  }
+}

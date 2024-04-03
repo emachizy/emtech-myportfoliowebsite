@@ -1,3 +1,5 @@
+
+
 // JavaScript to hide the preload page once the content is loaded
 window.addEventListener("load", function () {
 //   document.querySelector(".preload-container").style.display = "none";
@@ -23,8 +25,38 @@ document.addEventListener('DOMContentLoaded', function () {
       setTimeout(() => {
         texts[currentIndex].classList.remove('slideOut');
         texts[index].classList.remove('slideIn');
-      }, 2000); // Animation duration
+      }, 1000); // Animation duration
     }
 
     setInterval(showText, 3000); // Change 3000 to adjust the interval in milliseconds
   });
+
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+      var navbar = document.getElementById("navbar");
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          navbar.classList.add("scrolled");
+      } else {
+          navbar.classList.remove("scrolled");
+      }
+  }
+
+// Get all project items
+const projects = document.querySelectorAll('.project');
+
+// Iterate over each project item
+projects.forEach(project => {
+  // Get the overlay element
+  const overlay = project.querySelector('.overlay');
+
+  // Show the overlay on mouse enter
+  project.addEventListener('mouseenter', () => {
+    overlay.style.display = 'block';
+  });
+
+  // Hide the overlay on mouse leave
+  project.addEventListener('mouseleave', () => {
+    overlay.style.display = 'none';
+  });
+});
