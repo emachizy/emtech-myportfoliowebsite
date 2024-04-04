@@ -90,3 +90,26 @@ function addAnimation() {
     });
   });
 }
+
+const nameEl = document.getElementById("name")
+const email = document.getElementById("email")
+const phone = document.getElementById("phone")
+const form = document.getElementById("form")
+const errorEl = document.getElementById("error")
+
+form.addEventListener('submit', (e) => {
+  let messages = []
+  if (nameEl.value === '' || nameEl.value == null){
+    messages.push("Name is required!")
+  }
+  if (email.value === '' || email.value == null){
+    messages.push("please enter a valid email address!")
+  }
+
+  if (messages.length > 0){
+    e.preventDefault()
+    errorEl.innerText = messages.join(', ')
+  }
+  
+  
+})

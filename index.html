@@ -194,13 +194,15 @@
             <p class="text-gray-500 text-sm font-bold pt-10 pb-10">My goal is to ensure that I deliver quality and reliable projects while also maintaining a strict timeline for completion</p>
           </div>
 <div class="get-in-touch-form bg-gray-900 p-10 ">
-  <form action="" class="flex flex-col gap-5">
+  
+  <form id="form" action="/" method="GET" class="flex flex-col gap-5">
     <h1 class="text-white text-2xl font-bold">GET IN TOUCH WITH ME?</h1>
     <p class="text-gray-500 text-sm font-bold">I will do everything I can to reach out as soon as I can I promise!</p>
-    <input type="text" placeholder="Your Name" class="p-5 border-2 border-yellow-500 outline-0">
-    <input type="text" placeholder="Your Email" class="p-5 border-2 border-yellow-500 outline-0">
-    <input type="text" placeholder="Phone Number" class="p-5 border-2 border-yellow-500 outline-0">
+    <input type="text" id="name" name="name" placeholder="Your Name" class="p-5 border-2 border-yellow-500 outline-0">
+    <input type="email" id="email" name="email" placeholder="Your Email" class="p-5 border-2 border-yellow-500 outline-0">
+    <input type="number" id="phone" name="phone" placeholder="Phone Number" class="p-5 border-2 border-yellow-500 outline-0">
     <textarea name="" id="" cols="30" rows="7" class="border-2 border-yellow-500 px-5 outline-0" placeholder="Message"></textarea>
+    <div id="error" class="text-red-500 bg-white text-center font-bold"></div>
     <input type="submit" value="submit now" class="bg-yellow-500 text-black">
   </form>
 </div>
@@ -371,7 +373,7 @@
       <!-- News Letter -->
       <section>
         <div class="footer-top md:px-0 py-20 px-4">
-          <form action="" class="m-auto">
+          <form action="/" method="GET" class="m-auto">
             <h1 class="text-white text-4xl text-center font-bold py-10">SUBSCRIBE TO MY NEWSLETTER</h1>
             <div class="input md:w-3/5 m-auto border border-yellow-500 flex justify-center items-center">
               <input type="text" placeholder="Enter Your Email" class="w-4/5 p-8 bg-transparent outline-0">
@@ -427,6 +429,6 @@
         </div>
       </section>
     </footer>
-    <script src="./src/index.js"></script>
+    <script defer src="./src/index.js"></script>
   </body>
 </html>
