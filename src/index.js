@@ -1,8 +1,6 @@
-
-
 // JavaScript to hide the preload page once the content is loaded
 window.addEventListener("load", function () {
-//   document.querySelector(".preload-container").style.display = "none";
+  //   document.querySelector(".preload-container").style.display = "none";
   $(".preload-container").fadeOut("slow");
 });
 
@@ -10,57 +8,58 @@ window.addEventListener("load", function () {
 //     window.location.replace("index.html");
 // });
 
-document.addEventListener('DOMContentLoaded', function () {
-    const texts = document.querySelectorAll('.text');
-    let index = 0;
+document.addEventListener("DOMContentLoaded", function () {
+  const texts = document.querySelectorAll(".text");
+  let index = 0;
 
-    function showText() {
-      const currentIndex = index;
-      index = (index + 1) % texts.length;
+  function showText() {
+    const currentIndex = index;
+    index = (index + 1) % texts.length;
 
-      texts[currentIndex].classList.add('slideOut');
-      texts[currentIndex].classList.remove('active');
-      texts[index].classList.add('slideIn', 'active');
+    texts[currentIndex].classList.add("slideOut");
+    texts[currentIndex].classList.remove("active");
+    texts[index].classList.add("slideIn", "active");
 
-      setTimeout(() => {
-        texts[currentIndex].classList.remove('slideOut');
-        texts[index].classList.remove('slideIn');
-      }, 1000); // Animation duration
-    }
-
-    setInterval(showText, 3000); // Change 3000 to adjust the interval in milliseconds
-  });
-
-  window.onscroll = function() {scrollFunction()};
-
-  function scrollFunction() {
-      var navbar = document.getElementById("navbar");
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-          navbar.classList.add("scrolled");
-      } else {
-          navbar.classList.remove("scrolled");
-      }
+    setTimeout(() => {
+      texts[currentIndex].classList.remove("slideOut");
+      texts[index].classList.remove("slideIn");
+    }, 1000); // Animation duration
   }
 
+  setInterval(showText, 3000); // Change 3000 to adjust the interval in milliseconds
+});
+
+window.onscroll = function () {
+  scrollFunction();
+};
+
+function scrollFunction() {
+  var navbar = document.getElementById("navbar");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    navbar.classList.add("scrolled");
+  } else {
+    navbar.classList.remove("scrolled");
+  }
+}
+
 // Get all project items
-const projects = document.querySelectorAll('.project');
+const projects = document.querySelectorAll(".project");
 
 // Iterate over each project item
-projects.forEach(project => {
+projects.forEach((project) => {
   // Get the overlay element
-  const overlay = project.querySelector('.overlay');
+  const overlay = project.querySelector(".overlay");
 
   // Show the overlay on mouse enter
-  project.addEventListener('mouseenter', () => {
-    overlay.style.display = 'block';
+  project.addEventListener("mouseenter", () => {
+    overlay.style.display = "block";
   });
 
   // Hide the overlay on mouse leave
-  project.addEventListener('mouseleave', () => {
-    overlay.style.display = 'none';
+  project.addEventListener("mouseleave", () => {
+    overlay.style.display = "none";
   });
 });
-
 
 // Scroller animation
 
@@ -91,30 +90,66 @@ function addAnimation() {
   });
 }
 
-const nameEl = document.getElementById("name")
-const email = document.getElementById("email")
-const phone = document.getElementById("phone")
-const form = document.getElementById("form")
-const errorEl = document.getElementById("error")
-const backButton = document.getElementById("backButton")
+const nameEl = document.getElementById("name");
+const email = document.getElementById("email");
+const phone = document.getElementById("phone");
+const form = document.getElementById("form");
+const errorEl = document.getElementById("error");
+const backButton = document.getElementById("backButton");
 
-form.addEventListener('submit', (e) => {
-  let messages = []
-  if (nameEl.value === '' || nameEl.value == null){
-    messages.push("Name is required!")
+form.addEventListener("submit", (e) => {
+  let messages = [];
+  if (nameEl.value === "" || nameEl.value == null) {
+    messages.push("Name is required!");
   }
-  if (email.value === '' || email.value == null){
-    messages.push("please enter a valid email address!")
+  if (email.value === "" || email.value == null) {
+    messages.push("please enter a valid email address!");
   }
 
-  if (messages.length > 0){
-    e.preventDefault()
-    errorEl.innerText = messages.join(', ')
+  if (messages.length > 0) {
+    e.preventDefault();
+    errorEl.innerText = messages.join(", ");
   }
-  
-  
-})
+});
 
-document.getElementById("backButton").addEventListener("click", function() {
-  window.location.href = "index.html"; // Change "index.html" to your home page URL
+document.getElementById("backButton").addEventListener("click", function () {
+  window.location.href = "index.html";
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll(".smooth-scroll");
+
+  for (const link of links) {
+    link.addEventListener("click", smoothScroll);
+  }
+
+  function smoothScroll(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href");
+    const targetPosition = document.querySelector(targetId).offsetTop;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+    const duration = 1000; // Adjust scrolling duration (in milliseconds)
+
+    let start = null;
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      const progress = timestamp - start;
+      window.scrollTo(
+        0,
+        easeInOutCubic(progress, startPosition, distance, duration)
+      );
+      if (progress < duration) {
+        window.requestAnimationFrame(step);
+      }
+    }
+    window.requestAnimationFrame(step);
+  }
+
+  function easeInOutCubic(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return (c / 2) * t * t * t + b;
+    t -= 2;
+    return (c / 2) * (t * t * t + 2) + b;
+  }
 });
