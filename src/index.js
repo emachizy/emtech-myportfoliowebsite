@@ -96,6 +96,7 @@ const email = document.getElementById("email")
 const phone = document.getElementById("phone")
 const form = document.getElementById("form")
 const errorEl = document.getElementById("error")
+const backButton = document.getElementById("backButton")
 
 form.addEventListener('submit', (e) => {
   let messages = []
@@ -113,3 +114,7 @@ form.addEventListener('submit', (e) => {
   
   
 })
+
+document.getElementById("backButton").addEventListener("click", function() {
+  window.location.href = "index.html"; // Change "index.html" to your home page URL
+});

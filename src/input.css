@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 body {
+  width: 100%;
   background: rgb(2, 0, 36);
   background: linear-gradient(
     90deg,
@@ -10,6 +11,7 @@ body {
     rgba(118, 104, 24, 1) 75%,
     rgba(21, 17, 34, 1) 77%
   );
+  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
