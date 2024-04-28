@@ -16,6 +16,9 @@
       integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
       crossorigin="anonymous"
     ></script>
+    <!-- ion icons -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <!-- vanilla css -->
     <link rel="stylesheet" href="/src/input.css" />
   </head>
@@ -38,24 +41,50 @@
   
     <nav>
       <div id="navbar"
-        class="navbar w-full md:w-4/5 flex items-center justify-between m-auto bg-black py-5 md:fixed md:top-0 md:left-32 fixed"
+        class="navbar w-full md:w-4/5 md:flex items-center justify-between m-auto bg-black py-5 md:fixed md:top-0 md:left-32 fixed shadow"
       >
+      <div class="flex justify-between items-center">
         <div class="logo text-yellow-500 text-4xl pl-2 cursor-pointer"> 
           <link rel="" href="index.html">EmTech.
         </div>
-        <div class="nav-link md:flex  gap-10 text-white hidden">
+        <span class="text-white cursor-pointer mx-2 md:hidden text-3xl block ">
+          <ion-icon name="menu-outline" onclick="Menu(this)" ></ion-icon>
+        </span>
+      </div>
+        
+        <div class="nav-link md:flex  gap-10 text-white md:text-xl text-2xl z-[1] md:z-auto md:static absolute w-full left-0 md:w-auto md:opacity-100 opacity-0 -top-100px transition-all duration-500">
           <a
             href="index.html"
-            class="hover:bg-yellow-500 p-2 hover:transition-all hover:duration-75 hover:transform origin-bottom"
+            class="hover:bg-yellow-500 p-2 hover:transition-all hover:duration-75 hover:transform origin-bottom duration-500"
             >HOME</a
           >
-          <a href="#about-us" id="" class="hover:bg-yellow-500 p-2 smooth-scroll">ABOUT US</a>
+          <a href="#about-us" id="" class="hover:bg-yellow-500 p-2 smooth-scroll duration-500">ABOUT US</a>
+          <a href="#services" class="hover:bg-yellow-500 p-2 smooth-scroll duration-500">SERVICES</a>
+          <a href="#project" class="hover:bg-yellow-500 p-2 smooth-scroll duration-500">PROJECTS</a>
+          <a href="#" class="hover:bg-yellow-500 p-2 smooth-scroll duration-500">BLOG</a>
+          <a href="#contact" class="hover:bg-yellow-500 p-2 smooth-scroll duration-500">CONTACT</a>
+        </div>
+      </div>
+      <!-- Mobile Nav
+      <div class="mobile-nav md:hidden bg-black fixed top-0 left-0 w-full h-full z-50 hidden">
+        <div class="mobile-nav-header flex justify-between items-center p-5">
+          <div class="logo text-yellow-500 text-4xl pl-2 cursor-pointer">EmTech.</div>
+          <div class="close-btn text-white text-4xl cursor-pointer">X</div>
+        </div>
+        <div class="mobile-nav-links flex flex-col gap-5 text-white p-5">
+          <a href="index.html" class="hover:bg-yellow-500 p-2">HOME</a>
+          <a href="#about-us" class="hover:bg-yellow-500 p-2 smooth-scroll">ABOUT US</a>
           <a href="#services" class="hover:bg-yellow-500 p-2 smooth-scroll">SERVICES</a>
           <a href="#project" class="hover:bg-yellow-500 p-2 smooth-scroll">PROJECTS</a>
           <a href="#" class="hover:bg-yellow-500 p-2 smooth-scroll">BLOG</a>
           <a href="#contact" class="hover:bg-yellow-500 p-2 smooth-scroll">CONTACT</a>
         </div>
-      </div>
+      </div> -->
+
+      <!-- Mobile Nav Button -->
+      <!-- <div class="mobile-nav-btn md:hidden fixed top-5 right-5 z-50 cursor-pointer">
+        <img src="images/menu.svg" alt="" width="30" />
+      </div> -->
     </nav>
     <header class="md:w-4/5 m-auto text-center pt-60 pb-20">
       <h3 class="pb-10 text-white font-bold text-2xl">Hello, I'M A</h3>
@@ -87,7 +116,7 @@
       <!-- my services -->
 
       <section id="services">
-        <div class="services pt-24">
+        <div class="services pt-24 px-5">
           <div class="services-header">
             <h4 class="text-yellow-500 text-center text-xl">MY SERVICES</h4>
             <h1
@@ -97,7 +126,7 @@
               design and innovation
             </h1>
           </div>
-          <div class="services-body md:w-4/5 m-auto grid md:grid-cols-3 gap-5 pt-10">
+          <div class="services-body md:w-4/5 m-auto grid md:grid-cols-3 gap-16 pt-10">
             <div class="border border-gray-700 py-10">
               <img
                 src="images/webdesign.svg"
@@ -373,19 +402,7 @@
     <!-- Footer -->
     <footer class="m-auto ">
 
-      <!-- News Letter -->
-      <section>
-        <div class="footer-top md:px-0 py-20 px-4">
-          <form action="/" method="GET" class="m-auto">
-            <h1 class="text-white text-4xl text-center font-bold py-10">SUBSCRIBE TO MY NEWSLETTER</h1>
-            <div class="input md:w-3/5 m-auto border border-yellow-500 flex justify-center items-center">
-              <input type="text" placeholder="Enter Your Email" class="w-4/5 p-8 bg-transparent outline-0 text-white">
-              <button class="bg-yellow-500 p-6 text-center items-end">Notify Now</button>
-            </div>
-          </form>
-        </div>
-        
-      </section>
+      
       <section class="bg-black">
         <div class="footer-bottom border-b-2 border-gray-500 py-20 md:px-10 md:flex md:flex-row flex-col justify-center items-center gap-10">
           <div class="address md:flex flex-col md:flex-row justify-center gap-5 md:m-0 m-auto">
@@ -432,6 +449,8 @@
         </div>
       </section>
     </footer>
-    <script defer src="./src/index.js"></script>
+    <script defer src="./src/index.js">
+      
+    </script>
   </body>
 </html>

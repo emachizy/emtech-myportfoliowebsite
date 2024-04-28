@@ -1,3 +1,7 @@
+const mobileNavBtn = document.querySelector(".mobile-nav-btn");
+const closeBtn = document.querySelector(".close-btn");
+const mobileNav = document.querySelector(".mobile-nav");
+
 // JavaScript to hide the preload page once the content is loaded
 window.addEventListener("load", function () {
   //   document.querySelector(".preload-container").style.display = "none";
@@ -116,40 +120,16 @@ document.getElementById("backButton").addEventListener("click", function () {
   window.location.href = "index.html";
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const links = document.querySelectorAll(".smooth-scroll");
+// mobile nav
+function Menu(e) {
+  let list = document.querySelector(".nav-link");
+  let isVisible = list.classList.contains("opacity-100");
 
-  for (const link of links) {
-    link.addEventListener("click", smoothScroll);
+  if (!isVisible) {
+    list.classList.add("top-[80px]", "opacity-100", "bg-yellow-500");
+    e.name = "close-outline";
+  } else {
+    list.classList.remove("top-[80px]", "opacity-100");
+    e.name = "menu-outline";
   }
-
-  function smoothScroll(e) {
-    e.preventDefault();
-    const targetId = this.getAttribute("href");
-    const targetPosition = document.querySelector(targetId).offsetTop;
-    const startPosition = window.pageYOffset;
-    const distance = targetPosition - startPosition;
-    const duration = 1000; // Adjust scrolling duration (in milliseconds)
-
-    let start = null;
-    function step(timestamp) {
-      if (!start) start = timestamp;
-      const progress = timestamp - start;
-      window.scrollTo(
-        0,
-        easeInOutCubic(progress, startPosition, distance, duration)
-      );
-      if (progress < duration) {
-        window.requestAnimationFrame(step);
-      }
-    }
-    window.requestAnimationFrame(step);
-  }
-
-  function easeInOutCubic(t, b, c, d) {
-    t /= d / 2;
-    if (t < 1) return (c / 2) * t * t * t + b;
-    t -= 2;
-    return (c / 2) * (t * t * t + 2) + b;
-  }
-});
+}
