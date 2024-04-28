@@ -132,4 +132,14 @@ function Menu(e) {
     list.classList.remove("top-[80px]", "opacity-100");
     e.name = "menu-outline";
   }
+
+  // Add an event listener to each link inside the menu
+  document.querySelectorAll(".nav-link a").forEach((link) => {
+    link.addEventListener("click", () => {
+      let list = document.querySelector(".nav-link");
+      list.classList.remove("top-[80px]", "opacity-100");
+      document.querySelector('ion-icon[name="close-outline"]').name =
+        "menu-outline";
+    });
+  });
 }
