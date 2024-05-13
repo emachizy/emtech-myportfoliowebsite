@@ -1,7 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+*{
+  scroll-behavior: smooth;
+}
 body {
   width: 100%;
   background: rgb(2, 0, 36);
@@ -12,7 +14,7 @@ body {
     rgba(21, 17, 34, 1) 77%
   );
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  
 }
 
 nav {
