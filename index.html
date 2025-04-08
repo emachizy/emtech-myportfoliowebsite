@@ -3,11 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <title>Portfolio | PERSONAL</title>
     <!-- Google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,700;0,900;1,800&family=Bungee+Spice&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Glory:ital,wght@0,100..800;1,100..800&family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,700;0,900;1,800&family=Bungee+Spice&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Glory:ital,wght@0,100..800;1,100..800&family=Kumbh+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <!-- tailwind css -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- jquery -->
@@ -17,8 +24,14 @@
       crossorigin="anonymous"
     ></script>
     <!-- ion icons -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <!-- vanilla css -->
     <link rel="stylesheet" href="/src/input.css" />
   </head>
@@ -38,56 +51,63 @@
     <!-- end of preloader -->
 
     <!-- navigation -->
-  
+
     <nav>
-      <div id="navbar"
-        class="navbar w-full md:w-4/5 md:flex items-center justify-between m-auto bg-black py-5 md:fixed md:top-0 md:left-32 fixed shadow"
+      <div
+        id="navbar"
+        class="navbar w-full md:w-4/5 md:max-lg:w-full md:max-lg:left-0 mx-auto md:flex items-center justify-between m-auto bg-white py-5 md:fixed md:top-0 md:left-32 fixed shadow-md"
       >
-      <div class="flex justify-between items-center">
-        <div class="logo text-yellow-500 text-4xl pl-2 cursor-pointer"> 
-          <link rel="" href="index.html">Em<span class="text-yellow-200 font-bold">Tech</span>.
+        <div class="flex justify-between items-center">
+          <div class="logo text-yellow-500 text-4xl pl-2 cursor-pointer">
+            <link rel="" href="index.html" />Em<span
+              class="text-yellow-200 font-bold"
+              >Tech</span
+            >.
+          </div>
+          <span class="cursor-pointer mx-2 md:hidden text-3xl block">
+            <ion-icon name="menu-outline" onclick="Menu(this)"></ion-icon>
+          </span>
         </div>
-        <span class="text-white cursor-pointer mx-2 md:hidden text-3xl block ">
-          <ion-icon name="menu-outline" onclick="Menu(this)" ></ion-icon>
-        </span>
-      </div>
-        
-        <div class="nav-link md:flex  gap-10 text-white md:text-xl text-2xl z-[1] md:z-auto md:static absolute w-full left-0 md:w-auto md:opacity-100 opacity-0 -top-100px transition-all duration-500">
+
+        <div
+          class="nav-link md:flex gap-10 md:max-lg:gap-1 md:max-lg:text-xs md:text-xl text-2xl z-[1] md:z-auto md:static absolute w-full left-0 md:w-auto md:opacity-100 opacity-0 -top-100px transition-all duration-500"
+        >
           <a
             href="index.html"
-            class="hover:bg-yellow-500 p-2 hover:transition-all hover:duration-75 hover:transform origin-bottom duration-500"
+            class="hover:bg-yellow-500 hover:text-white p-1 hover:transition-all hover:duration-75 hover:transform origin-bottom duration-500 hover:rounded"
             >HOME</a
           >
-          <a href="#about-us" id="" class="hover:bg-yellow-500 p-2 smooth-scroll duration-500">ABOUT US</a>
-          <a href="#services" class="hover:bg-yellow-500 p-2 smooth-scroll duration-500">SERVICES</a>
-          <a href="#project" class="hover:bg-yellow-500 p-2 smooth-scroll duration-500">PROJECTS</a>
-          <a href="#" class="hover:bg-yellow-500 p-2 smooth-scroll duration-500">BLOG</a>
-          <a href="#contact" class="hover:bg-yellow-500 p-2 smooth-scroll duration-500">CONTACT</a>
+          <a
+            href="#about-us"
+            id=""
+            class="hover:bg-yellow-500 hover:text-white p-1 smooth-scroll duration-500 hover:rounded"
+            >ABOUT US</a
+          >
+          <a
+            href="#services"
+            class="hover:bg-yellow-500 hover:text-white p-1 smooth-scroll duration-500 hover:rounded"
+            >SERVICES</a
+          >
+          <a
+            href="#project"
+            class="hover:bg-yellow-500 hover:text-white p-1 smooth-scroll duration-500 hover:rounded"
+            >PROJECTS</a
+          >
+          <a
+            href="#"
+            class="hover:bg-yellow-500 hover:text-white p-1 smooth-scroll duration-500 hover:rounded"
+            >BLOG</a
+          >
+          <a
+            href="#contact"
+            class="hover:bg-yellow-500 hover:text-white p-1 smooth-scroll duration-500 hover:rounded"
+            >CONTACT</a
+          >
         </div>
       </div>
-      <!-- Mobile Nav
-      <div class="mobile-nav md:hidden bg-black fixed top-0 left-0 w-full h-full z-50 hidden">
-        <div class="mobile-nav-header flex justify-between items-center p-5">
-          <div class="logo text-yellow-500 text-4xl pl-2 cursor-pointer">EmTech.</div>
-          <div class="close-btn text-white text-4xl cursor-pointer">X</div>
-        </div>
-        <div class="mobile-nav-links flex flex-col gap-5 text-white p-5">
-          <a href="index.html" class="hover:bg-yellow-500 p-2">HOME</a>
-          <a href="#about-us" class="hover:bg-yellow-500 p-2 smooth-scroll">ABOUT US</a>
-          <a href="#services" class="hover:bg-yellow-500 p-2 smooth-scroll">SERVICES</a>
-          <a href="#project" class="hover:bg-yellow-500 p-2 smooth-scroll">PROJECTS</a>
-          <a href="#" class="hover:bg-yellow-500 p-2 smooth-scroll">BLOG</a>
-          <a href="#contact" class="hover:bg-yellow-500 p-2 smooth-scroll">CONTACT</a>
-        </div>
-      </div> -->
-
-      <!-- Mobile Nav Button -->
-      <!-- <div class="mobile-nav-btn md:hidden fixed top-5 right-5 z-50 cursor-pointer">
-        <img src="images/menu.svg" alt="" width="30" />
-      </div> -->
     </nav>
-    <header class="md:w-4/5 m-auto text-center pt-60 pb-20 h-[100vh]">
-      <h3 class="pb-10 text-white font-bold text-2xl">Hello, I'M A</h3>
+    <header class="md:w-4/5 m-auto text-center pt-40 pb-10">
+      <h3 class="pb-10 font-bold text-2xl">Hello, I'M A</h3>
       <div class="hero">
         <!-- <div class="text">Hello, I am a</div> -->
         <h1 class="text text-yellow-500 font-black">Developer</h1>
@@ -98,9 +118,10 @@
         based in Lagos, Nigeria.
       </h4>
       <!-- Download CV Button -->
-      <div class="cv-btn bg-yellow-500 hover:bg-opacity-5 flex mt-5">
+      <div class="cv-btn bg-yellow-500 hover:bg-opacity-50 flex mt-5">
         <a
-          href="https://drive.google.com/file/d/1Ce6XzVof-Ahq64N6sUlVln-_FRcjhhF7/view?usp=sharing" target="_blank"
+          href="https://drive.google.com/file/d/1Ce6XzVof-Ahq64N6sUlVln-_FRcjhhF7/view?usp=sharing"
+          target="_blank"
           class="download-button"
           >Download CV
         </a>
@@ -112,66 +133,66 @@
       <div class="border"></div>
       <div class="border"></div>
     </div>
-    <main class="bg-black py-10">
+    <main class="bg-slate-50 py-10">
       <!-- my services -->
 
       <section id="services">
         <div class="services pt-24 px-5">
           <div class="services-header">
             <h4 class="text-yellow-500 text-center text-xl">MY SERVICES</h4>
-            <h1
-              class="text-white text-center text-4xl font-bold leading-relaxed pb-14"
-            >
+            <h1 class="text-center text-4xl font-bold leading-relaxed pb-14">
               Crafting stories through <br />
               design and innovation
             </h1>
           </div>
-          <div class="services-body md:w-4/5 m-auto grid md:grid-cols-3 gap-16 pt-10">
-            <div class="border border-gray-700 py-10">
+          <div
+            class="services-body md:w-4/5 md:max-lg:w-full mx-auto grid md:grid-cols-3 md:max-lg:grid-cols-2 gap-16 pt-10"
+          >
+            <div
+              class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+            >
               <img
                 src="images/webdesign.svg"
                 class="mx-auto -mt-20"
                 alt=""
                 width="150"
               />
-              <h3 class="text-white text-2xl text-center font-bold py-6">
-                WEBSITE DESIGN
-              </h3>
-              <p class="text-gray-500 text-center font-bold text-sm px-5">
+              <h3 class="text-xl font-bold text-center mb-2">WEBSITE DESIGN</h3>
+              <p class="text-gray-600 text-center font-bold text-sm px-5">
                 Our website design projects are more than just buttons, images,
                 and texts. We take into consideration your passion for your
                 business and your customer's need and bring it to life with our
                 four (4) years of web design experience
               </p>
             </div>
-            <div class="border border-gray-700 py-10">
+            <div
+              class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+            >
               <img
                 src="images/uiux.svg"
                 class="mx-auto -mt-20"
                 alt=""
                 width="150"
               />
-              <h3 class="text-white text-2xl text-center font-bold py-6">
-                UI DESIGN
-              </h3>
-              <p class="text-gray-500 text-center font-bold text-sm px-5">
+              <h3 class="text-xl font-bold text-center mb-2">UI DESIGN</h3>
+              <p class="text-gray-600 text-center font-bold text-sm px-5">
                 Our website design projects are more than just buttons, images,
                 and texts. We take into consideration your passion for your
                 business and your customer's need and bring it to life with our
                 four (4) years of web design experience
               </p>
             </div>
-            <div class="border border-gray-700 py-10">
+            <div
+              class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg md:max-lg:col-span-2 md:max-lg:mx-auto md:max-lg:w-1/2 transition-shadow duration-300"
+            >
               <img
                 src="images/itsupport.svg"
                 class="mx-auto -mt-20"
                 alt=""
                 width="150"
               />
-              <h3 class="text-white text-2xl text-center font-bold py-6">
-                IT SUPPORT
-              </h3>
-              <p class="text-gray-500 text-center font-bold text-sm px-5">
+              <h3 class="text-xl font-bold text-center mb-2">IT SUPPORT</h3>
+              <p class="text-gray-600 text-center font-bold text-sm px-5">
                 Our website design projects are more than just buttons, images,
                 and texts. We take into consideration your passion for your
                 business and your customer's need and bring it to life with our
@@ -183,259 +204,596 @@
       </section>
       <!-- ABOUT ME -->
       <section id="about-us">
-        <div class="about md:w-4/5 mx-auto md:flex  justify-between pt-20 pb-20">
+        <div
+          class="about md:w-4/5 md:max-lg:w-full mx-auto md:flex justify-between pt-20 pb-20"
+        >
           <div class="about-text px-6 md:w-1/2">
-            <h3 class="text-yellow-500 text-bold text-2xl">ABOUT ME</h3>
-            <h1 class="text-white text-4xl font-bold leading-10 pt-6">
+            <h3
+              class="text-yellow-500 text-bold text-2xl text-center md:text-left"
+            >
+              ABOUT ME
+            </h3>
+            <h1
+              class="text-4xl font-bold leading-10 pt-6 text-center md:text-left"
+            >
               Transforming visions into exceptional portfolios
             </h1>
             <div class="flex gap-5 md:items-start py-10">
               <div class="md:border-t-2 md:w-36 mt-2"></div>
-              <p class="text-gray-500 text-sm">
-                I am a passionate frontend developer dedicated to crafting visually stunning and highly functional web experiences. With expertise in HTML, CSS, JavaScript, React, and Tailwind CSS, I specialize in building modern, responsive websites that showcase brands and ideas effectively. My goal is to bring concepts to life through clean, efficient code and user-centric design. I am committed to delivering high-quality work that exceeds expectations and drives results.
+              <p class="text-gray-500 text-sm text-center md:text-left">
+                I am a passionate frontend developer dedicated to crafting
+                visually stunning and highly functional web experiences. With
+                expertise in HTML, CSS, JavaScript, React, and Tailwind CSS, I
+                specialize in building modern, responsive websites that showcase
+                brands and ideas effectively. My goal is to bring concepts to
+                life through clean, efficient code and user-centric design. I am
+                committed to delivering high-quality work that exceeds
+                expectations and drives results.
               </p>
             </div>
-          </h4>
-          <!-- Download CV Button -->
-          <div class="cv-btn bg-yellow-500 hover:bg-opacity-5 flex mt-5 md:ml-16 ml-2">
-            <a
-              href="https://drive.google.com/file/d/1Ce6XzVof-Ahq64N6sUlVln-_FRcjhhF7/view?usp=sharing"
-              class="download-button" target="_blank"
-              >Download CV
-            </a>
-            <img src="images/download.svg" alt="" width="15" />
-          </div>
+
+            <!-- Download CV Button -->
+            <div
+              class="cv-btn bg-yellow-500 hover:bg-opacity-50 flex md:ml-16 ml-2"
+            >
+              <a
+                href="https://drive.google.com/file/d/1Ce6XzVof-Ahq64N6sUlVln-_FRcjhhF7/view?usp=sharing"
+                class="download-button"
+                target="_blank"
+                >Download CV
+              </a>
+              <img src="images/download.svg" alt="" width="15" />
+            </div>
           </div>
           <div class="about-img bg-yellow-500 mx-6 md:w-1/4 relative m-auto">
-<img src="images/about-img.jpg" class="bg-black  relative md:top-4 top-4" alt="" >
-<div class="caption bg-gray-900 py-5 px-4  absolute  md:-bottom-10 md:-left-10 left-8">
-  <h3 class="text-white text-2xl font-bold">Nwankwo Emmanuel</h3>
-  <p class="text-gray-500 text-xl font-bold">Software Engineer</p>
-</div>
+            <img
+              src="images/about-img.jpg"
+              class="bg-black relative md:top-4 top-4"
+              alt=""
+            />
+            <div
+              class="caption bg-gray-900 py-5 px-4 absolute md:-bottom-10 md:-left-10 left-8"
+            >
+              <h3 class="text-white text-2xl font-bold">Nwankwo Emmanuel</h3>
+              <p class="text-gray-500 text-xl font-bold">Software Engineer</p>
+            </div>
           </div>
         </div>
+      </section>
+      <section>
         <!-- GET IN TOUCH -->
-        <div id="contact" class="get-in-touch md:w-4/5 m-auto md:grid grid-cols-2 md:pt-20 md:gap-5 pt-20 px-6">
-          <div class="get-in-touch-text flex flex-col justify-center items-center">
-            <h1 class="text-white text-4xl font-black ">Design <span class="text-xl">and Innovation</span> </h1>
-            <p class="text-gray-500 text-sm font-bold pt-10 pb-10">My goal is to ensure that I deliver quality and reliable projects while also maintaining a strict timeline for completion</p>
+        <div
+          id="contact"
+          class="get-in-touch md:w-4/5 md:max-lg:w-full m-auto md:grid grid-cols-2 md:pt-20 md:gap-5 pt-20 px-6"
+        >
+          <div
+            class="get-in-touch-text flex flex-col justify-center items-center"
+          >
+            <h1 class="text-4xl font-black">
+              Design <span class="text-xl">and Innovation</span>
+            </h1>
+            <p class="text-gray-500 text-sm font-bold pt-10 pb-10">
+              My goal is to ensure that I deliver quality and reliable projects
+              while also maintaining a strict timeline for completion
+            </p>
           </div>
-<div class="get-in-touch-form bg-gray-900 p-10 rounded shadow-xl">
-  
-  <form id="form" action="https://formsubmit.co/27ef4252af3e43c55bb019f2befb212d" method="POST" class="flex flex-col gap-5 shadow-2xl">
-    <h1 class="text-white text-2xl font-bold">GET IN TOUCH WITH ME?</h1>
-    <p class="text-gray-500 text-sm font-bold">I will do everything I can to reach out as soon as I can I promise!</p>
-    <input type="text" id="name" name="name" placeholder="Your Name" class="p-2 rounded border-2 border-yellow-500 outline-0" required>
-    <input type="email" id="email" name="email" placeholder="Your Email" class="p-2 rounded border-2 border-yellow-500 outline-0" required>
-    <input type="number" id="phone" name="phone" placeholder="Phone Number" class="p-2 rounded border-2 border-yellow-500 outline-0" required>
-    <textarea name="message" id="message" cols="10" rows="7" class="border-2 border-yellow-500 px-5 outline-0" placeholder="Message"></textarea>
-    <div id="error" class="text-red-500 bg-white text-center font-bold"></div>
-    <input type="hidden" name="_captcha" value="false">
-    <!-- <input type="hidden" name="_next" value="https://thankyou.html"> -->
-    <input type="hidden" name="_template" value="table">
-    <input type="submit" value="submit now" class="bg-yellow-500 text-black rounded">
-  </form>
-</div>
+          <div class="get-in-touch-form bg-white p-5 rounded shadow-xl">
+            <form
+              id="form"
+              action="https://formsubmit.co/27ef4252af3e43c55bb019f2befb212d"
+              method="POST"
+              class="flex flex-col gap-3"
+            >
+              <h1 class="text-center text-2xl font-bold">
+                GET IN TOUCH WITH ME?
+              </h1>
+              <p class="text-gray-500 text-sm font-bold text-center">
+                I will do everything I can to reach out as soon as I can I
+                promise!
+              </p>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+                required
+              />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+                required
+              />
+              <input
+                type="number"
+                id="phone"
+                name="phone"
+                class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+                required
+              />
+              <textarea
+                name="message"
+                id="message"
+                cols="10"
+                rows="7"
+                class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+                placeholder="Message"
+                required
+              ></textarea>
+              <div
+                id="error"
+                class="text-red-500 bg-white text-center font-bold"
+              ></div>
+              <input type="hidden" name="_captcha" value="false" />
+              <!-- <input type="hidden" name="_next" value="https://thankyou.html"> -->
+              <input type="hidden" name="_template" value="table" />
+              <button
+                type="submit"
+                id="submitBtn"
+                value="submit now"
+                class="bg-yellow-500 text-white rounded py-1 hover:bg-white hover:text-yellow-500"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
         </div>
       </section>
       <!-- EUCATION AND SKILL -->
-      <section class="bg-gray-900   mt-20 ">
-        <div class="edu-skill md:w-4/5 md:m-auto mx-4 px-6">
+      <section class="bg-gray-900 mt-20">
+        <div class="edu-skill md:w-4/5 md:max-lg:w-full md:m-auto mx-4 px-6">
           <div class="edu-header text-center leading-6">
-            <h3 class="text-yellow-500 text-2xl font-bold pt-20">EDUCATION & SKILL</h3>
-            <h1 class="text-white text-4xl font-bold">Showcasing my talent <br> amplifying your project</h1>
+            <h3 class="text-yellow-500 text-2xl font-bold pt-20">
+              EDUCATION & SKILL
+            </h3>
+            <h1 class="text-white text-4xl font-bold">
+              Showcasing my talent <br />
+              amplifying your project
+            </h1>
           </div>
           <div class="edu md:grid grid-cols-2 md:gap-10 gap-20 pt-20">
-            <div class="left ">
-<div class="date w-36 py-4 px-6 text-yellow-500 text-center font-bold border-2 border-yellow-500">
-  2023-2024
-</div>
-<div class="left-content">
-  <h1 class="text-white text-2xl font-bold pt-5">Junior Front-End Developer</h1>
-  <p class="text-gray-500 font-bold text-sm py-5">I interned at ITTECHSKILLS. I worked on frontend projects with HTML, CSS, JS, TAILWIND, JQUERY, REACT. I also worked on server projects with nodeJs, MongoDB, and expressJS.</p>
-</div>
+            <div class="left">
+              <div
+                class="date w-36 py-4 px-6 text-yellow-500 text-center font-bold border-2 border-yellow-500"
+              >
+                2023-2024
+              </div>
+              <div class="left-content">
+                <h1 class="text-white text-2xl font-bold pt-5">
+                  Junior Front-End Developer
+                </h1>
+                <p class="text-gray-500 font-bold text-sm py-5">
+                  I interned at ITTECHSKILLS. I worked on frontend projects with
+                  HTML, CSS, JS, TAILWIND, JQUERY, REACT. I also worked on
+                  server projects with nodeJs, MongoDB, and expressJS.
+                </p>
+              </div>
             </div>
-            <div class="left ">
-<div class="date w-36 py-4 px-6 text-yellow-500 text-center font-bold border-2 border-yellow-500">
-  2023-2024
-</div>
-<div class="left-content">
-  <h1 class="text-white text-2xl font-bold pt-5">Junior Front-End Developer</h1>
-  <p class="text-gray-500 font-bold text-sm py-5">I interned at ITTECHSKILLS. I worked on frontend projects with HTML, CSS, JS, TAILWIND, JQUERY, REACT. I also worked on server projects with nodeJs, MongoDB, and expressJS.</p>
-</div>
+            <div class="left">
+              <div
+                class="date w-36 py-4 px-6 text-yellow-500 text-center font-bold border-2 border-yellow-500"
+              >
+                2023-2024
+              </div>
+              <div class="left-content">
+                <h1 class="text-white text-2xl font-bold pt-5">
+                  Junior Front-End Developer
+                </h1>
+                <p class="text-gray-500 font-bold text-sm py-5">
+                  I interned at ITTECHSKILLS. I worked on frontend projects with
+                  HTML, CSS, JS, TAILWIND, JQUERY, REACT. I also worked on
+                  server projects with nodeJs, MongoDB, and expressJS.
+                </p>
+              </div>
             </div>
             <div class="right">
-              <div class="date w-36 py-4 px-6 text-yellow-500 text-center font-bold border-2 border-yellow-500">
+              <div
+                class="date w-36 py-4 px-6 text-yellow-500 text-center font-bold border-2 border-yellow-500"
+              >
                 2022-2023
               </div>
               <div class="right-content">
-                <h1 class="text-white text-2xl font-bold pt-5">Javascript Developer</h1>
-                <p class="text-gray-500 font-bold text-sm py-5">I assisted senior JS developers on SAVECOINSHQ frontend team to implement vannila javascript codes; writing custom and reusable components.</p>
+                <h1 class="text-white text-2xl font-bold pt-5">
+                  Javascript Developer
+                </h1>
+                <p class="text-gray-500 font-bold text-sm py-5">
+                  I assisted senior JS developers on SAVECOINSHQ frontend team
+                  to implement vannila javascript codes; writing custom and
+                  reusable components.
+                </p>
               </div>
             </div>
             <div class="right">
-              <div class="date w-36 py-4 px-6 text-yellow-500 text-center font-bold border-2 border-yellow-500">
+              <div
+                class="date w-36 py-4 px-6 text-yellow-500 text-center font-bold border-2 border-yellow-500"
+              >
                 2022-2023
               </div>
               <div class="right-content">
-                <h1 class="text-white text-2xl font-bold pt-5">Javascript Developer</h1>
-                <p class="text-gray-500 font-bold text-sm pt-5">I assisted senior JS developers on SAVECOINSHQ frontend team to implement vannila javascript codes; writing custom and reusable components.</p>
+                <h1 class="text-white text-2xl font-bold pt-5">
+                  Javascript Developer
+                </h1>
+                <p class="text-gray-500 font-bold text-sm pt-5">
+                  I assisted senior JS developers on SAVECOINSHQ frontend team
+                  to implement vannila javascript codes; writing custom and
+                  reusable components.
+                </p>
               </div>
             </div>
           </div>
         </div>
         <!-- SKILLS -->
-        <div class="skills md:w-4/5 md:m-auto mx-4 md:space-y-0 space-y-10 md:grid grid-cols-2 gap-10 py-20">
+        <div
+          class="skills md:w-4/5 md:max-lg:w-full md:m-auto mx-4 md:space-y-0 space-y-10 md:grid grid-cols-2 gap-10 py-20"
+        >
           <div class="bg-gray-800 flex flex-col">
-            <p class="text-white text-sm py-5 px-5">HTML</p>
+            <p class="text-white text-sm py-5 px-5">MongoDb</p>
             <div class="w-4/5 border-b-4 border-yellow-500"></div>
-
           </div>
           <div class="bg-gray-800 flex flex-col">
-            <p class="text-white text-sm py-5 px-5">CSS</p>
+            <p class="text-white text-sm py-5 px-5">Express</p>
             <div class="w-4/5 border-b-4 border-yellow-500"></div>
-
           </div>
           <div class="bg-gray-800 flex flex-col">
-            <p class="text-white text-sm py-5 px-5">JAVASCRIPT</p>
+            <p class="text-white text-sm py-5 px-5">REACT</p>
             <div class="w-4/5 border-b-4 border-yellow-500"></div>
-
           </div>
           <div class="bg-gray-800 flex flex-col">
             <p class="text-white text-sm py-5 px-5">NODEJS</p>
             <div class="w-2/5 border-b-4 border-yellow-500"></div>
-
           </div>
           <div class="bg-gray-800 flex flex-col">
             <p class="text-white text-sm py-5 px-5">TAILWIND</p>
             <div class="w-4/5 border-b-4 border-yellow-500"></div>
-
           </div>
           <div class="bg-gray-800 flex flex-col">
-            <p class="text-white text-sm py-5 px-5">REACT</p>
+            <p class="text-white text-sm py-5 px-5">JAVASCRIPT</p>
             <div class="w-2/5 border-b-4 border-yellow-500"></div>
-
           </div>
         </div>
       </section>
       <!-- portfolio project -->
       <section>
-        <div id="project" class="projects md:w-4/5 m-auto py-20 px-6">
-          <div class="project-header">
-            <h3 class="text-xl text-yellow-500 font-bold">MY RECENT PORTFOLIO</h3>
-            <h1 class="text-white text-4xl font-bold">Elevate your brand to new <br> heights with our portfolio expertise</h1>
+        <div
+          id="project"
+          class="projects md:w-4/5 md:max-lg:w-full m-auto py-20 px-6"
+        >
+          <div class="project-header pb-10">
+            <h3 class="text-sm text-yellow-500 font-bold text-center">
+              MY RECENT PORTFOLIO
+            </h3>
+            <h1
+              class="md:w-2/4 md:mx-auto text-4xl font-bold text-center capitalize"
+            >
+              Elevate your brand to new heights with our portfolio expertise
+            </h1>
           </div>
-          <div class="project-body space-y-6 md:space-y-0 py-20 md:flex md:flex-col gap-8">
-            <div class="top-project space-y-6 md:space-y-0 md:flex gap-8">
-            <div class="item1 project text-white">
-              <img src="images/monito-thumbnail.png" alt="">
-              <div class="desc overlay p-3">
-                <h2 class="text-2xl font-bold">Monito Ecommerce</h2>
-                <p class="pb-2">E-commerce website for selling Dogs</p>
-                <a href="https://monito-ecommerce-nine.vercel.app/" target="_blank" class="bg-yellow-500 text-white font-bold py-1 px-2 rounded hover:bg-yellow-700 transition-all duration-0.75">View Project</a>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="group relative overflow-hidden rounded-lg shadow-md">
+              <img
+                src="./images/compass-trybe.png"
+                alt="Project"
+                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4"
+              >
+                <h2 class="text-2xl font-bold mb-2 capitalize">
+                  The Compass Trybe
+                </h2>
+                <p class="mb-4">
+                  The Compass trybe is a tour management and booking website
+                </p>
+                <a
+                  href="https://compass-trybe.vercel.app/"
+                  class="bg-yellow-500 text-white font-bold py-2 px-4 rounded hover:bg-yellow-600 transition-colors"
+                  >View Project</a
+                >
               </div>
             </div>
-            <div class="item2 project text-white">
-              <img src="images/sunnyside.png" alt="">
-              <div class="desc overlay p-3">
-                <h2 class="text-2xl font-bold capitalize">sunnyside</h2>
-                <p class="pb-2">A landing page for a branding company</p>
-                <a href="https://sunnyside-brown-seven.vercel.app/" target="_blank" class="bg-yellow-500 text-white font-bold py-1 px-2 rounded hover:bg-yellow-700 transition-all duration-0.75">View Project</a>
+            <div class="group relative overflow-hidden rounded-lg shadow-md">
+              <img
+                src="./images/bball4evryone.png"
+                alt="Project"
+                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4"
+              >
+                <h2 class="text-2xl font-bold mb-2 capitalize">
+                  BasketBall for everyone
+                </h2>
+                <p class="mb-4">
+                  This is a non Governmental organization that focuses on
+                  helping under-previledged children by engaging them in
+                  basketball
+                </p>
+                <a
+                  href="https://basketball4everyone.vercel.app/"
+                  class="bg-yellow-500 text-white font-bold py-2 px-4 rounded hover:bg-yellow-600 transition-colors"
+                  >View Project</a
+                >
               </div>
             </div>
-          </div>
-          <div class="bottom-project space-y-6 md:space-y-0 md:flex md:gap-8">
-            <div class="item1 project text-white">
-              <img src="images/bball4evryone.png" alt="">
-              <div class="desc overlay p-3">
-                <h2 class="text-2xl font-bold capitalize">basketball4everyone</h2>
-                <p class="pb-2">An NGO that takes basketball to kid in the slum across Africa</p>
-                <a href="basketball4everyone.vercel.app" target="_blank" class="bg-yellow-500 text-white font-bold py-1 px-2 rounded hover:bg-yellow-700 transition-all duration-0.75">View Project</a>
+
+            <div class="group relative overflow-hidden rounded-lg shadow-md">
+              <img
+                src="images/recipe-sharing.png"
+                alt="Project"
+                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4"
+              >
+                <h2 class="text-2xl font-bold mb-2">Recipe sharing platform</h2>
+                <p class="mb-4">
+                  A platform where you can find and share recipes by searching
+                  for specific ingredient
+                </p>
+                <a
+                  href="https://recipe-sharing-app-hazel.vercel.app/index.html"
+                  class="bg-yellow-500 text-white font-bold py-2 px-4 rounded hover:bg-yellow-600 transition-colors"
+                  >View Project</a
+                >
               </div>
             </div>
-            <div class="item2 project text-white">
-              <img src="images/recipe-sharing.png" alt="">
-              <div class="desc overlay p-3">
-                <h2 class="text-2xl font-bold">Recipe sharing platform</h2>
-                <p class="pb-2">A platform where you can find and share recipes by searching for specific ingredient(E.g beef, egg)</p>
-                <a href="https://recipe-sharing-app-hazel.vercel.app/index.html" target="_blank" class="bg-yellow-500 text-white font-bold py-1 px-2 rounded hover:bg-yellow-700 transition-all duration-0.75">View Project</a>
+            <div class="group relative overflow-hidden rounded-lg shadow-md">
+              <img
+                src="./images/unicus.png"
+                alt="Project"
+                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4"
+              >
+                <h2 class="text-2xl font-bold mb-2 capitalize">Unicus Tech</h2>
+                <p class="mb-4 capitalize">A company website(Personal)</p>
+                <a
+                  href="https://unicus-khi3.vercel.app/"
+                  class="bg-yellow-500 text-white font-bold py-2 px-4 rounded hover:bg-yellow-600 transition-colors"
+                  >View Project</a
+                >
               </div>
             </div>
-          </div>
+            <div class="group relative overflow-hidden rounded-lg shadow-md">
+              <img
+                src="./images/gymbuddy.png"
+                alt="Project"
+                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4"
+              >
+                <h2 class="text-2xl font-bold mb-2">Gym buddy</h2>
+                <p class="mb-4">
+                  A full stack gym app that connects users who are gym
+                  ethusiasts within a geographycal area
+                </p>
+                <a
+                  href="https://gym-buddy-client.onrender.com/"
+                  class="bg-yellow-500 text-white font-bold py-2 px-4 rounded hover:bg-yellow-600 transition-colors"
+                  >View Project</a
+                >
+              </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-lg shadow-md">
+              <img
+                src="./images/monito-thumbnail.png"
+                alt="Project"
+                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4"
+              >
+                <h2 class="text-2xl font-bold mb-2">Monito Ecommerce</h2>
+                <p class="mb-4">E-commerce website for selling Dogs</p>
+                <a
+                  href="https://monito-ecommerce-nine.vercel.app/"
+                  class="bg-yellow-500 text-white font-bold py-2 px-4 rounded hover:bg-yellow-600 transition-colors"
+                  >View Project</a
+                >
+              </div>
+            </div>
           </div>
         </div>
       </section>
       <!-- TESTIMONIALS -->
       <section>
-        <div class="testimonial md:w-4/5 m-auto">
-          <div class="testimonial-header md:w-4/5 px-6 m-auto py-20 text-center">
-            <h3 class="text-yellow-500 text-xl font-bold">CLIENT REVIEWS</h3>
-            <h1 class="text-white text-4xl font-black space-y-5">My testimonial</h1>
+        <div class="testimonial md:w-4/5 md:max-lg:w-full m-auto py-20 px-6">
+          <div class="testimonial-header text-center mb-10">
+            <h3 class="text-yellow-500 text-sm font-bold">CLIENT REVIEWS</h3>
+            <h1 class="text-4xl font-black">My Testimonials</h1>
           </div>
-          <div class="testimonial-body md:grid md:grid-cols-2 md:gap-5">
-            <div class="border border-gray-300"></div>
-            <div class="border border-gray-300"></div>
+          <div class="relative overflow-hidden px-4">
+            <!-- Carousel Container -->
+            <div
+              id="testimonial-carousel"
+              class="flex transition-transform duration-500 ease-in-out w-full"
+            >
+              <!-- Testimonial 1 -->
+              <div
+                class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4 box-border"
+              >
+                <div
+                  class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 h-full"
+                >
+                  <p class="text-gray-600 text-sm mb-4">
+                    "Emmanuel's work on our e-commerce platform was exceptional.
+                    The design was sleek, and the functionality exceeded our
+                    expectations."
+                  </p>
+                  <div class="flex items-center">
+                    <img
+                      src="images/about-img.jpg"
+                      alt="Client"
+                      class="w-14 h-14 rounded-full mr-4"
+                    />
+                    <div>
+                      <h4 class="font-bold">Jane Doe</h4>
+                      <p class="text-gray-500 text-sm">CEO, Monito Ecommerce</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial 2 -->
+              <div
+                class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4 box-border"
+              >
+                <div
+                  class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 h-full"
+                >
+                  <p class="text-gray-600 text-sm mb-4">
+                    "The landing page for Sunnyside was delivered on time and
+                    perfectly captured our brand identity. Highly recommend!"
+                  </p>
+                  <div class="flex items-center">
+                    <img
+                      src="images/about-img.jpg"
+                      alt="Client"
+                      class="w-14 h-14 rounded-full mr-4"
+                    />
+                    <div>
+                      <h4 class="font-bold">John Smith</h4>
+                      <p class="text-gray-500 text-sm">
+                        Marketing Lead, Sunnyside
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Testimonial 3 -->
+              <div
+                class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4 box-border"
+              >
+                <div
+                  class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 h-full"
+                >
+                  <p class="text-gray-600 text-sm mb-4">
+                    "Working with Emmanuel on our NGO site was a breeze. The
+                    result was both functional and inspiring."
+                  </p>
+                  <div class="flex items-center">
+                    <img
+                      src="images/obiozo.jpg"
+                      alt="Client"
+                      class="w-14 h-14 rounded-full mr-4"
+                    />
+                    <div>
+                      <h4 class="font-bold">Onyeka Obiozo</h4>
+                      <p class="text-gray-500 text-sm">
+                        Founder, Basketball4Everyone
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <button
+              id="prev-btn"
+              class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-yellow-500 text-white p-2 rounded-full h-9 hover:bg-yellow-600 transition-colors"
+            >
+              <ion-icon name="chevron-back-outline" class="text-xl"></ion-icon>
+            </button>
+            <button
+              id="next-btn"
+              class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-yellow-500 text-white p-2 rounded-full h-9 hover:bg-yellow-600 transition-colors"
+            >
+              <ion-icon
+                name="chevron-forward-outline"
+                class="text-xl"
+              ></ion-icon>
+            </button>
           </div>
         </div>
       </section>
+
+      <!-- Scroll animation -->
       <section>
-      <div class="scroller  bg-yellow-500 my-20"  data-speed="fast">
-        <ul class="tag-list scroller__inner">
-          <li>WEB DESIGN</li>
-          <li>*</li>
-          <li>MongoDB</li>
-          <li>*</li>
-          <li>JAVASCRIPT</li>
-          <li>*</li>
-          <li>NODEJS</li>
-          <li>*</li>
-          <li>TAILWIND</li>
-          <li>*</li>
-          <li>REACT</li>
-          <li>*</li>
-        </ul>
-      </div>
-    </section>
+        <div class="scroller bg-yellow-500 my-20" data-speed="fast">
+          <ul class="tag-list scroller__inner">
+            <li>WEB DESIGN</li>
+            <li>*</li>
+            <li>MongoDB</li>
+            <li>*</li>
+            <li>JAVASCRIPT</li>
+            <li>*</li>
+            <li>NODEJS</li>
+            <li>*</li>
+            <li>TAILWIND</li>
+            <li>*</li>
+            <li>REACT</li>
+            <li>*</li>
+          </ul>
+        </div>
+      </section>
     </main>
     <!-- Footer -->
-    <footer class="m-auto ">
-
-      
+    <footer class="m-auto">
       <section class="bg-black">
-        <div class="footer-bottom border-b-2 border-gray-500 py-20 md:px-10 md:flex md:flex-row flex-col justify-center items-center gap-10">
-          <div class="address md:flex flex-col md:flex-row justify-center gap-5 md:m-0 m-auto">
-            <div class="address-img w-24 bg-yellow-500 rounded-full p-5 py-5 m-auto">
-              <img src="images/address.png" alt="">
+        <div
+          class="footer-bottom border-b-2 border-gray-500 py-20 md:px-10 md:flex md:flex-row flex-col justify-center items-center gap-10"
+        >
+          <div
+            class="address md:flex flex-col md:flex-row justify-center gap-5 md:m-0 m-auto"
+          >
+            <div
+              class="address-img w-24 bg-yellow-500 rounded-full p-5 py-5 m-auto"
+            >
+              <img src="images/address.png" alt="" />
             </div>
             <div class="address-text text-white text-center md:text-left">
               <h3 class="text-xl font-bold pb-4">Address</h3>
-              <p class="text-gray-500 ">5 Bucknor Savage Boulevard, <br>
-                 Fagba, Lagos.</p>
+              <p class="text-gray-500">
+                5 Bucknor Savage Boulevard, <br />
+                Fagba, Lagos.
+              </p>
             </div>
           </div>
-          <div class="phone md:flex flex-col md:flex-row justify-center gap-5 md:m-0 m-auto py-5">
-            <div class="phone-img w-24 bg-yellow-500 rounded-full p-5 py-5 m-auto">
-              <img src="images/icons8-phone-50.png" alt="">
+          <div
+            class="phone md:flex flex-col md:flex-row justify-center gap-5 md:m-0 m-auto py-5"
+          >
+            <div
+              class="phone-img w-24 bg-yellow-500 rounded-full p-5 py-5 m-auto"
+            >
+              <img src="images/icons8-phone-50.png" alt="" />
             </div>
             <div class="phone-text text-white text-center md:text-left">
               <h3 class="text-xl font-bold pb-4">Let's talk</h3>
-              <p class="text-gray-500 hover:text-yellow-500 cursor-pointer"><a href="tel:+234 8165257534">+234 8165257534</a></p>
-              <p class="text-gray-500 hover:text-yellow-500 cursor-pointer"><a href="tel:+234 9053445501">+234 9053445501</a></p>
+              <p class="text-gray-500 hover:text-yellow-500 cursor-pointer">
+                <a href="tel:+234 8165257534">+234 8165257534</a>
+              </p>
+              <p class="text-gray-500 hover:text-yellow-500 cursor-pointer">
+                <a href="tel:+234 9053445501">+234 9053445501</a>
+              </p>
             </div>
           </div>
-          <div class="email md:flex flex-col md:flex-row justify-center gap-5 md:m-0 m-auto py-5">
-            <div class="email-img w-24 bg-yellow-500 rounded-full p-5 py-5 m-auto">
-              <img src="images/icons8-email-50.png" alt="">
+          <div
+            class="email md:flex flex-col md:flex-row justify-center gap-5 md:m-0 m-auto py-5"
+          >
+            <div
+              class="email-img w-24 bg-yellow-500 rounded-full p-5 py-5 m-auto"
+            >
+              <img src="images/icons8-email-50.png" alt="" />
             </div>
             <div class="email-text text-white text-center md:text-left">
               <h3 class="text-xl font-bold pb-4">Send us email</h3>
-              <p class="text-gray-500 hover:text-yellow-500 cursor-pointer"><a href="mailto:emachi2011@gmail.com">emachi2011@gmail.com</a></p>
-              <p class="text-gray-500 hover:text-yellow-500 cursor-pointer"><a href="mailto:emmcnwankwo@gmail.com">emmcnwankwo@gmail.com</a>
-                 </p>
+              <p class="text-gray-500 hover:text-yellow-500 cursor-pointer">
+                <a href="mailto:emachi2011@gmail.com">emachi2011@gmail.com</a>
+              </p>
+              <p class="text-gray-500 hover:text-yellow-500 cursor-pointer">
+                <a href="mailto:emmcnwankwo@gmail.com">emmcnwankwo@gmail.com</a>
+              </p>
             </div>
           </div>
         </div>
-        <div class="terms w-full md:w-4/5 md:flex md:flex-row flex-col justify-between items-center py-10 px-4 mx-auto">
+        <div
+          class="terms w-full md:w-4/5 md:flex md:flex-row flex-col justify-between items-center py-10 px-4 mx-auto"
+        >
           <div class="right text-gray-500">
             <p>&copy; EmTech 2023 | All Rights Reserved</p>
           </div>
@@ -447,8 +805,7 @@
         </div>
       </section>
     </footer>
-    <script defer src="./src/index.js">
-      
-    </script>
+    <script defer src="./src/index.js"></script>
+    <script defer src="./src/carousel.js"></script>
   </body>
 </html>

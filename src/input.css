@@ -6,13 +6,13 @@
 }
 body {
   width: 100%;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
+  /* background: rgb(2, 0, 36); */
+  /* background: linear-gradient(
     90deg,
     rgba(2, 0, 36, 1) 72%,
     rgba(118, 104, 24, 1) 75%,
     rgba(21, 17, 34, 1) 77%
-  );
+  ); */
   overflow-x: hidden;
 }
 
@@ -101,7 +101,7 @@ nav {
 } */
 
 .navbar a {
-  color: white;
+  /* color: white; */
   text-decoration: none;
   font-size: 18px;
   display: flex;
@@ -131,7 +131,7 @@ nav {
 }
 
 .navbar a:hover {
-  transform: translateY(-5px);
+  transform: translateY(-3px);
 }
 
 .navbar.scrolled {
@@ -139,6 +139,7 @@ nav {
   left: 0;
   transition: 01s ease-in-out;
   background-color: #000;
+  color: #fff;
   z-index: 1000;
 }
 

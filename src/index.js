@@ -100,6 +100,7 @@ const phone = document.getElementById("phone");
 const form = document.getElementById("form");
 const errorEl = document.getElementById("error");
 const backButton = document.getElementById("backButton");
+const submitBtn = document.getElementById("submitBtn");
 
 form.addEventListener("submit", (e) => {
   let messages = [];
@@ -113,6 +114,18 @@ form.addEventListener("submit", (e) => {
   if (messages.length > 0) {
     e.preventDefault();
     errorEl.innerText = messages.join(", ");
+  }
+
+  if (messages.length > 0) {
+    e.preventDefault();
+    errorEl.innerText = messages.join(", ");
+  } else {
+    submitBtn.textContent = "Submitting...";
+    submitBtn.disabled = true;
+    setTimeout(() => {
+      submitBtn.textContent = "Submit";
+      submitBtn.disabled = false;
+    }, 5000); // adjust the time as needed
   }
 });
 

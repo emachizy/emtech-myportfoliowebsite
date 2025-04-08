@@ -1,15 +1,31 @@
 {
   "name": "portfolio-personal",
   "version": "1.0.0",
-  "description": "",
+  "description": "A personal portfolio project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server",
+    "build": "tailwindcss -i ./src/input.css -o ./dist/output.css",
+    "build:dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "portfolio",
+    "personal",
+    "project"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
   "devDependencies": {
+    "live-server": "^1.2.2",
     "tailwindcss": "^3.4.3"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emachizy/emtech-myportfoliowebsite.git"
+  },
+  "bugs": {
+    "url": "https://github.com/emachizy/emtech-myportfoliowebsite/issues"
+  },
+  "homepage": "https://github.com/emachizy/emtech-myportfoliowebsite#readme"
 }
