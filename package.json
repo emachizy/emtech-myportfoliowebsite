@@ -6,7 +6,7 @@
   "scripts": {
     "start": "live-server",
     "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css",
-    "build:dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+    "build:dev": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
   "keywords": [
     "portfolio",
