@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "live-server",
-    "build": "node_modules/.bin/postcss src/input.css -o dist/output.css.",
+    "build": "npx tailwindcss -i ./src/input.css -o ./dist/output.css",
     "build:dev": "tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
   },
   "keywords": [
@@ -16,6 +16,7 @@
   "author": "Your Name",
   "license": "MIT",
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
     "live-server": "^1.2.2",
     "postcss": "^8.5.3",
     "postcss-cli": "^11.0.1",
