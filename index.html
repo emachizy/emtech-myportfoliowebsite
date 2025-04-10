@@ -55,12 +55,19 @@
     <nav>
       <div
         id="navbar"
-        class="navbar w-full md:w-4/5 md:max-lg:w-full md:max-lg:left-0 mx-auto md:flex items-center justify-between m-auto bg-white py-5 md:fixed md:top-0 md:left-32 fixed shadow-md"
+        class="navbar w-full md:w-4/5 md:max-lg:w-full md:max-lg:left-0 mx-auto md:flex items-center justify-between m-auto bg-white py-5 md:fixed md:top-0 md:left-32 fixed shadow"
       >
         <div class="flex justify-between items-center">
-          <div class="logo text-yellow-500 text-4xl pl-2 cursor-pointer">
-            <link rel="" href="index.html" />Em<span
-              class="text-yellow-200 font-bold"
+          <div
+            class="logo flex gap-1 text-yellow-500 text-4xl pl-2 cursor-pointer"
+          >
+            <img
+              src="./images/emtech.jpg"
+              alt=""
+              class="w-12 h-12 rounded-full"
+            />
+            <link rel="" href="index.html" class="text-xs" />Em<span
+              class="text-yellow-200 font-extrabold text-xs"
               >Tech</span
             >.
           </div>
@@ -74,33 +81,33 @@
         >
           <a
             href="index.html"
-            class="hover:bg-yellow-500 hover:text-white p-1 hover:transition-all hover:duration-75 hover:transform origin-bottom duration-500 hover:rounded"
+            class="hover:bg-white md:text-black md:max-sm:text-white hover:text-yellow-500 p-3 md:p-1 hover:transition-all hover:duration-75 hover:transform origin-bottom duration-500 hover:rounded shadow-md md:shadow-none"
             >HOME</a
           >
           <a
             href="#about-us"
             id=""
-            class="hover:bg-yellow-500 hover:text-white p-1 smooth-scroll duration-500 hover:rounded"
+            class="hover:bg-white md:max-sm:text-white hover:text-yellow-500 p-3 md:p-1 smooth-scroll duration-500 hover:rounded shadow-md md:shadow-none"
             >ABOUT US</a
           >
           <a
             href="#services"
-            class="hover:bg-yellow-500 hover:text-white p-1 smooth-scroll duration-500 hover:rounded"
+            class="hover:bg-white md:max-sm:text-white hover:text-yellow-500 p-3 md:p-1 smooth-scroll duration-500 hover:rounded shadow-md md:shadow-none"
             >SERVICES</a
           >
           <a
             href="#project"
-            class="hover:bg-yellow-500 hover:text-white p-1 smooth-scroll duration-500 hover:rounded"
+            class="hover:bg-white md:max-sm:text-white hover:text-yellow-500 p-3 md:p-1 smooth-scroll duration-500 hover:rounded shadow-md md:shadow-none"
             >PROJECTS</a
           >
           <a
             href="#"
-            class="hover:bg-yellow-500 hover:text-white p-1 smooth-scroll duration-500 hover:rounded"
+            class="hover:bg-white md:max-sm:text-white hover:text-yellow-500 p-3 md:p-1 smooth-scroll duration-500 hover:rounded shadow-md md:shadow-none"
             >BLOG</a
           >
           <a
             href="#contact"
-            class="hover:bg-yellow-500 hover:text-white p-1 smooth-scroll duration-500 hover:rounded"
+            class="hover:bg-white md:max-sm:text-white hover:text-yellow-500 p-3 smooth-scroll duration-500 hover:rounded shadow-md md:shadow-none md:p-1"
             >CONTACT</a
           >
         </div>
@@ -120,7 +127,7 @@
       <!-- Download CV Button -->
       <div class="cv-btn bg-yellow-500 hover:bg-opacity-50 flex mt-5">
         <a
-          href="https://drive.google.com/file/d/1Ce6XzVof-Ahq64N6sUlVln-_FRcjhhF7/view?usp=sharing"
+          href="https://drive.google.com/file/d/1NPurQY96h1UsLSH-JXP0nhr2Fo14T0un/view?usp=sharing"
           target="_blank"
           class="download-button"
           >Download CV
@@ -237,7 +244,7 @@
               class="cv-btn bg-yellow-500 hover:bg-opacity-50 flex md:ml-16 ml-2"
             >
               <a
-                href="https://drive.google.com/file/d/1Ce6XzVof-Ahq64N6sUlVln-_FRcjhhF7/view?usp=sharing"
+                href="https://drive.google.com/file/d/1NPurQY96h1UsLSH-JXP0nhr2Fo14T0un/view?usp=sharing"
                 class="download-button"
                 target="_blank"
                 >Download CV
@@ -344,7 +351,7 @@
       <section class="bg-gray-900 mt-20">
         <div class="edu-skill md:w-4/5 md:max-lg:w-full md:m-auto mx-4 px-6">
           <div class="edu-header text-center leading-6">
-            <h3 class="text-yellow-500 text-2xl font-bold pt-20">
+            <h3 class="text-yellow-500 text-xs font-bold pt-20">
               EDUCATION & SKILL
             </h3>
             <h1 class="text-white text-4xl font-bold">
@@ -469,7 +476,9 @@
               Elevate your brand to new heights with our portfolio expertise
             </h1>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 md:max-lg:grid-cols-2 gap-8"
+          >
             <div class="group relative overflow-hidden rounded-lg shadow-md">
               <img
                 src="./images/compass-trybe.png"

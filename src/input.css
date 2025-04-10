@@ -352,6 +352,10 @@ nav {
     left: 0;
   }
 
+  .nav-link a {
+    color: #fff;
+  }
+
   .projects {
     margin: 0 20px;
   }
