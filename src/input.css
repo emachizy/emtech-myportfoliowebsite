@@ -151,7 +151,7 @@ nav {
 }
 
 .text {
-  font-size: 56px;
+  width: 100%;
   margin-bottom: 10px;
   position: absolute;
   top: 50%;

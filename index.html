@@ -302,21 +302,24 @@
                 type="text"
                 id="name"
                 name="name"
-                class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+                placeholder="Enter your name"
+                class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
                 required
               />
               <input
                 type="email"
                 id="email"
                 name="email"
-                class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+                placeholder="Email Address"
+                class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
                 required
               />
               <input
                 type="number"
                 id="phone"
                 name="phone"
-                class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+                placeholder="phone number"
+                class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
                 required
               />
               <textarea
@@ -324,7 +327,7 @@
                 id="message"
                 cols="6"
                 rows="3"
-                class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-yellow-500 focus:border-yellow-500"
+                class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
                 placeholder="Message"
                 required
               ></textarea>
@@ -678,7 +681,7 @@
                 </div>
               </div>
 
-              <!-- Testimonial 2 -->
+              <!-- Testimonial 3 -->
               <div
                 class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4 box-border"
               >
@@ -705,7 +708,32 @@
                 </div>
               </div>
 
-              <!-- Testimonial 3 -->
+              <!-- Testimonial 4 -->
+              <div
+                class="w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-4 box-border"
+              >
+                <div
+                  class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 h-full"
+                >
+                  <p class="text-gray-600 text-sm mb-4">
+                    "Working with Emmanuel on our Tour site was a breeze. The
+                    result was both functional and inspiring."
+                  </p>
+                  <div class="flex items-center">
+                    <img
+                      src="images/obiozo.jpg"
+                      alt="Client"
+                      class="w-14 h-14 rounded-full mr-4"
+                    />
+                    <div>
+                      <h4 class="font-bold">Onyeka Obiozo</h4>
+                      <p class="text-gray-500 text-sm">
+                        Convener, The Compass Trybe
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <!-- Navigation Buttons -->
@@ -821,6 +849,26 @@
         </div>
       </section>
     </footer>
+    <button
+      id="backToTop"
+      class="hidden fixed bottom-6 right-6 z-50 bg-yellow-500 text-white md:p-6 p-4 rounded-full shadow-lg hover:bg-white hover:text-yellow-500 transition duration-300 md:text-4xl"
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      aria-label="Back to Top"
+    >
+      ↑
+    </button>
+    <script>
+      const backToTopBtn = document.getElementById("backToTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTopBtn.classList.remove("hidden");
+        } else {
+          backToTopBtn.classList.add("hidden");
+        }
+      });
+    </script>
+
     <script defer src="./src/index.js"></script>
     <script defer src="./src/carousel.js"></script>
   </body>
