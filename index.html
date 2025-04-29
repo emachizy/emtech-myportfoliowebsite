@@ -32,6 +32,10 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.2.4/dist/cdn.min.js"
+    ></script>
     <!-- vanilla css -->
     <link rel="stylesheet" href="/src/input.css" />
   </head>
@@ -147,16 +151,17 @@
         <div class="services pt-24 px-5">
           <div class="services-header">
             <h4 class="text-yellow-500 text-center text-xl">MY SERVICES</h4>
-            <h1 class="text-center text-4xl font-bold leading-relaxed pb-14">
-              Crafting stories through <br />
-              design and innovation
+            <h1
+              class="text-center text-4xl font-bold leading-relaxed pb-14 md:w-2/4 mx-auto"
+            >
+              Crafting stories through design and innovation
             </h1>
           </div>
           <div
-            class="services-body md:w-4/5 md:max-lg:w-full mx-auto grid md:grid-cols-3 md:max-lg:grid-cols-2 gap-16 pt-10"
+            class="services-body md:max-lg:w-full mx-auto grid md:grid-cols-4 md:max-lg:grid-cols-3 md:gap-4 gap-16 pt-10"
           >
             <div
-              class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+              class="bg-white p-2 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
             >
               <img
                 src="images/webdesign.svg"
@@ -166,10 +171,9 @@
               />
               <h3 class="text-xl font-bold text-center mb-2">WEBSITE DESIGN</h3>
               <p class="text-gray-600 text-center font-bold text-sm px-5">
-                Our website design projects are more than just buttons, images,
-                and texts. We take into consideration your passion for your
-                business and your customer's need and bring it to life with our
-                four (4) years of web design experience
+                Bring your vision to life with over four years of web design
+                expertise, creating websites that blend your passion with your
+                customers' needs.
               </p>
             </div>
             <div
@@ -183,10 +187,9 @@
               />
               <h3 class="text-xl font-bold text-center mb-2">UI DESIGN</h3>
               <p class="text-gray-600 text-center font-bold text-sm px-5">
-                Our website design projects are more than just buttons, images,
-                and texts. We take into consideration your passion for your
-                business and your customer's need and bring it to life with our
-                four (4) years of web design experience
+                Crafting intuitive, user-centered designs that not only look
+                beautiful but also deliver seamless experiences across web and
+                mobile platforms.
               </p>
             </div>
             <div
@@ -200,10 +203,27 @@
               />
               <h3 class="text-xl font-bold text-center mb-2">IT SUPPORT</h3>
               <p class="text-gray-600 text-center font-bold text-sm px-5">
-                Our website design projects are more than just buttons, images,
-                and texts. We take into consideration your passion for your
-                business and your customer's need and bring it to life with our
-                four (4) years of web design experience
+                Providing reliable technical support and solutions to keep your
+                systems running smoothly, minimizing downtime and maximizing
+                productivity.
+              </p>
+            </div>
+            <div
+              class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg md:max-lg:col-span-2 md:max-lg:mx-auto md:max-lg:w-1/2 transition-shadow duration-300"
+            >
+              <img
+                src="images/seo.svg"
+                class="mx-auto -mt-14"
+                alt=""
+                width="150"
+              />
+              <h3 class="text-xl font-bold text-center mb-2">
+                SEO OPTIMIZATION
+              </h3>
+              <p class="text-gray-600 text-center font-bold text-sm px-5">
+                Boosting your online visibility with modern SEO strategies,
+                ensuring your website ranks higher, attracts more traffic, and
+                reaches the right audience.
               </p>
             </div>
           </div>
@@ -284,7 +304,7 @@
               while also maintaining a strict timeline for completion
             </p>
           </div>
-          <div class="get-in-touch-form bg-white p-5 rounded shadow-xl">
+          <div class="get-in-touch-form bg-white py-10 p-5 rounded shadow-xl">
             <form
               id="form"
               action="https://formsubmit.co/27ef4252af3e43c55bb019f2befb212d"
@@ -298,22 +318,24 @@
                 I will do everything I can to reach out as soon as I can I
                 promise!
               </p>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Enter your name"
-                class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
-                required
-              />
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Email Address"
-                class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
-                required
-              />
+              <div class="grid grid-cols-2 gap-2">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your name"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
+                  required
+                />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email Address"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
+                  required
+                />
+              </div>
               <input
                 type="number"
                 id="phone"
@@ -350,118 +372,146 @@
           </div>
         </div>
       </section>
-      <!-- EUCATION AND SKILL -->
-      <section class="bg-gray-900 mt-20">
-        <div class="edu-skill md:w-4/5 md:max-lg:w-full md:m-auto mx-4 px-6">
-          <div class="edu-header text-center leading-6">
-            <h3 class="text-yellow-500 text-xs font-bold pt-20">
-              EDUCATION & SKILL
-            </h3>
-            <h1 class="text-white text-4xl font-bold">
-              Showcasing my talent <br />
-              amplifying your project
-            </h1>
-          </div>
-          <div class="edu md:grid grid-cols-2 md:gap-10 gap-20 pt-20">
-            <div class="left">
-              <div
-                class="date w-36 py-4 px-6 text-yellow-500 text-center font-bold border-2 border-yellow-500"
+      <!-- EXPERIENCE AND SKILL -->
+      <section class="bg-gray-200 mt-20">
+        <section id="md:w-4/5 experience" class="py-16 bg-gray-100">
+          <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+              <h3
+                class="text-yellow-500 text-xs font-bold"
+                data-aos="fade-down"
               >
-                2023-2024
-              </div>
-              <div class="left-content">
-                <h1 class="text-white text-2xl font-bold pt-5">
+                EXPERIENCE
+              </h3>
+              <h1
+                class="text-4xl font-bold md:w-2/5 mx-auto mt-4"
+                data-aos="fade-up"
+              >
+                Showcasing my talent amplifying your project
+              </h1>
+            </div>
+
+            <div class="relative border-l-4 border-yellow-500 ml-6">
+              <!-- Experience 1 -->
+              <div
+                class="mb-10 ml-8"
+                data-aos="fade-right"
+                data-aos-delay="100"
+              >
+                <div
+                  class="absolute w-6 h-6 bg-yellow-500 rounded-full -left-3 top-1.5"
+                ></div>
+                <p class="text-sm text-yellow-500 font-bold">2023-2024</p>
+                <h3 class="text-2xl font-bold pt-2">
                   Junior Front-End Developer
-                </h1>
-                <p class="text-gray-500 font-bold text-sm py-5">
-                  I interned at ITTECHSKILLS. I worked on frontend projects with
-                  HTML, CSS, JS, TAILWIND, JQUERY, REACT. I also worked on
-                  server projects with nodeJs, MongoDB, and expressJS.
+                </h3>
+                <p class="text-gray-500 text-sm pt-3">
+                  Interned at ITTECHSKILLS working on frontend projects using
+                  HTML, CSS, JS, Tailwind, jQuery, and React. Also contributed
+                  to server-side projects with Node.js, MongoDB, and Express.js.
                 </p>
               </div>
-            </div>
-            <div class="left">
-              <div
-                class="date w-36 py-4 px-6 text-yellow-500 text-center font-bold border-2 border-yellow-500"
-              >
-                2023-2024
-              </div>
-              <div class="left-content">
-                <h1 class="text-white text-2xl font-bold pt-5">
+
+              <!-- Experience 2 -->
+              <div class="mb-10 ml-8" data-aos="fade-left" data-aos-delay="200">
+                <div
+                  class="absolute w-6 h-6 bg-yellow-500 rounded-full -left-3 top-1.5"
+                ></div>
+                <p class="text-sm text-yellow-500 font-bold">2023-2024</p>
+                <h3 class="text-2xl font-bold pt-2">
                   Junior Front-End Developer
-                </h1>
-                <p class="text-gray-500 font-bold text-sm py-5">
-                  I interned at ITTECHSKILLS. I worked on frontend projects with
-                  HTML, CSS, JS, TAILWIND, JQUERY, REACT. I also worked on
-                  server projects with nodeJs, MongoDB, and expressJS.
+                </h3>
+                <p class="text-gray-500 text-sm pt-3">
+                  Interned at ITTECHSKILLS working on frontend projects using
+                  HTML, CSS, JS, Tailwind, jQuery, and React. Also contributed
+                  to server-side projects with Node.js, MongoDB, and Express.js.
                 </p>
               </div>
-            </div>
-            <div class="right">
+
+              <!-- Experience 3 -->
               <div
-                class="date w-36 py-4 px-6 text-yellow-500 text-center font-bold border-2 border-yellow-500"
+                class="mb-10 ml-8"
+                data-aos="fade-right"
+                data-aos-delay="300"
               >
-                2022-2023
-              </div>
-              <div class="right-content">
-                <h1 class="text-white text-2xl font-bold pt-5">
-                  Javascript Developer
-                </h1>
-                <p class="text-gray-500 font-bold text-sm py-5">
-                  I assisted senior JS developers on SAVECOINSHQ frontend team
-                  to implement vannila javascript codes; writing custom and
-                  reusable components.
+                <div
+                  class="absolute w-6 h-6 bg-yellow-500 rounded-full -left-3 top-1.5"
+                ></div>
+                <p class="text-sm text-yellow-500 font-bold">2022-2023</p>
+                <h3 class="text-2xl font-bold pt-2">JavaScript Developer</h3>
+                <p class="text-gray-500 text-sm pt-3">
+                  Assisted senior JavaScript developers at SAVECOINSHQ to
+                  implement vanilla JavaScript code, writing custom and reusable
+                  components for frontend projects.
                 </p>
               </div>
-            </div>
-            <div class="right">
-              <div
-                class="date w-36 py-4 px-6 text-yellow-500 text-center font-bold border-2 border-yellow-500"
-              >
-                2022-2023
-              </div>
-              <div class="right-content">
-                <h1 class="text-white text-2xl font-bold pt-5">
-                  Javascript Developer
-                </h1>
-                <p class="text-gray-500 font-bold text-sm pt-5">
-                  I assisted senior JS developers on SAVECOINSHQ frontend team
-                  to implement vannila javascript codes; writing custom and
-                  reusable components.
+
+              <!-- Experience 4 -->
+              <div class="mb-10 ml-8" data-aos="fade-left" data-aos-delay="400">
+                <div
+                  class="absolute w-6 h-6 bg-yellow-500 rounded-full -left-3 top-1.5"
+                ></div>
+                <p class="text-sm text-yellow-500 font-bold">2022-2023</p>
+                <h3 class="text-2xl font-bold pt-2">JavaScript Developer</h3>
+                <p class="text-gray-500 text-sm pt-3">
+                  Assisted senior JavaScript developers at SAVECOINSHQ to
+                  implement vanilla JavaScript code, writing custom and reusable
+                  components for frontend projects.
                 </p>
               </div>
             </div>
           </div>
-        </div>
+        </section>
+
         <!-- SKILLS -->
-        <div
-          class="skills md:w-4/5 md:max-lg:w-full md:m-auto mx-4 md:space-y-0 space-y-10 md:grid grid-cols-2 gap-10 py-20"
+        <section
+          x-data="skillDisplay"
+          class="p-6 space-y-6 bg-gray-100 rounded-xl md:grid md:grid-cols-2 md:gap-4 sm:space-y-0"
         >
-          <div class="bg-gray-800 flex flex-col">
-            <p class="text-white text-sm py-5 px-5">MongoDb</p>
-            <div class="w-4/5 border-b-4 border-yellow-500"></div>
+          <div class="grid grid-cols-2 gap-6">
+            <template x-for="skill in skills">
+              <button
+                x-text="skill.title"
+                class="px-4 py-2 text-xl text-gray-100 transition bg-yellow-600 rounded-md h-14 w-44 hover:bg-white hover:text-yellow-500"
+                :class="(currentSkill.title == skill.title) && 'font-bold ring-2 ring-gray-100'"
+                @click="currentSkill = skill"
+              ></button>
+            </template>
           </div>
-          <div class="bg-gray-800 flex flex-col">
-            <p class="text-white text-sm py-5 px-5">Express</p>
-            <div class="w-4/5 border-b-4 border-yellow-500"></div>
+
+          <div
+            class="flex items-center justify-center"
+            x-data="{ circumference: 2 * 22 / 7 * 120 }"
+          >
+            <svg class="transform -rotate-90 w-72 h-72">
+              <circle
+                cx="145"
+                cy="145"
+                r="120"
+                stroke="currentColor"
+                stroke-width="30"
+                fill="transparent"
+                class="text-gray-700"
+              />
+
+              <circle
+                cx="145"
+                cy="145"
+                r="120"
+                stroke="currentColor"
+                stroke-width="30"
+                fill="transparent"
+                :stroke-dasharray="circumference"
+                :stroke-dashoffset="circumference - currentSkill.percent / 100 * circumference"
+                class="text-yellow-500"
+              />
+            </svg>
+            <span
+              class="absolute text-5xl"
+              x-text="`${currentSkill.percent}%`"
+            ></span>
           </div>
-          <div class="bg-gray-800 flex flex-col">
-            <p class="text-white text-sm py-5 px-5">REACT</p>
-            <div class="w-4/5 border-b-4 border-yellow-500"></div>
-          </div>
-          <div class="bg-gray-800 flex flex-col">
-            <p class="text-white text-sm py-5 px-5">NODEJS</p>
-            <div class="w-2/5 border-b-4 border-yellow-500"></div>
-          </div>
-          <div class="bg-gray-800 flex flex-col">
-            <p class="text-white text-sm py-5 px-5">TAILWIND</p>
-            <div class="w-4/5 border-b-4 border-yellow-500"></div>
-          </div>
-          <div class="bg-gray-800 flex flex-col">
-            <p class="text-white text-sm py-5 px-5">JAVASCRIPT</p>
-            <div class="w-2/5 border-b-4 border-yellow-500"></div>
-          </div>
-        </div>
+        </section>
       </section>
       <!-- portfolio project -->
       <section>
@@ -484,7 +534,42 @@
           >
             <div class="group relative overflow-hidden rounded-lg shadow-md">
               <img
-                src="./images/compass-trybe.png"
+                src="./images/evelyn-website-photo.png"
+                alt="Project"
+                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
+              />
+              <div
+                class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-4"
+              >
+                <h2 class="text-2xl font-bold mb-2 capitalize text-yellow-500">
+                  E-commerce Store
+                </h2>
+                <p class="mb-4 text-center text-sm">
+                  Transforming the online shopping experience with Eveline
+                  Beauty World—where beauty meets convenience. From
+                  user-friendly navigation to seamless transactions, this
+                  e-commerce platform is designed to enhance the shopping
+                  journey with a modern and responsive interface
+                </p>
+                <div class="flex gap-4">
+                  <a
+                    href="https://eveline-beauty-world-emachizys-projects.vercel.app/"
+                    class="bg-yellow-500 text-white font-bold py-2 px-4 rounded hover:bg-white hover:text-yellow-500 transition-colors"
+                    target="_blank"
+                    >Demo</a
+                  >
+                  <a
+                    href="https://github.com/emachizy/eveline-beauty-world"
+                    target="_blank"
+                    class="bg-yellow-500 text-white font-bold py-2 px-4 rounded hover:bg-white hover:text-yellow-500 transition-colors"
+                    >Github</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-lg shadow-md">
+              <img
+                src="./images/compass-website-img.png"
                 alt="Project"
                 class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
               />
@@ -515,7 +600,7 @@
             </div>
             <div class="group relative overflow-hidden rounded-lg shadow-md">
               <img
-                src="./images/bball4evryone.png"
+                src="./images/bb4erone-website-img.png"
                 alt="Project"
                 class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
               />
@@ -916,6 +1001,46 @@
       ↑
     </button>
     <script>
+      document.addEventListener("alpine:init", () => {
+        Alpine.data("skillDisplay", () => ({
+          skills: [
+            {
+              title: "HTML",
+              percent: "95",
+            },
+            {
+              title: "CSS",
+              percent: "70",
+            },
+            {
+              title: "Tailwind CSS",
+              percent: "90",
+            },
+            {
+              title: "JavaScript",
+              percent: "70",
+            },
+            {
+              title: "Alpine JS",
+              percent: "80",
+            },
+            {
+              title: "NodeJs",
+              percent: "65",
+            },
+            {
+              title: "ExpressJs",
+              percent: "75",
+            },
+          ],
+          currentSkill: {
+            title: "HTML",
+            percent: "95",
+          },
+        }));
+      });
+    </script>
+    <script>
       const backToTopBtn = document.getElementById("backToTop");
 
       window.addEventListener("scroll", () => {
@@ -929,5 +1054,6 @@
 
     <script defer src="./src/index.js"></script>
     <script defer src="./src/carousel.js"></script>
+    <!-- Initialize AOS -->
   </body>
 </html>
