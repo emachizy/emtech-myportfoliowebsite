@@ -36,6 +36,12 @@
       defer
       src="https://unpkg.com/alpinejs@3.2.4/dist/cdn.min.js"
     ></script>
+
+    <!-- font awesome icon -->
+    <script
+      src="https://kit.fontawesome.com/b89ae03868.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- vanilla css -->
     <link rel="stylesheet" href="/src/input.css" />
   </head>
@@ -152,7 +158,7 @@
           <div class="services-header">
             <h4 class="text-yellow-500 text-center text-xs">MY SERVICES</h4>
             <h1
-              class="text-center text-4xl font-bold leading-relaxed pb-14 md:w-2/4 mx-auto"
+              class="text-center text-4xl md:text-4xl font-bold leading-relaxed pb-14 md:w-2/4 md:mx-auto capitalize"
             >
               Crafting stories through design and innovation
             </h1>
@@ -278,6 +284,42 @@
               class="bg-black relative md:top-4 top-4"
               alt=""
             />
+
+            <!-- Social Icons Over Image -->
+            <div
+              class="absolute top-4 right-4 flex space-x-9 bg-white/70 backdrop-blur-sm px-3 py-2 rounded-full shadow-md"
+            >
+              <a
+                href="https://web.facebook.com/bigiano.chibuzor/?_rdc=1&_rdr#"
+                target="_blank"
+                class="hover:text-yellow-500 text-blue-600 transition"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://x.com/Emachi_s"
+                target="_blank"
+                class="hover:text-yellow-500 text-black transition"
+              >
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                class="hover:text-yellow-500 text-pink-500 transition"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/emmanuel-nwankwo"
+                target="_blank"
+                class="hover:text-yellow-500 text-blue-500 transition"
+              >
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </div>
+
+            <!-- Caption at Bottom -->
             <div
               class="caption bg-gray-900 py-5 px-4 absolute md:-bottom-10 md:-left-10 left-8"
             >
@@ -287,91 +329,7 @@
           </div>
         </div>
       </section>
-      <section>
-        <!-- GET IN TOUCH -->
-        <div
-          id="contact"
-          class="get-in-touch md:w-4/5 md:max-lg:w-full m-auto md:grid grid-cols-2 md:pt-20 md:gap-5 pt-20 px-6"
-        >
-          <div
-            class="get-in-touch-text flex flex-col justify-center items-center"
-          >
-            <h1 class="text-4xl font-black">
-              Design <span class="text-xl">and Innovation</span>
-            </h1>
-            <p class="text-gray-500 text-sm font-bold pt-10 pb-10">
-              My goal is to ensure that I deliver quality and reliable projects
-              while also maintaining a strict timeline for completion
-            </p>
-          </div>
-          <div class="get-in-touch-form bg-white py-10 p-5 rounded shadow-xl">
-            <form
-              id="form"
-              action="https://formsubmit.co/27ef4252af3e43c55bb019f2befb212d"
-              method="POST"
-              class="flex flex-col gap-3"
-            >
-              <h1 class="text-center text-2xl font-bold">
-                GET IN TOUCH WITH ME?
-              </h1>
-              <p class="text-gray-500 text-sm font-bold text-center">
-                I will do everything I can to reach out as soon as I can I
-                promise!
-              </p>
-              <div class="grid grid-cols-2 gap-2">
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  placeholder="Enter your name"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
-                  required
-                />
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  placeholder="Email Address"
-                  class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
-                  required
-                />
-              </div>
-              <input
-                type="number"
-                id="phone"
-                name="phone"
-                placeholder="phone number"
-                class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
-                required
-              />
-              <textarea
-                name="message"
-                id="message"
-                cols="6"
-                rows="3"
-                class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
-                placeholder="Message"
-                required
-              ></textarea>
-              <div
-                id="error"
-                class="text-red-500 bg-white text-center font-bold"
-              ></div>
-              <input type="hidden" name="_captcha" value="false" />
-              <!-- <input type="hidden" name="_next" value="https://thankyou.html"> -->
-              <input type="hidden" name="_template" value="table" />
-              <button
-                type="submit"
-                id="submitBtn"
-                value="submit now"
-                class="bg-yellow-500 text-white rounded py-1 hover:bg-white hover:text-yellow-500"
-              >
-                Submit
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
+
       <!-- EXPERIENCE AND SKILL -->
       <section class="bg-gray-200 mt-20">
         <section id="md:w-4/5 experience" class="py-16 bg-gray-100">
@@ -918,9 +876,126 @@
           </ul>
         </div>
       </section>
+      <section>
+        <!-- GET IN TOUCH -->
+        <div
+          id="contact"
+          class="get-in-touch md:w-4/5 md:max-lg:w-full m-auto md:grid grid-cols-2 md:pt-20 md:gap-5 pt-20 px-6"
+        >
+          <div
+            class="get-in-touch-text flex flex-col justify-center items-center"
+          >
+            <h1 class="text-4xl font-black">
+              Design <span class="text-xl">and Innovation</span>
+            </h1>
+            <p class="text-gray-500 text-sm font-bold pt-10 pb-10">
+              My goal is to ensure that I deliver quality and reliable projects
+              while also maintaining a strict timeline for completion
+            </p>
+          </div>
+          <div class="get-in-touch-form bg-white py-10 p-5 rounded shadow-xl">
+            <form
+              id="form"
+              action="https://formsubmit.co/27ef4252af3e43c55bb019f2befb212d"
+              method="POST"
+              class="flex flex-col gap-3"
+            >
+              <h1 class="text-center text-2xl font-bold">
+                GET IN TOUCH WITH ME?
+              </h1>
+              <p class="text-gray-500 text-sm font-bold text-center">
+                I will do everything I can to reach out as soon as I can I
+                promise!
+              </p>
+              <div class="grid grid-cols-2 gap-2">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your name"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
+                  required
+                />
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Email Address"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
+                  required
+                />
+              </div>
+              <input
+                type="number"
+                id="phone"
+                name="phone"
+                placeholder="phone number"
+                class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
+                required
+              />
+              <textarea
+                name="message"
+                id="message"
+                cols="6"
+                rows="3"
+                class="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition duration-300"
+                placeholder="Message"
+                required
+              ></textarea>
+              <div
+                id="error"
+                class="text-red-500 bg-white text-center font-bold"
+              ></div>
+              <input type="hidden" name="_captcha" value="false" />
+              <!-- <input type="hidden" name="_next" value="https://thankyou.html"> -->
+              <input type="hidden" name="_template" value="table" />
+              <button
+                type="submit"
+                id="submitBtn"
+                value="submit now"
+                class="bg-yellow-500 text-white rounded py-1 hover:bg-white hover:text-yellow-500"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
     </main>
     <!-- Footer -->
-    <footer class="m-auto">
+    <footer class="m-auto bg-black">
+      <section>
+        <div class="flex space-x-10 mt-4 md:mt-0 pt-4 justify-center text-xl">
+          <a
+            href="https://web.facebook.com/bigiano.chibuzor/?_rdc=1&_rdr#"
+            target="_blank"
+            class="hover:text-yellow-500 text-blue-500 transition bg-white px-2 rounded-full"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a
+            href="https://x.com/Emachi_s"
+            target="_blank"
+            class="hover:text-yellow-500 text-black transition bg-white px-1 rounded-full"
+          >
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            class="hover:text-yellow-500 text-red-500 transition bg-white px-1 rounded-full"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/emmanuel-nwankwo"
+            target="_blank"
+            class="hover:text-yellow-500 text-blue-500 transition bg-white px-1 rounded-full"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+      </section>
       <section class="bg-black">
         <div
           class="footer-bottom border-b-2 border-gray-500 py-20 md:px-10 md:flex md:flex-row flex-col justify-center items-center gap-10"
