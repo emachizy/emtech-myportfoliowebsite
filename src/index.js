@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 1000); // Animation duration
   }
 
-  setInterval(showText, 3000); // Change 3000 to adjust the interval in milliseconds
+  setInterval(showText, 4000); // Change 3000 to adjust the interval in milliseconds
 });
 
 window.onscroll = function () {

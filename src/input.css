@@ -151,7 +151,7 @@ nav {
 }
 
 .text {
-  width: 100%;
+  width: 80%;
   margin-bottom: 10px;
   position: absolute;
   top: 50%;
@@ -159,7 +159,8 @@ nav {
   transform: translate(-50%, -50%);
   opacity: 0;
   animation-fill-mode: both;
-  animation-duration: 1s;
+  animation-duration: 3s;
+  transition: ease-in-out;
   animation-timing-function: cubic-bezier(0.01, 0.99, 0.21, 0.98);
 }
 
@@ -168,9 +169,13 @@ nav {
     opacity: 1;
     transform: translate(-50%, -50%);
   }
+  50% {
+    opacity: 0.1;
+    transform: translate(10%, -50%);
+  }
   100% {
     opacity: 0;
-    transform: translate(100%, -50%);
+    transform: translate(50%, -50%);
   }
 }
 
