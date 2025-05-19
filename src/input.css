@@ -100,6 +100,10 @@ nav {
   font-size: 26px;
 } */
 
+.navbar {
+  transition: all 0.75s ease-in-out;
+}
+
 .navbar a {
   /* color: white; */
   text-decoration: none;
@@ -135,13 +139,21 @@ nav {
 }
 
 .navbar.scrolled {
-  width: 100%; /* Updated width on scroll */
+  width: 100%;
   left: 0;
   transition: 01s ease-in-out;
   background-color: #111;
   color: #fff;
   z-index: 1000;
 }
+
+/* .navbar.scrolled {
+  width: 100%;
+  left: 0;
+  background-color: #111;
+  transition: all 0.3s ease-in-out; /* Consistent transition */
+/* } */
+*/
 
 /* Hero section */
 

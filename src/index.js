@@ -39,7 +39,7 @@ window.onscroll = function () {
 
 function scrollFunction() {
   var navbar = document.getElementById("navbar");
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 20) {
     navbar.classList.add("scrolled");
   } else {
     navbar.classList.remove("scrolled");
