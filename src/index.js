@@ -140,14 +140,14 @@ function Menu(e) {
 
   if (!isVisible) {
     list.classList.add(
-      "left-[80px]",
+      "right-[80px]",
       "opacity-100",
       "bg-yellow-500",
       "h-screen"
     );
     e.name = "close-outline";
   } else {
-    list.classList.remove("left-[80px]", "opacity-100");
+    list.classList.remove("right-[80px]", "opacity-100");
     e.name = "menu-outline";
   }
 
