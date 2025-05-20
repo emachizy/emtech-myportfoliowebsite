@@ -142,7 +142,7 @@ function Menu(e) {
     list.classList.add(
       "right-[80px]",
       "opacity-100",
-      "bg-yellow-500",
+      "bg-[#9d9577]",
       "h-screen"
     );
     e.name = "close-outline";
