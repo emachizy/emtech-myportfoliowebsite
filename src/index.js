@@ -139,10 +139,15 @@ function Menu(e) {
   let isVisible = list.classList.contains("opacity-100");
 
   if (!isVisible) {
-    list.classList.add("top-[80px]", "opacity-100", "bg-yellow-500");
+    list.classList.add(
+      "left-[80px]",
+      "opacity-100",
+      "bg-yellow-500",
+      "h-screen"
+    );
     e.name = "close-outline";
   } else {
-    list.classList.remove("top-[80px]", "opacity-100");
+    list.classList.remove("left-[80px]", "opacity-100");
     e.name = "menu-outline";
   }
 
