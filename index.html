@@ -631,35 +631,7 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="group relative overflow-hidden rounded-lg shadow-md">
-              <img
-                src="./images/unicus.png"
-                alt="Project"
-                class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-              />
-              <div
-                class="absolute inset-0 bg-black bg-opacity-70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-white p-2"
-              >
-                <h2 class="text-2xl font-bold mb-2 capitalize text-yellow-500">
-                  Unicus Tech
-                </h2>
-                <p class="mb-4 capitalize">A company website(Personal)</p>
-                <div class="flex gap-4">
-                  <a
-                    href="https://unicus-khi3.vercel.app/"
-                    class="bg-yellow-500 text-white font-bold py-2 px-4 rounded hover:bg-white hover:text-yellow-500 transition-colors"
-                    target="_blank"
-                    >Demo</a
-                  >
-                  <a
-                    href="https://github.com/emachizy/unicus"
-                    target="_blank"
-                    class="bg-yellow-500 text-white font-bold py-2 px-4 rounded hover:bg-white hover:text-yellow-500 transition-colors"
-                    >Github</a
-                  >
-                </div>
-              </div>
-            </div> -->
+
             <div class="group relative overflow-hidden rounded-lg shadow-md">
               <img
                 src="./images/gymbuddy.png"
@@ -726,7 +698,7 @@
             </div>
             <div class="group relative overflow-hidden rounded-lg shadow-md">
               <img
-                src="./images/sculptart.svg"
+                src="./images/sculptart.webp"
                 alt="Project"
                 class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
               />
@@ -1154,31 +1126,6 @@
 
     <script defer src="./src/index.js"></script>
     <script defer src="./src/carousel.js"></script>
-    <!-- Initialize AOS -->
-
-    <!-- floating whatsapp -->
-    <!-- <script type="text/javascript">
-      (function () {
-        var options = {
-          whatsapp: "2349012345678", // your CSR's number
-          call_to_action: "Need help? Chat with us!", // Text
-          position: "right", // Position
-          pre_filled_message: "Hi, I'm on your website and need assistance.",
-        };
-        var proto = document.location.protocol,
-          host = "getbutton.io",
-          url = proto + "//static." + host;
-        var s = document.createElement("script");
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = url + "/widget-send-button/js/init.js";
-        s.onload = function () {
-          WhWidgetSendButton.init(host, proto, options);
-        };
-        var x = document.getElementsByTagName("script")[0];
-        x.parentNode.insertBefore(s, x);
-      })();
-    </script> -->
 
     <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
     <script
@@ -1189,5 +1136,18 @@
       class="elfsight-app-40181e69-00c5-4f92-8e59-805be0c64a28"
       data-elfsight-app-lazy
     ></div>
+
+    <script>
+      // Add this right before closing </body> tag
+      document.addEventListener("DOMContentLoaded", () => {
+        const inputs = document.querySelectorAll("input, textarea, select");
+
+        inputs.forEach((input) => {
+          input.addEventListener("click", (e) => {
+            e.stopPropagation();
+          });
+        });
+      });
+    </script>
   </body>
 </html>
