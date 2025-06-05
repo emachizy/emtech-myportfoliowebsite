@@ -123,9 +123,9 @@ const About = () => {
           {funFacts.map((fact) => (
             <div
               key={fact.id}
-              className="flex flex-col items-center justify-center p-6 bg-white rounded-lg shadow-md hover:shadow-primary transition-shadow duration-300 m-4"
+              className="flex flex-col items-center justify-center py-10 px-6 bg-white rounded-lg shadow-md hover:shadow-primary transition-shadow duration-300 m-4"
             >
-              <div className="text-2xl text-secondary py-4">
+              <div className="text-4xl text-secondary py-4">
                 {React.createElement(fact.icon)}
               </div>
               <h3 className="text-2xl font-bold text-black">{fact.value}</h3>
