@@ -2,12 +2,7 @@
 import { useState } from "react";
 import { useInView } from "react-intersection-observer";
 
-export default function LazyImage({
-  src,
-  alt,
-  className,
-  placeholderClassName = "",
-}) {
+function LazyImage({ src, alt, className, placeholderClassName = "" }) {
   const [loaded, setLoaded] = useState(false);
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -34,3 +29,5 @@ export default function LazyImage({
     </div>
   );
 }
+
+export default LazyImage;

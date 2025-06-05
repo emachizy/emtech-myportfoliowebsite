@@ -4,6 +4,7 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import Waves from "../components/utils/Waves";
 import { projectCategories, projects } from "../assets/assets";
+import LazyImage from "../components/LazyLoading";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -72,7 +73,7 @@ const Projects = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: index * 0.1 }}
               >
-                <img
+                <LazyImage
                   src={project.image}
                   alt={project.title}
                   onClick={() => handleImageClick(index)}
