@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #ffda03; /* SculptArtFitness brand color */
-  --color-secondary: #ffb703; /* Secondary color for accents */
+  --color-primary: #daa520; /* SculptArtFitness brand color */
+  --color-secondary: #c49102; /* Secondary color for accents */
 }
 
 @layer utilities {
@@ -33,4 +33,16 @@
 
 .marquee-wrapper:hover .marquee-track {
   animation-play-state: paused;
+}
+
+@media (hover: hover) {
+  .project:hover .overlay {
+    opacity: 1;
+  }
+}
+
+@media (hover: none) {
+  .project.show-overlay .overlay {
+    opacity: 1;
+  }
 }

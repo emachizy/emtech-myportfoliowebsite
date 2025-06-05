@@ -14,7 +14,7 @@ const Services = () => {
     >
       {/* Background Waves */}
       <Waves
-        lineColor="#ffda03"
+        lineColor="#c49102"
         backgroundColor="rgba(252, 252, 252, 0.2)"
         waveSpeedX={0.02}
         waveSpeedY={0.01}
@@ -28,7 +28,7 @@ const Services = () => {
       />
 
       {/* Content container */}
-      <div className="relative w-full max-w-7xl mx-auto rounded-4xl bg-white pt-10 pb-24 px-4 md:px-16 shadow-lg">
+      <div className="relative w-full max-w-[95vw] mx-auto rounded-4xl bg-gray-100 pt-10 pb-24 px-4 md:px-16 shadow-lg">
         {/* Section Header */}
         <div className="mb-12">
           <h2 className="text-start text-3xl font-bold text-gray-800">

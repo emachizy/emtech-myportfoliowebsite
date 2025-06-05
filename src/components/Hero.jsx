@@ -21,7 +21,7 @@ const Hero = () => {
   return (
     <div className="relative h-[70vh] md:h-[90vh] w-full">
       <Waves
-        lineColor="#ffda03"
+        lineColor="#c49102"
         backgroundColor="rgba(252, 252, 252, 0.2)"
         waveSpeedX={0.02}
         waveSpeedY={0.01}
@@ -51,7 +51,7 @@ const Hero = () => {
               words={coloredWords.map((el) => el.props.children)} // Extract pure text
               loop={true}
               cursor
-              cursorColor="#da9100"
+              cursorColor="#c49102"
               cursorStyle="_"
               typeSpeed={150}
               deleteSpeed={50}

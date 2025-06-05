@@ -28,7 +28,7 @@ const About = () => {
   return (
     <section className="relative flex min-h-screen w-full flex-col items-center justify-center bg-gray-100 text-gray-800 overflow-hidden">
       <Waves
-        lineColor="#ffda03"
+        lineColor="#c49102"
         backgroundColor="rgba(252, 252, 252, 0.2)"
         waveSpeedX={0.02}
         waveSpeedY={0.01}
@@ -40,7 +40,7 @@ const About = () => {
         xGap={12}
         yGap={36}
       />
-      <div className="relative w-full max-w-7xl mx-auto my-10 rounded-4xl bg-white pt-10 pb-24">
+      <div className="relative w-full max-w-[95vw] mx-auto my-10 rounded-4xl bg-gray-100 pt-10 pb-24">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 py-24 px-4 md:px-16">
           {/* Image Section */}
           <div className="flex-1 flex justify-center">
@@ -69,12 +69,19 @@ const About = () => {
               also have experience with back-end technologies.
             </p>
             <div className="flex gap-4 pt-4 justify-center md:justify-start">
-              <button className="bg-white text-black px-6 py-2 rounded-full font-medium transition border-4 border-primary hover:bg-secondary hover:text-white">
+              <a
+                href="https://drive.google.com/file/d/17A5k_R6MSEJh0P3W_vafqpejQVY_Byi0/view?usp=sharing"
+                target="_blank"
+                className="bg-white text-black px-6 py-2 rounded-full font-medium transition border-4 border-primary hover:bg-secondary hover:text-white"
+              >
                 Download CV
-              </button>
-              <button className="border border-black px-6 py-2 rounded-full font-medium hover:bg-black hover:text-white transition">
+              </a>
+              <a
+                href="mailto:emachi2011@gmail.com"
+                className="border border-black px-6 py-2 rounded-full font-medium hover:bg-black hover:text-white transition"
+              >
                 Contact
-              </button>
+              </a>
             </div>
           </div>
         </div>

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import { useClickAway } from "react-use";
 import Waves from "../components/utils/Waves";
 import { projectCategories, projects } from "../assets/assets";
 import LazyImage from "../components/LazyLoading";
@@ -29,9 +30,8 @@ const Projects = () => {
       transition={{ duration: 0.8 }}
       exit={{ opacity: 0, y: -20 }}
     >
-      {/* Decorative Waves Background */}
       <Waves
-        lineColor="#ffda03"
+        lineColor="#c49102"
         backgroundColor="rgba(252, 252, 252, 0.2)"
         waveSpeedX={0.02}
         waveSpeedY={0.01}
@@ -44,9 +44,7 @@ const Projects = () => {
         yGap={36}
       />
 
-      {/* Main Content */}
-      <div className="relative z-10 w-full max-w-screen-xl mx-auto my-10 rounded-4xl bg-white pt-10 pb-24 px-4 md:px-16">
-        {/* Filter Buttons */}
+      <div className="relative w-full max-w-[95vw] mx-auto rounded-4xl bg-gray-100 pt-10 pb-24 px-4 md:px-16 shadow-lg">
         <div className="flex flex-wrap gap-4 mb-8 justify-center py-10">
           {projectCategories.map((filter) => (
             <button
@@ -63,53 +61,18 @@ const Projects = () => {
           ))}
         </div>
 
-        {/* Projects Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
-            <motion.div
+            <Project
               key={project.id}
-              className="relative group overflow-hidden shadow-lg cursor-pointer"
-              whileHover={{ scale: 1.03 }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
-            >
-              <LazyImage
-                src={project.image}
-                alt={project.title}
-                placeholderClassName={`w-full h-60 object-cover rounded-none`}
-                onClick={() => handleImageClick(index)}
-                className="w-full h-60 object-cover rounded-none"
-              />
-              <div className="absolute inset-0 bg-gray-100/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center space-y-4">
-                <h3 className="text-black text-lg font-bold">
-                  {project.title}
-                </h3>
-                <div className="flex gap-3">
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-primary px-4 py-2 text-white rounded-lg hover:bg-secondary transition"
-                  >
-                    Demo
-                  </a>
-                  <a
-                    href={project.code}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-gray-800 px-4 py-2 text-white rounded-lg hover:bg-gray-900 transition"
-                  >
-                    Codebase
-                  </a>
-                </div>
-              </div>
-            </motion.div>
+              project={project}
+              index={index}
+              onImageClick={handleImageClick}
+            />
           ))}
         </div>
       </div>
 
-      {/* Lightbox Viewer */}
       {lightboxOpen && (
         <Lightbox
           open={lightboxOpen}
@@ -119,6 +82,67 @@ const Projects = () => {
         />
       )}
     </motion.section>
+  );
+};
+
+const Project = ({ project, index, onImageClick }) => {
+  const [showOverlay, setShowOverlay] = useState(false);
+  const ref = useRef(null);
+  const isTouchDevice = window.matchMedia("(hover: none)").matches;
+
+  useClickAway(ref, () => {
+    if (isTouchDevice) {
+      setShowOverlay(false);
+    }
+  });
+
+  const handleClick = () => {
+    if (isTouchDevice) {
+      setShowOverlay(true);
+    }
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      onClick={handleClick}
+      className={` project relative group overflow-hidden shadow-lg cursor-pointer ${
+        isTouchDevice && showOverlay ? "show-overlay" : ""
+      }`}
+      whileHover={{ scale: 1.03 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: index * 0.1 }}
+    >
+      <div className="overlay absolute inset-0 bg-gray-100/50 opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center space-y-4 z-50">
+        <h3 className="text-black text-lg font-bold">{project.title}</h3>
+        <div className="flex gap-3">
+          <a
+            href={project.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary px-4 py-2 text-white rounded-lg hover:bg-secondary transition"
+          >
+            Demo
+          </a>
+          <a
+            href={project.code}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gray-800 px-4 py-2 text-white rounded-lg hover:bg-gray-900 transition"
+          >
+            Codebase
+          </a>
+        </div>
+      </div>
+      <LazyImage
+        src={project.image}
+        alt={project.title}
+        placeholderClassName="w-full h-60 object-cover rounded-none"
+        onClick={() => onImageClick(index)}
+        className="w-full h-60 object-cover rounded-none"
+      />
+    </motion.div>
   );
 };
 

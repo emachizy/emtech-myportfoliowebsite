@@ -7,7 +7,7 @@ const Contact = () => {
   return (
     <section className="relative flex min-h-screen w-full flex-col items-center justify-center bg-gray-100 text-gray-800 overflow-hidden">
       <Waves
-        lineColor="#ffda03"
+        lineColor="#c49102"
         backgroundColor="rgba(252, 252, 252, 0.2)"
         waveSpeedX={0.02}
         waveSpeedY={0.01}
@@ -19,7 +19,7 @@ const Contact = () => {
         xGap={12}
         yGap={36}
       />
-      <div className="relative w-full max-w-7xl mx-auto my-10 rounded-4xl bg-white pt-10 pb-24">
+      <div className="relative w-full max-w-[95vw] mx-auto my-10 rounded-4xl bg-gray-100 pt-10 pb-24">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
