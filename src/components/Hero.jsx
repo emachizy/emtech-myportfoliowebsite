@@ -62,10 +62,11 @@ const Hero = () => {
             EmTech - Web Developer & Designer in Lagos
           </p>
           <Link
-            to="/bmi"
+            to="/contact"
+            onClick={() => window.scrollTo(0, 0)}
             className="bg-transparent shadow-2xl shadow-primary hover:backdrop-blur-3xl transition px-6 py-3 rounded-md font-semibold text-black cursor-pointer"
           >
-            Start Today
+            Let's Discuss
           </Link>
         </div>
       </motion.div>

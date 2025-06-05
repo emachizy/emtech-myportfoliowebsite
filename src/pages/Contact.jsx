@@ -19,13 +19,13 @@ const Contact = () => {
         xGap={12}
         yGap={36}
       />
-      <div className="absolute inset-0 w-[95vw] mx-auto my-10 rounded-4xl bg-white pt-10 pb-24 overflow-y-auto scroll-smooth hide-scrollbar">
+      <div className="relative w-full max-w-7xl mx-auto my-10 rounded-4xl bg-white pt-10 pb-24">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="flex flex-col md:flex-row md:justify-between mb-8 py-8 md:py-0 border-t border-b border-gray-300 md:px-16 bg-gray-50"
+          className="flex flex-col md:flex-row md:justify-between mb-8 py-8 md:py-0 border-t border-b border-gray-300 px-4 md:px-16 bg-gray-50"
         >
           <h2 className="text-4xl font-bold text-gray-800 mb-6 md:py-10">
             Contact

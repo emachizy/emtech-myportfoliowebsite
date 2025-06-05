@@ -40,7 +40,7 @@ const About = () => {
         xGap={12}
         yGap={36}
       />
-      <div className="absolute inset-0 w-[95vw] mx-auto my-10 rounded-4xl bg-white overflow-y-auto scroll-smooth hide-scrollbar">
+      <div className="relative w-full max-w-7xl mx-auto my-10 rounded-4xl bg-white pt-10 pb-24">
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 py-24 px-4 md:px-16">
           {/* Image Section */}
           <div className="flex-1 flex justify-center">
