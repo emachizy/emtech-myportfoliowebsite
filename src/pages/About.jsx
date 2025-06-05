@@ -41,7 +41,7 @@ const About = () => {
         yGap={36}
       />
       <div className="relative w-full max-w-[95vw] mx-auto my-10 rounded-4xl bg-gray-100 pt-10 pb-24">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 py-24 px-4 md:px-16">
+        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-8 py-24 px-4 md:px-16">
           {/* Image Section */}
           <div className="flex-1 flex justify-center">
             <div
