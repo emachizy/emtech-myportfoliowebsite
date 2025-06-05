@@ -114,9 +114,9 @@ const Project = ({ project, index, onImageClick }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.1 }}
     >
-      <div className="overlay absolute inset-0 bg-gray-100/50 opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center space-y-4 z-50">
-        <h3 className="text-black text-lg font-bold">{project.title}</h3>
-        <div className="flex gap-3">
+      <div className="overlay absolute inset-0 bg-gray-500/50 opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center space-y-4 z-50">
+        <h3 className="text-white text-xl font-bold">{project.title}</h3>
+        <div className="flex justify-between gap-16 relative -bottom-18">
           <a
             href={project.demo}
             target="_blank"
