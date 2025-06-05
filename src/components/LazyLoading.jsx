@@ -13,7 +13,7 @@ function LazyImage({ src, alt, className, placeholderClassName = "" }) {
     <div ref={ref} className={`relative ${className}`}>
       {!loaded && (
         <div
-          className={`absolute inset-0 bg-gray-100 animate-pulse rounded-full ${placeholderClassName}`}
+          className={`absolute inset-0 bg-gray-100 animate-pulse rounded-md ${placeholderClassName}`}
         />
       )}
       {inView && (
@@ -21,7 +21,7 @@ function LazyImage({ src, alt, className, placeholderClassName = "" }) {
           src={src}
           alt={alt}
           onLoad={() => setLoaded(true)}
-          className={`w-full h-full object-cover rounded-full transition-opacity duration-700 ${
+          className={`w-full h-full object-cover rounded-ful transition-opacity duration-700 ${
             loaded ? "opacity-100" : "opacity-0"
           }`}
         />

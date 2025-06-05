@@ -47,7 +47,7 @@ const Projects = () => {
       {/* Main Content */}
       <div className="relative z-10 w-full max-w-screen-xl mx-auto my-10 rounded-4xl bg-white pt-10 pb-24 px-4 md:px-16">
         {/* Filter Buttons */}
-        <div className="flex flex-wrap gap-4 mb-8 justify-center">
+        <div className="flex flex-wrap gap-4 mb-8 justify-center py-10">
           {projectCategories.map((filter) => (
             <button
               key={filter}
@@ -77,6 +77,7 @@ const Projects = () => {
               <LazyImage
                 src={project.image}
                 alt={project.title}
+                placeholderClassName={`w-full h-60 object-cover rounded-none`}
                 onClick={() => handleImageClick(index)}
                 className="w-full h-60 object-cover rounded-none"
               />

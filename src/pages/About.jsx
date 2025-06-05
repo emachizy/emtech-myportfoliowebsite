@@ -46,7 +46,7 @@ const About = () => {
           <div className="flex-1 flex justify-center">
             <div
               ref={imageRef}
-              className="transition-transform duration-200 ease-out p-6 bg-gray-400 rounded-full shadow-lg hover:shadow-neutral-50"
+              className="transition-transform duration-200 ease-out p-6 bg-gray-400 rounded-md shadow-xl hover:shadow-primary/10"
             >
               <LazyImage
                 src="/images/profile-img.jpg"
