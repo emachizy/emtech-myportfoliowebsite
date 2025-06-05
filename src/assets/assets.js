@@ -1,0 +1,102 @@
+import { FaInstagram, FaFacebook, FaLinkedin } from "react-icons/fa";
+import seo_icon from "./seo-icon.svg";
+import web_development_icon from "./web-development-icon.svg";
+import mobile_app_icon from "./mobile-app-icon.svg";
+import ui_ux_design_icon from "./ui-ux-design-icon.svg";
+
+export const socialLinks = [
+  {
+    name: "instagram",
+    url: "https://www.instagram.com/yourprofile",
+    icon: FaInstagram,
+  },
+  {
+    name: "facebook",
+    url: "https://www.facebook.com/yourprofile",
+    icon: FaFacebook,
+  },
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/yourprofile",
+    icon: FaLinkedin,
+  },
+];
+
+export const services = [
+  {
+    title: "Web Development",
+    description:
+      "Building responsive and modern websites using the latest technologies.",
+    icon: web_development_icon,
+  },
+  {
+    title: "Mobile App Development",
+    description:
+      "Creating user-friendly mobile applications for both iOS and Android platforms.",
+    icon: mobile_app_icon,
+  },
+  {
+    title: "UI/UX Design",
+    description:
+      "Designing intuitive and engaging user interfaces with a focus on user experience.",
+    icon: ui_ux_design_icon,
+  },
+  {
+    title: "SEO Optimization",
+    description:
+      "Improving website visibility and search engine rankings through effective SEO strategies.",
+    icon: seo_icon,
+  },
+];
+
+export const projectCategories = [
+  "All",
+  "Portfolio",
+  "Landing Page",
+  "Ecommerce",
+  "Blog",
+  "Multi-Page Website",
+];
+
+export const projects = [
+  {
+    id: 1,
+    title: "Portfolio Website",
+    image: "/images/dunke-portfolio.webp",
+    category: "Portfolio",
+    demo: "https://dunke-portfolio.vercel.app/",
+    code: "https://github.com/emachizy/dunke-portfolio",
+  },
+  {
+    id: 2,
+    title: "Basketball for Everyone",
+    image: "/images/bb4erone-website-img.webp",
+    category: "Landing Page",
+    demo: "https://basketball4everyone.vercel.app/",
+    code: "https://github.com/emachizy/basketball4everyone",
+  },
+  {
+    id: 3,
+    title: "Eveline Beauty Services",
+    image: "/images/evelyn-website-photo.webp",
+    category: "Ecommerce",
+    demo: "https://eveline-beauty-world.vercel.app/",
+    code: "https://github.com/emachizy/eveline-beauty-world",
+  },
+  {
+    id: 4,
+    title: "The Compass Trybe",
+    image: "/images/compass-website-img.webp",
+    category: "Blog",
+    demo: "https://compass-trybe.vercel.app/",
+    code: "https://github.com/emachizy/compass-trybe",
+  },
+  {
+    id: 5,
+    title: "SculptArt Fitness Center",
+    image: "/images/sculptart.webp",
+    category: "Multi-Page Website",
+    demo: "https://sculptartfitness.vercel.app/",
+    code: "https://github.com/emachizy/sculptartfitness",
+  },
+];
