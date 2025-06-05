@@ -3,6 +3,10 @@ import seo_icon from "./seo-icon.svg";
 import web_development_icon from "./web-development-icon.svg";
 import mobile_app_icon from "./mobile-app-icon.svg";
 import ui_ux_design_icon from "./ui-ux-design-icon.svg";
+import { PiWatch } from "react-icons/pi";
+import { CiHeart } from "react-icons/ci";
+import { IoMdStarOutline } from "react-icons/io";
+import { FaRegCalendarCheck } from "react-icons/fa";
 
 export const socialLinks = [
   {
@@ -28,6 +32,7 @@ export const services = [
     description:
       "Building responsive and modern websites using the latest technologies.",
     icon: web_development_icon,
+    // clientLogo: "/images/bb41.",
   },
   {
     title: "Mobile App Development",
@@ -98,5 +103,53 @@ export const projects = [
     category: "Multi-Page Website",
     demo: "https://sculptartfitness.vercel.app/",
     code: "https://github.com/emachizy/sculptartfitness",
+  },
+];
+
+export const companies = [
+  {
+    id: 1,
+    name: "The Compass Trybe",
+    logo: "/images/c-trybe-logo.webp",
+    website: "https://compass-trybe.vercel.app/",
+  },
+  {
+    id: 2,
+    name: "Basket Ball for Everyone",
+    logo: "/images/bb41-logo.webp",
+    website: "https://www.companyb.com",
+  },
+  {
+    id: 3,
+    name: "SculptArt Fitness Center",
+    logo: "/images/sculpt-art-logo1.webp",
+    website: "https://www.companyc.com",
+  },
+];
+
+export const funFacts = [
+  {
+    id: 1,
+    title: "Working Hours",
+    value: 4350,
+    icon: PiWatch,
+  },
+  {
+    id: 2,
+    title: "Happy Clients",
+    value: 30,
+    icon: CiHeart,
+  },
+  {
+    id: 3,
+    title: "Years of Experience",
+    value: 3,
+    icon: FaRegCalendarCheck,
+  },
+  {
+    id: 4,
+    title: "Awards Won",
+    value: 2,
+    icon: IoMdStarOutline,
   },
 ];

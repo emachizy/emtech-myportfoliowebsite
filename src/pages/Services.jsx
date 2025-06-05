@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { services } from "../assets/assets";
+import { companies, services } from "../assets/assets";
 import Waves from "../components/utils/Waves";
 
 const Services = () => {
@@ -59,6 +59,28 @@ const Services = () => {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Clients */}
+        <div className="mt-12">
+          <div className="mb-12">
+            <h2 className="text-start text-3xl font-bold text-gray-800">
+              Clients
+            </h2>
+            <div className="bg-gray-200 w-24 h-1 rounded-full mt-2">
+              <div className="bg-primary h-1 w-10 rounded-full" />
+            </div>
+          </div>
+          <div className="flex justify-center items-center flex-wrap gap-6 rounded-full">
+            {companies.map((company) => (
+              <img
+                key={company.id}
+                src={company.logo}
+                alt={company.name}
+                className="w-20 h-20 object-contain rounded-full bg-white p-0.5 shadow-md hover:shadow-lg transition-shadow duration-300"
+              />
+            ))}
+          </div>
         </div>
       </div>
     </motion.section>

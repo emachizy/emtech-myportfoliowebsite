@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import Waves from "../components/utils/Waves";
 import LazyImage from "../components/LazyLoading";
-import { services } from "../assets/assets";
+import { funFacts, services } from "../assets/assets";
 import { InfiniteTestimonials } from "../components/InfiniteTestimonials";
 
 const About = () => {
@@ -49,7 +49,7 @@ const About = () => {
               className="transition-transform duration-200 ease-out p-6 bg-gray-400 rounded-md shadow-xl hover:shadow-primary/10"
             >
               <LazyImage
-                src="/images/profile-img.jpg"
+                src="/images/profile-img.webp"
                 alt="profile"
                 className="w-64 h-64 shadow-2xl bg-transparent rounded-full"
                 placeholderClassName="w-64 h-64"
@@ -96,7 +96,7 @@ const About = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-6 mt-8  ">
             {services.map((service) => (
               <div
-                key={service.id}
+                key={service.title}
                 className="flex gap-4 p-6 rounded-lg shadow-lg hover:shadow-primary transition-shadow duration-300 mb-4"
               >
                 <img
@@ -118,6 +118,21 @@ const About = () => {
         </div>
         {/* Testimonial Section */}
         <InfiniteTestimonials />
+        {/* Fun fact */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {funFacts.map((fact) => (
+            <div
+              key={fact.id}
+              className="flex flex-col items-center justify-center p-6 bg-white rounded-lg shadow-md hover:shadow-primary transition-shadow duration-300 m-4"
+            >
+              <div className="text-2xl text-secondary py-4">
+                {React.createElement(fact.icon)}
+              </div>
+              <h3 className="text-2xl font-bold text-black">{fact.value}</h3>
+              <p className="text-gray-500 text-sm mt-2">{fact.title}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
