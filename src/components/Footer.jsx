@@ -12,26 +12,26 @@ const Footer = () => {
   const socialLinks = [
     {
       name: "Facebook",
-      url: "https://facebook.com",
-      icon: <FaFacebookF size={20} />,
+      url: "https://web.facebook.com/profile.php?id=100071052699860",
+      icon: <FaFacebookF size={20} color="1877f2" />,
       className: "text-blue-600",
     },
     {
       name: "Twitter",
-      url: "https://twitter.com",
-      icon: <FaTwitter size={20} />,
+      url: "https://x.com/Emachi_s",
+      icon: <FaTwitter size={20} color="#1da1f2" />,
       className: "text-blue-400",
     },
     {
       name: "Instagram",
-      url: "https://instagram.com",
-      icon: <FaInstagram size={20} />,
+      url: "https://www.instagram.com/__emtech/",
+      icon: <FaInstagram size={20} color="#e4405f" />,
       className: "text-pink-500",
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com",
-      icon: <FaLinkedinIn size={20} />,
+      url: "https://www.linkedin.com/in/emmanuel-nwankwo/",
+      icon: <FaLinkedinIn size={20} color="#0a66c2" />,
       className: "text-blue-700",
     },
   ];
