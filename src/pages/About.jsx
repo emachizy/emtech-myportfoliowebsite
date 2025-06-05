@@ -3,6 +3,7 @@ import Waves from "../components/utils/Waves";
 import LazyImage from "../components/LazyLoading";
 import { funFacts, services } from "../assets/assets";
 import { InfiniteTestimonials } from "../components/InfiniteTestimonials";
+import { motion } from "framer-motion";
 
 const About = () => {
   const imageRef = useRef(null);
@@ -26,7 +27,13 @@ const About = () => {
   }, []);
 
   return (
-    <section className="relative flex min-h-screen w-full flex-col items-center justify-center bg-gray-100 text-gray-800 overflow-hidden">
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      exit={{ opacity: 0, y: -20 }}
+      className="relative flex min-h-screen w-full flex-col items-center justify-center bg-gray-100 text-gray-800 overflow-hidden"
+    >
       <Waves
         lineColor="#c49102"
         backgroundColor="rgba(252, 252, 252, 0.2)"
@@ -134,7 +141,7 @@ const About = () => {
           ))}
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -9,6 +9,7 @@ import Contact from "./pages/Contact";
 import { useEffect, useState } from "react";
 import Preloader from "./components/Preloader";
 import Projects from "./pages/Projects";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -27,6 +28,7 @@ function App() {
         <Preloader />
       ) : (
         <div>
+          <ToastContainer />
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
