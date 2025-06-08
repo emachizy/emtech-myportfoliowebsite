@@ -13,6 +13,7 @@ const NavBar = () => {
     { name: "About", path: "/about" },
     { name: "Services", path: "/services" },
     { name: "Projects", path: "/projects" },
+    { name: "Blog", path: "/blog" },
     // {
     //   name: "Projects",
     //   dropdown: true,
@@ -62,21 +63,20 @@ const NavBar = () => {
             //     )}
             //   </li>
             // ) : (
+
             <li key={link.name}>
-              <li key={link.name}>
-                <NavLink
-                  to={link.path}
-                  className={({ isActive }) =>
-                    `transition-colors duration-300 ${
-                      isActive
-                        ? "text-secondary font-semibold"
-                        : "hover:text-secondary"
-                    }`
-                  }
-                >
-                  {link.name}
-                </NavLink>
-              </li>
+              <NavLink
+                to={link.path}
+                className={({ isActive }) =>
+                  `transition-colors duration-300 ${
+                    isActive
+                      ? "text-secondary font-semibold"
+                      : "hover:text-secondary"
+                  }`
+                }
+              >
+                {link.name}
+              </NavLink>
             </li>
           ))}
         </ul>

@@ -10,6 +10,8 @@ import { useEffect, useState } from "react";
 import Preloader from "./components/Preloader";
 import Projects from "./pages/Projects";
 import { ToastContainer } from "react-toastify";
+import Blog from "./components/Blog";
+import BlogPost from "./components/BlogPost";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -36,6 +38,8 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
           </Routes>
           <Footer />
         </div>
