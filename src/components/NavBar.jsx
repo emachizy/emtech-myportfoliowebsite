@@ -122,6 +122,7 @@ const NavBar = () => {
                         : "hover:text-secondary"
                     }`
                   }
+                  onClick={() => setIsOpen(false)}
                 >
                   {link.name}
                 </NavLink>
