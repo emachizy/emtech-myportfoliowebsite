@@ -34,8 +34,8 @@ const Services = () => {
           <h2 className="text-start text-3xl font-bold text-gray-800">
             What I do
           </h2>
-          <div className="bg-gray-200 w-28 h-1 rounded-full mt-2">
-            <div className="bg-primary h-1 w-10 rounded-full" />
+          <div className="bg-gray-200 w-28 h-0.5 rounded-full mt-2">
+            <div className="bg-primary h-0.5 w-10 rounded-full" />
           </div>
         </div>
 
@@ -67,8 +67,8 @@ const Services = () => {
             <h2 className="text-start text-3xl font-bold text-gray-800">
               Clients
             </h2>
-            <div className="bg-gray-200 w-24 h-1 rounded-full mt-2">
-              <div className="bg-primary h-1 w-10 rounded-full" />
+            <div className="bg-gray-200 w-24 h-0.5 rounded-full mt-2">
+              <div className="bg-primary h-0.5 w-10 rounded-full" />
             </div>
           </div>
           <div className="flex justify-center items-center flex-wrap gap-6 rounded-full">

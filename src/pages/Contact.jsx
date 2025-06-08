@@ -94,9 +94,14 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           className="flex flex-col md:flex-row md:justify-between mb-8 py-8 md:py-0 border-t border-b border-gray-300 px-4 md:px-16 bg-gray-50"
         >
-          <h2 className="text-4xl font-bold text-gray-800 mb-6 md:py-10">
-            Contact
-          </h2>
+          <div className="mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 md:mb-6 md:py-10">
+              Contact
+            </h2>
+            <div className="bg-gray-200 w-24 h-0.5 rounded-full mt-2 md:hidden">
+              <div className="bg-primary h-0.5 w-10 rounded-full" />
+            </div>
+          </div>
           <p className="text-gray-500 text-xs md:py-2">Get in touch</p>
         </motion.div>
 

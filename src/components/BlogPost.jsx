@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 // import client from "../utils/contentful";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import client from "./utils/contentful";
+import LazyImage from "./LazyLoading";
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -31,7 +32,7 @@ const BlogPost = () => {
         {new Date(publishedDate).toLocaleDateString()}
       </p>
       {featuredImage && (
-        <img
+        <LazyImage
           src={featuredImage[0]?.fields?.file?.url}
           alt={title}
           className="w-full h-64 object-cover rounded mb-6"
