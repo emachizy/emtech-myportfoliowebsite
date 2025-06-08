@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [showDropdown, setShowDropdown] = useState(false);
+  // const [showDropdown, setShowDropdown] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -63,12 +63,20 @@ const NavBar = () => {
             //   </li>
             // ) : (
             <li key={link.name}>
-              <Link
-                to={link.path}
-                className="hover:text-secondary transition-colors duration-300"
-              >
-                {link.name}
-              </Link>
+              <li key={link.name}>
+                <NavLink
+                  to={link.path}
+                  className={({ isActive }) =>
+                    `transition-colors duration-300 ${
+                      isActive
+                        ? "text-secondary font-semibold"
+                        : "hover:text-secondary"
+                    }`
+                  }
+                >
+                  {link.name}
+                </NavLink>
+              </li>
             </li>
           ))}
         </ul>
@@ -85,37 +93,40 @@ const NavBar = () => {
       {isOpen && (
         <div className="md:hidden px-4 pb-4">
           <ul className="flex flex-col space-y-8 pl-6 text-gray-800 font-medium">
-            {navLinks.map((link) =>
-              link.dropdown ? (
-                <li key={link.name}>
-                  <span className="font-semibold">{link.name}</span>
-                  <ul className="ml-4 mt-2 space-y-2 text-sm">
-                    {link.children.map((child) => (
-                      <li key={child.name}>
-                        <Link
-                          to={child.path}
-                          onClick={() => setIsOpen(false)}
-                          className="block hover:text-secondary transition-colors duration-300"
-                        >
-                          {child.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              ) : (
-                <li key={link.name}>
-                  <Link
-                    to={link.path}
-                    onClick={() => setIsOpen(false)}
-                    className="hover:text-secondary transition-colors duration-300"
-                    aria-label={`Navigate to ${link.name}`}
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              )
-            )}
+            {navLinks.map((link) => (
+              // link.dropdown ? (
+              //   <li key={link.name}>
+              //     <span className="font-semibold">{link.name}</span>
+              //     <ul className="ml-4 mt-2 space-y-2 text-sm">
+              //       {link.children.map((child) => (
+              //         <li key={child.name}>
+              //           <Link
+              //             to={child.path}
+              //             onClick={() => setIsOpen(false)}
+              //             className="block hover:text-secondary transition-colors duration-300"
+              //           >
+              //             {child.name}
+              //           </Link>
+              //         </li>
+              //       ))}
+              //     </ul>
+              //   </li>
+              // ) :
+              <li key={link.name}>
+                <NavLink
+                  to={link.path}
+                  className={({ isActive }) =>
+                    `transition-colors duration-300 ${
+                      isActive
+                        ? "text-secondary font-semibold"
+                        : "hover:text-secondary"
+                    }`
+                  }
+                >
+                  {link.name}
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </div>
       )}

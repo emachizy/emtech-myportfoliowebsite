@@ -31,7 +31,7 @@ function App() {
           <ToastContainer />
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route index element={<Home />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/about" element={<About />} />
             <Route path="/services" element={<Services />} />
