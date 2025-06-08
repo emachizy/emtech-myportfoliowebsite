@@ -98,7 +98,7 @@ const Contact = () => {
             <h2 className="text-4xl font-bold text-gray-800 md:mb-6 md:py-10">
               Contact
             </h2>
-            <div className="bg-gray-200 w-24 h-0.5 rounded-full mt-2 md:hidden">
+            <div className="bg-gray-200 w-32 h-0.5 rounded-full mt-2 md:hidden">
               <div className="bg-primary h-0.5 w-10 rounded-full" />
             </div>
           </div>
