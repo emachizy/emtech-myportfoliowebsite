@@ -4,11 +4,52 @@ import { Link, useParams } from "react-router-dom";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import client from "./utils/contentful";
 import LazyImage from "./LazyLoading";
+import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 
 const BlogPost = () => {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
   const [relatedPosts, setRelatedPosts] = useState([]);
+
+  const options = {
+    renderMark: {
+      [MARKS.BOLD]: (text) => <strong className="text-primary">{text}</strong>,
+      [MARKS.BOLD]: (text) => <strong className="text-primary">{text}</strong>,
+      [MARKS.ITALIC]: (text) => <em className="text-secondary">{text}</em>,
+      [MARKS.UNDERLINE]: (text) => (
+        <span className="underline text-blue-600">{text}</span>
+      ),
+    },
+    renderNode: {
+      [BLOCKS.HEADING_1]: (node, children) => (
+        <h1 className="text-4xl font-extrabold text-secondary mb-6">
+          {children}
+        </h1>
+      ),
+      [BLOCKS.HEADING_3]: (node, children) => (
+        <h3 className="text-xl font-semibold text-gray-800 mb-3">{children}</h3>
+      ),
+      [BLOCKS.HEADING_2]: (node, children) => (
+        <h2 className="text-2xl font-bold text-primary mb-4">{children}</h2>
+      ),
+      [BLOCKS.PARAGRAPH]: (node, children) => (
+        <p className="text-base leading-relaxed text-gray-700 mb-4">
+          {children}
+        </p>
+      ),
+      [BLOCKS.UL_LIST]: (node, children) => (
+        <ul className="list-disc pl-6 mb-4">{children}</ul>
+      ),
+      [BLOCKS.OL_LIST]: (node, children) => (
+        <ol className="list-decimal pl-6 mb-4">{children}</ol>
+      ),
+      [BLOCKS.QUOTE]: (node, children) => (
+        <blockquote className="border-l-4 border-primary pl-4 italic text-gray-600 my-6">
+          {children}
+        </blockquote>
+      ),
+    },
+  };
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -66,7 +107,9 @@ const BlogPost = () => {
             className="w-full h-64 object-cover rounded mb-6"
           />
         )}
-        <div className="prose">{documentToReactComponents(content)}</div>
+        <div className="prose prose-lg prose-slate max-w-none">
+          {documentToReactComponents(content, options)}
+        </div>
       </section>
       {relatedPosts && relatedPosts.length > 0 && (
         <section className="max-w-3xl mx-auto px-4 py-16">
