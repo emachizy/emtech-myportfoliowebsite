@@ -6,6 +6,7 @@ import client from "./utils/contentful";
 import LazyImage from "./LazyLoading";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
 import { motion } from "framer-motion";
+import AffiliateSidebar from "./AffiliateSidebar";
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -86,9 +87,9 @@ const BlogPost = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         exit={{ opacity: 0, y: -20 }}
-        className="flex justify-center items-center"
+        className="flex justify-center items-center my-36"
       >
-        <p className="text-center border-t-4 border-t-primary rounded-full h-10 w-10 animate-spin py-20"></p>
+        <div class="spinner"></div>
       </motion.div>
     );
 
@@ -100,64 +101,82 @@ const BlogPost = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
       exit={{ opacity: 0, y: -20 }}
+      className="max-w-6xl mx-auto px-4 py-16 bg-gray-50 grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-10 h-full"
     >
-      <Link
-        to="/blog"
-        className="bg-primary text-white text-xl p-2 relative top-8 left-2 rounded hover:bg-white hover:text-primary"
-      >
-        Back ⬅️
-      </Link>
-      <div className="max-w-3xl mx-auto px-4 py-16 bg-gray-50">
-        <h1 className="text-3xl font-bold mb-2">{title}</h1>
-        <p className="text-gray-500 text-sm mb-6">
-          {new Date(publishedDate).toLocaleDateString()}
-        </p>
-        {featuredImage && (
-          <LazyImage
-            src={featuredImage[0]?.fields?.file?.url}
-            alt={title}
-            className="w-full h-64 object-cover rounded mb-6"
-          />
-        )}
-        <div className="prose prose-lg prose-slate max-w-none">
-          {documentToReactComponents(content, options)}
-        </div>
-      </div>
-      {relatedPosts && relatedPosts.length > 0 && (
-        <div className="max-w-3xl mx-auto px-4 py-16">
-          <div className="mb-12">
-            <h2 className="text-start text-3xl font-bold text-gray-800">
-              Related Post
-            </h2>
-            <div className="bg-gray-200 w-44 h-0.5 rounded-full mt-2">
-              <div className="bg-primary h-0.5 w-14 rounded-full" />
+      <div>
+        <Link
+          to="/blog"
+          className="bg-primary text-white text-xl p-2 relative top-8 left-2 rounded hover:bg-white hover:text-primary"
+        >
+          Back ⬅️
+        </Link>
+        <article>
+          <div className="max-w-3xl mx-auto px-4 py-16 bg-gray-50">
+            <h1 className="text-3xl font-bold mb-2">{title}</h1>
+            <p className="text-gray-500 text-sm mb-6">
+              {new Date(publishedDate).toLocaleDateString()}
+            </p>
+            {featuredImage && (
+              <LazyImage
+                src={featuredImage[0]?.fields?.file?.url}
+                alt={title}
+                className="w-full h-64 object-cover rounded mb-6"
+              />
+            )}
+            <div className="prose prose-lg prose-slate max-w-none">
+              {documentToReactComponents(content, options)}
             </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {relatedPosts.map((relatedPost) => (
-              <div key={relatedPost.sys.id}>
-                <Link to={`/blog/${relatedPost.fields.slug}`}>
-                  <h3 className="text-xl font-semibold">
-                    {relatedPost.fields.title}
-                  </h3>
-                </Link>
-                <p className="text-gray-500 text-sm">
-                  {new Date(
-                    relatedPost.fields.publishedDate
-                  ).toLocaleDateString()}
-                </p>
-                {relatedPost.fields.featuredImage?.[0]?.fields?.file?.url && (
-                  <LazyImage
-                    src={relatedPost.fields.featuredImage[0].fields.file.url}
-                    alt={relatedPost.fields.title}
-                    className="w-full h-32 object-cover rounded mt-2"
-                  />
-                )}
+          {relatedPosts && relatedPosts.length > 0 && (
+            <div className="max-w-3xl mx-auto px-4 py-16">
+              <div className="mb-12">
+                <h2 className="text-start text-3xl font-bold text-gray-800">
+                  Related Post
+                </h2>
+                <div className="bg-gray-200 w-44 h-0.5 rounded-full mt-2">
+                  <div className="bg-primary h-0.5 w-14 rounded-full" />
+                </div>
               </div>
-            ))}
-          </div>
-        </div>
-      )}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {relatedPosts.map((relatedPost) => (
+                  <div key={relatedPost.sys.id} className="shadow-xl">
+                    <Link to={`/blog/${relatedPost.fields.slug}`}>
+                      <h3 className="text-xl font-semibold">
+                        {relatedPost.fields.title}
+                      </h3>
+                    </Link>
+                    <p className="text-gray-500 text-sm">
+                      {new Date(
+                        relatedPost.fields.publishedDate
+                      ).toLocaleDateString()}
+                    </p>
+                    {relatedPost.fields.featuredImage?.[0]?.fields?.file
+                      ?.url && (
+                      <LazyImage
+                        src={
+                          relatedPost.fields.featuredImage[0].fields.file.url
+                        }
+                        alt={relatedPost.fields.title}
+                        className="w-full h-32 object-cover rounded mt-2"
+                      />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </article>
+      </div>
+      <div className="flex flex-col">
+        <AffiliateSidebar
+          title="Limited Offer 🎯"
+          productName="Wireless Smart Earbuds"
+          description="start your Tech journey today with a 10% discount and 100% scholarship available"
+          image="https://images.seeklogo.com/logo-png/49/1/altschool-africa-logo-png_seeklogo-491918.png"
+          link="https://portal.altschoolafrica.com/auth/signup?ref=1purnt"
+          buttonText="Start Now"
+        />
+      </div>
     </motion.section>
   );
 };

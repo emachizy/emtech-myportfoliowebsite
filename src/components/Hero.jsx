@@ -55,7 +55,7 @@ const Hero = () => {
               cursorStyle="_"
               typeSpeed={150}
               deleteSpeed={50}
-              delaySpeed={1500}
+              delaySpeed={5000}
             />
           </motion.h1>
           <p className="text-lg md:text-xl mb-6">

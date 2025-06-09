@@ -56,7 +56,7 @@ const Footer = () => {
     </div>
   );
   return (
-    <footer className="relative w-full bg-gray-100 text-black overflow-hidden">
+    <footer className="relative w-full bg-gray-100 text-black overflow-hidden ">
       <Particles
         particleColors={["#c49102", "#daa520"]}
         particleSpread={10}
