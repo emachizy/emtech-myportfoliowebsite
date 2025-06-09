@@ -5,6 +5,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import client from "./utils/contentful";
 import LazyImage from "./LazyLoading";
 import { BLOCKS, MARKS } from "@contentful/rich-text-types";
+import { motion } from "framer-motion";
 
 const BlogPost = () => {
   const { slug } = useParams();
@@ -80,22 +81,33 @@ const BlogPost = () => {
 
   if (!post)
     return (
-      <div className="flex justify-center items-center">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        exit={{ opacity: 0, y: -20 }}
+        className="flex justify-center items-center"
+      >
         <p className="text-center border-t-4 border-t-primary rounded-full h-10 w-10 animate-spin py-20"></p>
-      </div>
+      </motion.div>
     );
 
   const { title, featuredImage, content, publishedDate } = post.fields;
 
   return (
-    <>
+    <motion.section
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      exit={{ opacity: 0, y: -20 }}
+    >
       <Link
         to="/blog"
         className="bg-primary text-white text-xl p-2 relative top-8 left-2 rounded hover:bg-white hover:text-primary"
       >
         Back ⬅️
       </Link>
-      <section className="max-w-3xl mx-auto px-4 py-16 bg-gray-50">
+      <div className="max-w-3xl mx-auto px-4 py-16 bg-gray-50">
         <h1 className="text-3xl font-bold mb-2">{title}</h1>
         <p className="text-gray-500 text-sm mb-6">
           {new Date(publishedDate).toLocaleDateString()}
@@ -110,9 +122,9 @@ const BlogPost = () => {
         <div className="prose prose-lg prose-slate max-w-none">
           {documentToReactComponents(content, options)}
         </div>
-      </section>
+      </div>
       {relatedPosts && relatedPosts.length > 0 && (
-        <section className="max-w-3xl mx-auto px-4 py-16">
+        <div className="max-w-3xl mx-auto px-4 py-16">
           <div className="mb-12">
             <h2 className="text-start text-3xl font-bold text-gray-800">
               Related Post
@@ -144,9 +156,9 @@ const BlogPost = () => {
               </div>
             ))}
           </div>
-        </section>
+        </div>
       )}
-    </>
+    </motion.section>
   );
 };
 
