@@ -6,6 +6,9 @@ import { motion } from "framer-motion";
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
+  const [tags, setTags] = useState([]);
+  const [selectedTag, setSelectedTag] = useState("All");
+
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 3;
 
@@ -13,23 +16,34 @@ const Blog = () => {
     const fetchPosts = async () => {
       const entries = await client.getEntries({ content_type: "blogPost" });
       setPosts(entries.items);
+
+      // Collect unique tags
+      const allTags = entries.items
+        .flatMap((post) => post.fields.tags || [])
+        .filter((v, i, a) => a.indexOf(v) === i);
+
+      setTags(["All", ...allTags]);
     };
 
     fetchPosts();
   }, []);
 
-  if (!posts)
-    return (
-      <div className="flex justify-center items-center">
-        <p className="text-center border-t-4 border-t-primary rounded-full h-10 w-10 animate-spin py-20"></p>
-      </div>
-    );
+  // Filter posts by tag
+  const filteredPosts =
+    selectedTag === "All"
+      ? posts
+      : posts.filter((post) => post.fields.tags?.includes(selectedTag));
 
   // Pagination logic
-  const totalPages = Math.ceil(posts.length / postsPerPage);
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
   const indexOfLastPost = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+  const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
+
+  const handleTagChange = (tag) => {
+    setSelectedTag(tag);
+    setCurrentPage(1); // Reset pagination on tag change
+  };
 
   const handlePrev = () => {
     setCurrentPage((prev) => Math.max(prev - 1, 1));
@@ -58,6 +72,24 @@ const Blog = () => {
         </div>
       </div>
 
+      {/* Tag filter */}
+      <div className="flex flex-wrap gap-2 mb-8">
+        {tags.map((tag) => (
+          <button
+            key={tag}
+            onClick={() => handleTagChange(tag)}
+            className={`px-4 py-0.5 rounded-lg border text-sm ${
+              selectedTag === tag
+                ? "bg-primary text-white"
+                : "bg-white text-gray-700"
+            }`}
+          >
+            {tag}
+          </button>
+        ))}
+      </div>
+
+      {/* Posts Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {currentPosts.map((post) => (
           <div
@@ -86,37 +118,39 @@ const Blog = () => {
       </div>
 
       {/* Pagination Controls */}
-      <div className="mt-12 flex justify-center items-center gap-2">
-        <button
-          onClick={handlePrev}
-          disabled={currentPage === 1}
-          className="px-4 py-2 border rounded text-sm bg-white hover:bg-gray-100 disabled:opacity-50"
-        >
-          Prev
-        </button>
-
-        {[...Array(totalPages)].map((_, index) => (
+      {totalPages > 1 && (
+        <div className="mt-12 flex justify-center items-center gap-1">
           <button
-            key={index}
-            onClick={() => handlePageClick(index + 1)}
-            className={`px-3 py-1 text-sm rounded-full ${
-              currentPage === index + 1
-                ? "bg-primary text-white"
-                : "bg-white text-gray-700 border"
-            }`}
+            onClick={handlePrev}
+            disabled={currentPage === 1}
+            className=" text-md bg-white hover:bg-gray-100 disabled:opacity-50"
           >
-            {index + 1}
+            {"<<"}
           </button>
-        ))}
 
-        <button
-          onClick={handleNext}
-          disabled={currentPage === totalPages}
-          className="px-4 py-2 border rounded text-sm bg-white hover:bg-gray-100 disabled:opacity-50"
-        >
-          Next
-        </button>
-      </div>
+          {[...Array(totalPages)].map((_, index) => (
+            <button
+              key={index}
+              onClick={() => handlePageClick(index + 1)}
+              className={`px-2.5 py-0.5 text-md rounded-lg cursor-pointer ${
+                currentPage === index + 1
+                  ? "text-primary font-extrabold"
+                  : "bg-white text-gray-700 "
+              }`}
+            >
+              {index + 1}
+            </button>
+          ))}
+
+          <button
+            onClick={handleNext}
+            disabled={currentPage === totalPages}
+            className="rounded text-md bg-white hover:bg-gray-100 disabled:opacity-50"
+          >
+            {">>"}
+          </button>
+        </div>
+      )}
     </motion.section>
   );
 };

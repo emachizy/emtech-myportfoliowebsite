@@ -8,6 +8,7 @@ import LazyImage from "./LazyLoading";
 const BlogPost = () => {
   const { slug } = useParams();
   const [post, setPost] = useState(null);
+  const [relatedPosts, setRelatedPosts] = useState([]);
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -20,6 +21,21 @@ const BlogPost = () => {
 
     fetchPost();
   }, [slug]);
+
+  useEffect(() => {
+    if (post) {
+      const fetchRelatedPosts = async () => {
+        const relatedEntries = await client.getEntries({
+          content_type: "blogPost",
+          "fields.tags[in]": post.fields.tags,
+          "sys.id[ne]": post.sys.id,
+          limit: 2, // Optional: Limit to 3 related posts
+        });
+        setRelatedPosts(relatedEntries.items);
+      };
+      fetchRelatedPosts();
+    }
+  }, [post]);
 
   if (!post)
     return (
@@ -52,6 +68,41 @@ const BlogPost = () => {
         )}
         <div className="prose">{documentToReactComponents(content)}</div>
       </section>
+      {relatedPosts && relatedPosts.length > 0 && (
+        <section className="max-w-3xl mx-auto px-4 py-16">
+          <div className="mb-12">
+            <h2 className="text-start text-3xl font-bold text-gray-800">
+              Related Post
+            </h2>
+            <div className="bg-gray-200 w-44 h-0.5 rounded-full mt-2">
+              <div className="bg-primary h-0.5 w-14 rounded-full" />
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {relatedPosts.map((relatedPost) => (
+              <div key={relatedPost.sys.id}>
+                <Link to={`/blog/${relatedPost.fields.slug}`}>
+                  <h3 className="text-xl font-semibold">
+                    {relatedPost.fields.title}
+                  </h3>
+                </Link>
+                <p className="text-gray-500 text-sm">
+                  {new Date(
+                    relatedPost.fields.publishedDate
+                  ).toLocaleDateString()}
+                </p>
+                {relatedPost.fields.featuredImage?.[0]?.fields?.file?.url && (
+                  <LazyImage
+                    src={relatedPost.fields.featuredImage[0].fields.file.url}
+                    alt={relatedPost.fields.title}
+                    className="w-full h-32 object-cover rounded mt-2"
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
     </>
   );
 };
