@@ -6,6 +6,9 @@ import { useClickAway } from "react-use";
 import Waves from "../components/utils/Waves";
 import { projectCategories, projects } from "../assets/assets";
 import LazyImage from "../components/LazyLoading";
+import { Listbox } from "@headlessui/react";
+import { ChevronDownIcon, CheckIcon } from "@heroicons/react/20/solid";
+import clsx from "clsx";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -45,7 +48,47 @@ const Projects = () => {
       />
 
       <div className="relative w-full max-w-[95vw] mx-auto rounded-4xl bg-gray-100 pt-10 pb-24 px-4 md:px-16 shadow-lg">
-        <div className="flex flex-wrap gap-4 mb-8 justify-center py-10">
+        {/* Mobile Dropdown */}
+        <div className="block md:hidden mb-8 py-10 max-w-xs mx-auto">
+          <Listbox value={activeFilter} onChange={setActiveFilter}>
+            <div className="relative">
+              <Listbox.Button className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-left shadow focus:outline-none focus:ring-2 focus:ring-secondary">
+                <span className="block truncate">{activeFilter}</span>
+                <ChevronDownIcon className="pointer-events-none absolute right-3 top-2.5 h-5 w-5 text-gray-400" />
+              </Listbox.Button>
+
+              <Listbox.Options className="absolute z-10 mt-2 w-full rounded-lg border border-gray-200 bg-white shadow-lg focus:outline-none">
+                {projectCategories.map((filter) => (
+                  <Listbox.Option
+                    key={filter}
+                    value={filter}
+                    className={({ active, selected }) =>
+                      clsx(
+                        "cursor-pointer select-none px-4 py-2",
+                        active
+                          ? "bg-secondary/10 text-secondary"
+                          : "text-gray-800",
+                        selected && "bg-secondary/20 font-semibold"
+                      )
+                    }
+                  >
+                    {({ selected }) => (
+                      <div className="flex items-center justify-between">
+                        <span>{filter}</span>
+                        {selected && (
+                          <CheckIcon className="h-4 w-4 text-secondary" />
+                        )}
+                      </div>
+                    )}
+                  </Listbox.Option>
+                ))}
+              </Listbox.Options>
+            </div>
+          </Listbox>
+        </div>
+
+        {/* Desktop Buttons */}
+        <div className="hidden md:flex flex-wrap gap-4 mb-8 justify-center py-10">
           {projectCategories.map((filter) => (
             <button
               key={filter}
@@ -53,7 +96,7 @@ const Projects = () => {
               className={`px-4 py-2 rounded-lg transition-colors duration-300 ${
                 activeFilter === filter
                   ? "bg-secondary text-white"
-                  : "bg-gray-200 text-gray-800"
+                  : "bg-gray-200 text-gray-800 hover:bg-secondary/10"
               }`}
             >
               {filter}
@@ -61,6 +104,7 @@ const Projects = () => {
           ))}
         </div>
 
+        {/* Projects Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
             <Project
@@ -106,7 +150,7 @@ const Project = ({ project, index, onImageClick }) => {
     <motion.div
       ref={ref}
       onClick={handleClick}
-      className={` project relative group overflow-hidden shadow-lg cursor-pointer ${
+      className={`project relative group overflow-hidden shadow-lg cursor-pointer ${
         isTouchDevice && showOverlay ? "show-overlay" : ""
       }`}
       whileHover={{ scale: 1.03 }}
