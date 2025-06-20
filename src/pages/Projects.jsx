@@ -52,9 +52,9 @@ const Projects = () => {
         <div className="block md:hidden mb-8 py-10 max-w-xs mx-auto">
           <Listbox value={activeFilter} onChange={setActiveFilter}>
             <div className="relative">
-              <Listbox.Button className="w-full rounded-lg border border-gray-300 bg-white px-4 py-2 text-left shadow focus:outline-none focus:ring-2 focus:ring-secondary">
+              <Listbox.Button className="max-w-sm rounded-lg border border-gray-300 bg-white px-4 py-2 text-right shadow focus:outline-none focus:ring-2 focus:ring-secondary">
                 <span className="block truncate">{activeFilter}</span>
-                <ChevronDownIcon className="pointer-events-none absolute right-3 top-2.5 h-5 w-5 text-gray-400" />
+                {/* <ChevronDownIcon className="pointer-events-none absolute right-3 top-2.5 h-5 w-5 text-gray-400" /> */}
               </Listbox.Button>
 
               <Listbox.Options className="absolute z-10 mt-2 w-full rounded-lg border border-gray-200 bg-white shadow-lg focus:outline-none">
