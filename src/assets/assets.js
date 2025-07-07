@@ -85,7 +85,7 @@ export const projects = [
     id: 3,
     title: "Eveline Beauty Services",
     image: "/images/evelyn-website-photo.webp",
-    category: ["Ecommerce", "Multi-Page Website"],
+    category: ["Ecommerce", "Multi-Page Website", "Fullstack"],
     demo: "https://eveline-beauty-world.vercel.app/",
     code: "https://github.com/emachizy/eveline-beauty-world",
   },
