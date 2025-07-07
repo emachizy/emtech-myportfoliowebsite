@@ -18,7 +18,11 @@ const Projects = () => {
   const filteredProjects =
     activeFilter === "All"
       ? projects
-      : projects.filter((project) => project.category === activeFilter);
+      : projects.filter((project) =>
+          Array.isArray(project.category)
+            ? project.category.includes(activeFilter)
+            : project.category === activeFilter
+        );
 
   const handleImageClick = (index) => {
     setLightboxIndex(index);

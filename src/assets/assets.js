@@ -61,6 +61,7 @@ export const projectCategories = [
   "Ecommerce",
   "Blog",
   "Multi-Page Website",
+  "Fullstack",
 ];
 
 export const projects = [
@@ -104,6 +105,14 @@ export const projects = [
     demo: "https://sculptartfitness.vercel.app/",
     code: "https://github.com/emachizy/sculptartfitness",
   },
+  {
+    id: 6,
+    title: "Movie Recommendation App",
+    image: "/images/movie.webp",
+    category: ["Multi-Page Website", "Fullstack"],
+    demo: "https://mernstack-movie-recommend-app.vercel.app/",
+    code: "https://github.com/emachizy/mernstack-movie-recommend-app",
+  },
 ];
 
 export const companies = [
@@ -137,19 +146,19 @@ export const funFacts = [
   {
     id: 2,
     title: "Happy Clients",
-    value: 30,
+    value: 110,
     icon: CiHeart,
   },
   {
     id: 3,
     title: "Years of Experience",
-    value: 3,
+    value: 4,
     icon: FaRegCalendarCheck,
   },
   {
     id: 4,
     title: "Awards Won",
-    value: 2,
+    value: 6,
     icon: IoMdStarOutline,
   },
 ];

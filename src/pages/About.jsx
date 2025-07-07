@@ -79,13 +79,13 @@ const About = () => {
               <a
                 href="https://drive.google.com/file/d/17A5k_R6MSEJh0P3W_vafqpejQVY_Byi0/view?usp=sharing"
                 target="_blank"
-                className="bg-white text-black px-6 py-2 rounded-full font-medium transition border-4 border-primary hover:bg-secondary hover:text-white"
+                className="bg-white text-black px-6 py-2 rounded-full font-medium border-4 border-primary hover:bg-secondary hover:text-white transition-colors duration-700"
               >
                 Download CV
               </a>
               <a
                 href="mailto:emachi2011@gmail.com"
-                className="border border-black px-6 py-2 rounded-full font-medium hover:bg-black hover:text-white transition"
+                className="border border-black px-6 py-2 rounded-full font-medium hover:bg-black hover:text-white transition-colors duration-700"
               >
                 Contact
               </a>
