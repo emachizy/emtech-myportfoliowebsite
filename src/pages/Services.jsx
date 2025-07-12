@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { companies, services } from "../assets/assets";
 import Waves from "../components/utils/Waves";
+import Accordion from "../components/Accordion";
 
 const Services = () => {
   return (
@@ -28,7 +29,7 @@ const Services = () => {
       />
 
       {/* Content container */}
-      <div className="relative w-full max-w-[95vw] mx-auto rounded-4xl bg-gray-100 pt-10 pb-24 px-4 md:px-16 shadow-lg">
+      <div className="relative w-full max-w-[95vw] mx-auto rounded-4xl bg-gray-100 pt-10 pb-24 px-4  shadow-lg">
         {/* Section Header */}
         <div className="mb-12">
           <h2 className="text-start text-3xl font-bold text-gray-800">
@@ -40,7 +41,7 @@ const Services = () => {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:px-16">
           {services.map((service) => (
             <div
               key={service.id}
@@ -82,6 +83,8 @@ const Services = () => {
             ))}
           </div>
         </div>
+
+        <Accordion />
       </div>
     </motion.section>
   );

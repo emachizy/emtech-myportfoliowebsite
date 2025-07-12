@@ -3,6 +3,7 @@ import { MapPin, Phone, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 import Waves from "../components/utils/Waves";
 import { toast } from "react-toastify";
+import Accordion from "../components/Accordion";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -195,6 +196,7 @@ const Contact = () => {
             </form>
           </div>
         </div>
+        <Accordion />
       </div>
     </section>
   );
