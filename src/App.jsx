@@ -12,6 +12,7 @@ import Projects from "./pages/Projects";
 import { ToastContainer } from "react-toastify";
 import Blog from "./components/Blog";
 import BlogPost from "./components/BlogPost";
+import ScrollToTop from "./components/utils/ScrollToTop";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -31,6 +32,7 @@ function App() {
       ) : (
         <div>
           <ToastContainer />
+          <ScrollToTop />
           <Navbar />
           <Routes>
             <Route index element={<Home />} />

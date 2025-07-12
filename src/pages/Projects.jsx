@@ -51,7 +51,7 @@ const Projects = () => {
         yGap={36}
       />
 
-      <div className="relative w-full max-w-[95vw] mx-auto rounded-4xl bg-gray-100 pt-10 pb-24 px-4 md:px-16 shadow-lg">
+      <div className="relative w-full max-w-[95vw] mx-auto rounded-4xl bg-gray-100 pt-10 pb-24 px-4 md:px-16 shadow-lg -z-50">
         {/* Mobile Dropdown */}
         <div className="block md:hidden mb-8 py-10 max-w-xs mx-auto">
           <Listbox value={activeFilter} onChange={setActiveFilter}>

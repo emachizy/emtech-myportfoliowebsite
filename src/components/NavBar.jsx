@@ -14,15 +14,7 @@ const NavBar = () => {
     { name: "Services", path: "/services" },
     { name: "Projects", path: "/projects" },
     { name: "Blog", path: "/blog" },
-    // {
-    //   name: "Projects",
-    //   dropdown: true,
-    //   children: [
-    //     { name: "Web Development", path: "/projects/web" },
-    //     { name: "UI/UX Design", path: "/projects/uiux" },
-    //     { name: "API Integrations", path: "/projects/api" },
-    //   ],
-    // },
+
     { name: "Contact", path: "/contact" },
   ];
 
@@ -37,33 +29,6 @@ const NavBar = () => {
         {/* Desktop Links */}
         <ul className="hidden md:flex space-x-6 text-gray-800 font-medium relative">
           {navLinks.map((link) => (
-            // link.dropdown ? (
-            //   <li
-            //     key={link.name}
-            //     className="relative group"
-            //     onMouseEnter={() => setShowDropdown(true)}
-            //     onMouseLeave={() => setShowDropdown(false)}
-            //   >
-            //     <button className="flex items-center gap-1 hover:text-secondary">
-            //       {link.name} <ChevronDown size={18} />
-            //     </button>
-            //     {showDropdown && (
-            //       <ul className="absolute top-4 right- mt-2 w-48 bg-white shadow-lg rounded-lg p-4 space-y-2 z-10">
-            //         {link.children.map((child) => (
-            //           <li key={child.name}>
-            //             <Link
-            //               to={child.path}
-            //               className="block px-3 py-1 hover:bg-[#f5f5f5] rounded text-sm"
-            //             >
-            //               {child.name}
-            //             </Link>
-            //           </li>
-            //         ))}
-            //       </ul>
-            //     )}
-            //   </li>
-            // ) : (
-
             <li key={link.name}>
               <NavLink
                 to={link.path}
@@ -91,27 +56,9 @@ const NavBar = () => {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden px-4 pb-4">
+        <div className="md:hidden px-4 pb-4 relative z-50">
           <ul className="flex flex-col space-y-8 pl-6 text-gray-800 font-medium">
             {navLinks.map((link) => (
-              // link.dropdown ? (
-              //   <li key={link.name}>
-              //     <span className="font-semibold">{link.name}</span>
-              //     <ul className="ml-4 mt-2 space-y-2 text-sm">
-              //       {link.children.map((child) => (
-              //         <li key={child.name}>
-              //           <Link
-              //             to={child.path}
-              //             onClick={() => setIsOpen(false)}
-              //             className="block hover:text-secondary transition-colors duration-300"
-              //           >
-              //             {child.name}
-              //           </Link>
-              //         </li>
-              //       ))}
-              //     </ul>
-              //   </li>
-              // ) :
               <li key={link.name}>
                 <NavLink
                   to={link.path}
