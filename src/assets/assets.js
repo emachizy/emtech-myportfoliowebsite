@@ -67,20 +67,12 @@ export const projectCategories = [
 export const projects = [
   {
     id: 1,
-    title: "Portfolio Website",
-    image: "/images/dunke-portfolio.webp",
-    category: "Portfolio",
-    demo: "https://dunke-portfolio.vercel.app/",
-    code: "https://github.com/emachizy/dunke-portfolio",
+    title: "FetchMonie",
+    image: "/images/fetchMonie.webp",
+    category: ["Landing Page", "Multi-Page Website", "Fullstack"],
+    demo: "https://fetchmonie.com/",
   },
-  {
-    id: 2,
-    title: "Basketball for Everyone",
-    image: "/images/bb4erone-website-img.webp",
-    category: ["Landing Page", "Multi-Page Website"],
-    demo: "https://basketball4everyone.vercel.app/",
-    code: "https://github.com/emachizy/basketball4everyone",
-  },
+
   {
     id: 3,
     title: "Eveline Beauty Services",
@@ -112,6 +104,22 @@ export const projects = [
     category: ["Multi-Page Website", "Fullstack"],
     demo: "https://mernstack-movie-recommend-app.vercel.app/",
     code: "https://github.com/emachizy/mernstack-movie-recommend-app",
+  },
+  {
+    id: 2,
+    title: "Basketball for Everyone",
+    image: "/images/bb4erone-website-img.webp",
+    category: ["Landing Page", "Multi-Page Website"],
+    demo: "https://basketball4everyone.vercel.app/",
+    code: "https://github.com/emachizy/basketball4everyone",
+  },
+  {
+    id: 7,
+    title: "Portfolio Website",
+    image: "/images/dunke-portfolio.webp",
+    category: "Portfolio",
+    demo: "https://dunke-portfolio.vercel.app/",
+    code: "https://github.com/emachizy/dunke-portfolio",
   },
 ];
 
