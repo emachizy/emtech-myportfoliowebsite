@@ -2,7 +2,44 @@ import React from "react";
 import { motion } from "framer-motion";
 import { companies, services } from "../assets/assets";
 import Waves from "../components/utils/Waves";
-import Accordion from "../components/Accordion";
+
+import AccordionSection from "../components/AccordionSection";
+
+import accordion from "/images/accordion.png";
+import accordion1 from "/images/accordion1.png";
+
+const faqItems = [
+  {
+    id: 1,
+    question: "Will my website look same on all computers?",
+    answer:
+      "Yes, we make sure that by handling a lot of factors such as loading speed, simple architecture, browser compatibility, etc. This makes sure your visitors will have a great user experience on your website irrespective of internet speed, browser type and size of thir computers.",
+  },
+  {
+    id: 2,
+    question: "What is CMS?",
+    answer:
+      "CMS stands for Content Management System. It is a software application that allows users to create, manage, and modify digital content on a website without needing specialized technical knowledge. Popular CMS platforms include WordPress, Joomla, and Drupal.",
+  },
+  {
+    id: 3,
+    question: "Will my site work on all types of phones and iPads?",
+    answer:
+      "Yes, we make sure that your website is responsive and works on all types of devices including phones, tablets, iPads and desktops.",
+  },
+  {
+    id: 4,
+    question: "What is web hosting?",
+    answer:
+      "Web hosting is a service that allows individuals and organizations to make their websites accessible via the internet. Web hosts provide the technologies and services needed for the website to be viewed online, including server space, bandwidth, and security features.",
+  },
+  {
+    id: 5,
+    question: "Will my site be SEO friendly?",
+    answer:
+      "Yes, we ensure that your website is optimized for search engines (SEO) to improve its visibility and ranking on search engine results pages. This includes using best practices in coding, content creation, and site structure to enhance your site's SEO performance.",
+  },
+];
 
 const Services = () => {
   return (
@@ -84,7 +121,13 @@ const Services = () => {
           </div>
         </div>
 
-        <Accordion />
+        <AccordionSection
+          subtitle="FAQ"
+          title="Frequently Asked Questions"
+          items={faqItems}
+          mainImage={accordion}
+          overlayImage={accordion1}
+        />
       </div>
     </motion.section>
   );

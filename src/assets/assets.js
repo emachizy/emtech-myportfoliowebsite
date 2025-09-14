@@ -28,29 +28,43 @@ export const socialLinks = [
 
 export const services = [
   {
-    title: "Web Development",
+    title: "Responsive Design",
     description:
-      "Building responsive and modern websites using the latest technologies.",
+      "With mobile users accounting for over 80% of web traffic, mobile-friendly design is crucial. Our responsive approach aligns with Google's mobile-first indexing, optimizing your search rankings and helping you reach your target audience effectively.",
     icon: web_development_icon,
-    // clientLogo: "/images/bb41.",
   },
   {
-    title: "Mobile App Development",
+    title: "Customized Styles",
     description:
-      "Creating user-friendly mobile applications for both iOS and Android platforms.",
+      "Choose from diverse style options to match your brand. Whether you need an elegant design for premium products or a clean, simple layout, our designers can deliver. We'll guide you to the perfect design based on your business objectives and vision.",
     icon: mobile_app_icon,
   },
   {
-    title: "UI/UX Design",
+    title: "Website Copywriting",
     description:
-      "Designing intuitive and engaging user interfaces with a focus on user experience.",
+      "Compelling copy drives conversions. Our expert copywriters combine technical and creative expertise to craft SEO-optimized content that resonates with your audience and boosts search rankings.",
     icon: ui_ux_design_icon,
   },
   {
     title: "SEO Optimization",
     description:
-      "Improving website visibility and search engine rankings through effective SEO strategies.",
+      "We implement proven SEO strategies to improve your search visibility. Our team of digital marketing experts ensures your website design incorporates SEO best practices, driving more organic traffic and increasing conversion rates.",
     icon: seo_icon,
+  },
+  {
+    title: "Database Integration",
+    description:
+      "We provide seamless database integration services tailored to your needs. From basic to advanced solutions, we'll recommend and implement the perfect database structure based on your business requirements.",
+  },
+  {
+    title: "Ecommerce Functionality",
+    description:
+      "Transform your website into a powerful online store. We implement comprehensive e-commerce solutions with secure payment processing, inventory management, and sales monitoring through an intuitive dashboard.",
+  },
+  {
+    title: "Content Management System",
+    description:
+      "Enhance your content strategy with a custom CMS solution. We build flexible, scalable systems that match your specific needs, whether you need a standard, advanced, or enterprise-level platform.",
   },
 ];
 

@@ -9,6 +9,7 @@ import LazyImage from "../components/LazyLoading";
 import { Listbox } from "@headlessui/react";
 import { CheckIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
+import HeroBanner from "../components/HeroBanner";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All");
@@ -30,106 +31,115 @@ const Projects = () => {
   };
 
   return (
-    <motion.section
-      className="relative w-full min-h-screen bg-gray-50 py-20 px-4 md:px-16 overflow-hidden"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      exit={{ opacity: 0, y: -20 }}
-    >
-      <Waves
-        lineColor="#c49102"
-        backgroundColor="rgba(252, 252, 252, 0.2)"
-        waveSpeedX={0.02}
-        waveSpeedY={0.01}
-        waveAmpX={40}
-        waveAmpY={20}
-        friction={0.9}
-        tension={0.01}
-        maxCursorMove={120}
-        xGap={12}
-        yGap={36}
+    <>
+      <HeroBanner
+        title="Our Projects"
+        subtitle="A showcase of our diverse portfolio, highlighting our expertise and commitment to excellence in every project we undertake."
+        backgroundImage="/images/hero-img/project-img.webp"
+        breadcrumbs={["Projects"]}
       />
 
-      <div className="relative w-full max-w-[95vw] mx-auto rounded-4xl bg-gray-100 pt-10 pb-24 px-4 md:px-16 shadow-lg">
-        {/* Mobile Dropdown */}
-        <div className="block md:hidden mb-8 py-10 max-w-xs mx-auto">
-          <Listbox value={activeFilter} onChange={setActiveFilter}>
-            <div className="relative">
-              <div className="flex justify-end mx-auto">
-                <Listbox.Button className="ml-auto max-w-sm rounded-lg border border-gray-300 bg-white px-4 py-2 text-left shadow focus:outline-none focus:ring-2 focus:ring-secondary">
-                  <span className="block truncate">{activeFilter}</span>
-                </Listbox.Button>
-              </div>
-              <Listbox.Options className="absolute right-0 z-10 mt-2 max-w-lg rounded-lg border border-gray-200 bg-white shadow-lg focus:outline-none">
-                {projectCategories.map((filter) => (
-                  <Listbox.Option
-                    key={filter}
-                    value={filter}
-                    className={({ active, selected }) =>
-                      clsx(
-                        "cursor-pointer select-none px-4 py-2",
-                        active
-                          ? "bg-secondary/10 text-secondary"
-                          : "text-gray-800",
-                        selected && "bg-secondary/20 font-semibold"
-                      )
-                    }
-                  >
-                    {({ selected }) => (
-                      <div className="flex items-center justify-between">
-                        <span>{filter}</span>
-                        {selected && (
-                          <CheckIcon className="h-4 w-4 text-secondary" />
-                        )}
-                      </div>
-                    )}
-                  </Listbox.Option>
-                ))}
-              </Listbox.Options>
-            </div>
-          </Listbox>
-        </div>
-
-        {/* Desktop Buttons */}
-        <div className="hidden md:flex flex-wrap gap-4 mb-8 justify-center py-10">
-          {projectCategories.map((filter) => (
-            <button
-              key={filter}
-              onClick={() => setActiveFilter(filter)}
-              className={`px-4 py-2 rounded-lg transition-colors duration-300 ${
-                activeFilter === filter
-                  ? "bg-secondary text-white"
-                  : "bg-gray-200 text-gray-800 hover:bg-secondary/10"
-              }`}
-            >
-              {filter}
-            </button>
-          ))}
-        </div>
-
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-          {filteredProjects.map((project, index) => (
-            <Project
-              key={project.id}
-              project={project}
-              index={index}
-              onImageClick={handleImageClick}
-            />
-          ))}
-        </div>
-      </div>
-
-      {lightboxOpen && (
-        <Lightbox
-          open={lightboxOpen}
-          close={() => setLightboxOpen(false)}
-          index={lightboxIndex}
-          slides={filteredProjects.map((proj) => ({ src: proj.image }))}
+      <motion.section
+        className="relative w-full min-h-screen bg-gray-50 py-20 px-4 md:px-16 overflow-hidden"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        exit={{ opacity: 0, y: -20 }}
+      >
+        <Waves
+          lineColor="#c49102"
+          backgroundColor="rgba(252, 252, 252, 0.2)"
+          waveSpeedX={0.02}
+          waveSpeedY={0.01}
+          waveAmpX={40}
+          waveAmpY={20}
+          friction={0.9}
+          tension={0.01}
+          maxCursorMove={120}
+          xGap={12}
+          yGap={36}
         />
-      )}
-    </motion.section>
+
+        <div className="relative w-full max-w-[95vw] mx-auto rounded-4xl bg-gray-100 pt-10 pb-24 px-4 md:px-16 shadow-lg">
+          {/* Mobile Dropdown */}
+          <div className="block md:hidden mb-8 py-10 max-w-xs mx-auto">
+            <Listbox value={activeFilter} onChange={setActiveFilter}>
+              <div className="relative">
+                <div className="flex justify-end mx-auto">
+                  <Listbox.Button className="ml-auto max-w-sm rounded-lg border border-gray-300 bg-white px-4 py-2 text-left shadow focus:outline-none focus:ring-2 focus:ring-secondary">
+                    <span className="block truncate">{activeFilter}</span>
+                  </Listbox.Button>
+                </div>
+                <Listbox.Options className="absolute right-0 z-10 mt-2 max-w-lg rounded-lg border border-gray-200 bg-white shadow-lg focus:outline-none">
+                  {projectCategories.map((filter) => (
+                    <Listbox.Option
+                      key={filter}
+                      value={filter}
+                      className={({ active, selected }) =>
+                        clsx(
+                          "cursor-pointer select-none px-4 py-2",
+                          active
+                            ? "bg-secondary/10 text-secondary"
+                            : "text-gray-800",
+                          selected && "bg-secondary/20 font-semibold"
+                        )
+                      }
+                    >
+                      {({ selected }) => (
+                        <div className="flex items-center justify-between">
+                          <span>{filter}</span>
+                          {selected && (
+                            <CheckIcon className="h-4 w-4 text-secondary" />
+                          )}
+                        </div>
+                      )}
+                    </Listbox.Option>
+                  ))}
+                </Listbox.Options>
+              </div>
+            </Listbox>
+          </div>
+
+          {/* Desktop Buttons */}
+          <div className="hidden md:flex flex-wrap gap-4 mb-8 justify-center py-10">
+            {projectCategories.map((filter) => (
+              <button
+                key={filter}
+                onClick={() => setActiveFilter(filter)}
+                className={`px-4 py-2 rounded-lg transition-colors duration-300 ${
+                  activeFilter === filter
+                    ? "bg-secondary text-white"
+                    : "bg-gray-200 text-gray-800 hover:bg-secondary/10"
+                }`}
+              >
+                {filter}
+              </button>
+            ))}
+          </div>
+
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+            {filteredProjects.map((project, index) => (
+              <Project
+                key={project.id}
+                project={project}
+                index={index}
+                onImageClick={handleImageClick}
+              />
+            ))}
+          </div>
+        </div>
+
+        {lightboxOpen && (
+          <Lightbox
+            open={lightboxOpen}
+            close={() => setLightboxOpen(false)}
+            index={lightboxIndex}
+            slides={filteredProjects.map((proj) => ({ src: proj.image }))}
+          />
+        )}
+      </motion.section>
+    </>
   );
 };
 

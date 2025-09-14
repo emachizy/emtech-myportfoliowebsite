@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #daa520; /* SculptArtFitness brand color */
+  --color-primary: #ffbd59; /* SculptArtFitness brand color */
   --color-secondary: #c49102; /* Secondary color for accents */
 }
 
@@ -12,6 +12,66 @@
   }
   .hide-scrollbar::-webkit-scrollbar {
     display: none; /* Chrome, Safari */
+  }
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: linear-gradient(
+    to bottom right,
+    #f8fafc,
+    /* slate-50 */ #eff6ff,
+    /* blue-50 */ #eef2ff /* indigo-50 */
+  );
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    /* color: var(--color-primary); */
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+
+    font-weight: 700;
+    line-height: 1.2;
+
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #555;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  @layer base {
+    h1 {
+      font-size: 28px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 14px;
+    }
   }
 }
 

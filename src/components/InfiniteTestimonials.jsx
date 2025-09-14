@@ -42,11 +42,12 @@ const testimonials = [
 
 export const InfiniteTestimonials = () => {
   return (
-    <section className="overflow-hidden py-20 bg-gray-50 px-4 md:px-16">
+    <section className="overflow-hidden py-20 bg-gray-50 opacity-95">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
+        className="px-4"
       >
         <h2 className="text-start text-2xl font-bold">Testimonials</h2>
         <div className=" bg-gray-100 w-32 rounded-full">
