@@ -48,7 +48,7 @@ const Services = () => {
       <HeroBanner
         title="Service"
         subtitle="Lagos NG"
-        backgroundImage="/images/hero-img/ecom-img.webp"
+        backgroundImage="/images/hero-img/services.webp"
         breadcrumbs={["Services"]}
       />
 
