@@ -71,10 +71,10 @@ const NavBar = () => {
 
   return (
     <nav className="w-full bg-white shadow-md sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div className="pr-4 mx-auto py-3 flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className=" flex justify-center items-center ">
-          <img src="/images/emtechLogo.webp" alt="logo" className="h-18" />
+        <Link to="/" className=" ">
+          <img src="/images/emtechLogo.webp" alt="logo" className="h-20" />
         </Link>
 
         {/* Desktop Links */}
@@ -163,7 +163,7 @@ const NavBar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden px-4 pb-4 relative z-50">
-          <ul className="flex flex-col space-y-4 pl-6 text-gray-800 font-medium">
+          <ul className="flex flex-col space-y-6 pl-6 text-gray-800 font-medium">
             {navLinks.map((link) => (
               <li key={link.name}>
                 {link.hasDropdown ? (
@@ -171,7 +171,7 @@ const NavBar = () => {
                     <div className="flex items-center gap-1">
                       <Link
                         to={link.path}
-                        className="transition-colors duration-300 hover:text-orange-500"
+                        className="transition-colors duration-300 hover:text-orange-500 text-lg"
                         onClick={() => setIsOpen(false)}
                       >
                         {link.name}
@@ -210,7 +210,7 @@ const NavBar = () => {
                 ) : (
                   <Link
                     to={link.path}
-                    className="transition-colors duration-300 hover:text-orange-500"
+                    className="transition-colors duration-300 hover:text-orange-500 text-lg"
                     onClick={() => setIsOpen(false)}
                   >
                     {link.name}

@@ -19,29 +19,29 @@ import { useInView } from "react-intersection-observer";
 import CountUp from "react-countup";
 import LatestBlog from "../components/LatestBlog";
 
-const services = [
-  {
-    icon: Code,
-    title: "Web Development",
-    description:
-      "Modern, responsive websites built with the latest technologies",
-    features: ["React & Next.js", "Performance Optimized", "SEO Ready"],
-  },
-  {
-    icon: Palette,
-    title: "UI/UX Design",
-    description:
-      "Beautiful, user-centered designs that convert visitors to customers",
-    features: ["Modern Design", "User Research", "Prototyping"],
-  },
-  {
-    icon: Zap,
-    title: "E-commerce Solutions",
-    description:
-      "Complete online stores that drive sales and grow your business",
-    features: ["Payment Integration", "Inventory Management", "Analytics"],
-  },
-];
+// const services = [
+//   {
+//     icon: Code,
+//     title: "Web Development",
+//     description:
+//       "Modern, responsive websites built with the latest technologies",
+//     features: ["React & Next.js", "Performance Optimized", "SEO Ready"],
+//   },
+//   {
+//     icon: Palette,
+//     title: "UI/UX Design",
+//     description:
+//       "Beautiful, user-centered designs that convert visitors to customers",
+//     features: ["Modern Design", "User Research", "Prototyping"],
+//   },
+//   {
+//     icon: Zap,
+//     title: "E-commerce Solutions",
+//     description:
+//       "Complete online stores that drive sales and grow your business",
+//     features: ["Payment Integration", "Inventory Management", "Analytics"],
+//   },
+// ];
 
 const ModernHomePage = () => {
   const qaRef = useRef(null);
