@@ -53,7 +53,7 @@ const Services = () => {
       />
 
       <motion.section
-        className="relative w-full min-h-screen bg-gray-50 py-20 overflow-hidden"
+        className="relative w-full min-h-screen bg-gray-50 py-2 overflow-hidden"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}

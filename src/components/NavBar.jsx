@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { FaPhoneAlt } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -154,79 +155,95 @@ const NavBar = () => {
 
         {/* Mobile Menu Toggle */}
         <div className="md:hidden">
-          <button onClick={toggleMenu} aria-label="Toggle Menu">
+          <button onClick={toggleMenu} aria-label="Toggle Menu" className="">
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden px-4 pb-4 relative z-50">
-          <ul className="flex flex-col space-y-6 pl-6 text-gray-800 font-medium">
-            {navLinks.map((link) => (
-              <li key={link.name}>
-                {link.hasDropdown ? (
-                  <div>
-                    <div className="flex items-center gap-1">
-                      <Link
-                        to={link.path}
-                        className="transition-colors duration-300 hover:text-orange-500 text-lg"
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {link.name}
-                      </Link>
-                      <button
-                        type="button"
-                        onClick={() => setShowDropdown(!showDropdown)}
-                      >
-                        <ChevronDown
-                          size={16}
-                          className={`transition-transform duration-200 ${
-                            showDropdown ? "rotate-180" : ""
-                          }`}
-                        />
-                      </button>
-                    </div>
-
-                    {showDropdown && (
-                      <div className="mt-2 ml-4 space-y-2">
-                        {serviceItems.map((service, index) => (
-                          <Link
-                            key={index}
-                            to={service.path}
-                            onClick={() => {
-                              setIsOpen(false);
-                              setShowDropdown(false);
-                            }}
-                            className="block py-2 px-3 text-black font-bold hover:text-orange-500 transition-colors duration-200 text-sm bg-secondary shadow-2xl m-2 text-center rounded-md"
-                          >
-                            {service.name}
-                          </Link>
-                        ))}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
+            className="md:hidden px-4 pb-4 relative z-50"
+          >
+            <ul className="flex flex-col space-y-6 pl-6 text-gray-800 font-medium">
+              {navLinks.map((link) => (
+                <li key={link.name}>
+                  {link.hasDropdown ? (
+                    <div>
+                      <div className="flex items-center gap-1">
+                        <Link
+                          to={link.path}
+                          className="transition-colors duration-300 hover:text-orange-500 text-lg"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {link.name}
+                        </Link>
+                        <button
+                          type="button"
+                          onClick={() => setShowDropdown(!showDropdown)}
+                        >
+                          <ChevronDown
+                            size={16}
+                            className={`transition-transform duration-200 ${
+                              showDropdown ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
                       </div>
-                    )}
-                  </div>
-                ) : (
-                  <Link
-                    to={link.path}
-                    className="transition-colors duration-300 hover:text-orange-500 text-lg"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {link.name}
-                  </Link>
-                )}
-              </li>
-            ))}
 
-            {/* Mobile phone number */}
-            <li className="flex items-center gap- mt-4">
-              <FaPhoneAlt className="text-orange-500" />
-              <span className="text-sm font-medium">+2348165257534</span>
-            </li>
-          </ul>
-        </div>
-      )}
+                      <AnimatePresence>
+                        {showDropdown && (
+                          <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.3 }}
+                            className="mt-2 ml-4 space-y-2"
+                          >
+                            {serviceItems.map((service, index) => (
+                              <Link
+                                key={index}
+                                to={service.path}
+                                onClick={() => {
+                                  setIsOpen(false);
+                                  setShowDropdown(false);
+                                }}
+                                className="block py-2 px-3 text-black font-bold hover:text-orange-500 transition-colors duration-200 text-sm bg-secondary shadow-2xl m-2 text-center rounded-md"
+                              >
+                                {service.name}
+                              </Link>
+                            ))}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  ) : (
+                    <Link
+                      to={link.path}
+                      className="transition-colors duration-300 hover:text-orange-500 text-lg"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {link.name}
+                    </Link>
+                  )}
+                </li>
+              ))}
+
+              {/* Mobile phone number */}
+              <li className="flex items-center gap-2 mt-4">
+                <FaPhoneAlt className="text-orange-500" />
+                <span className="text-sm font-medium">+2348165257534</span>
+              </li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
