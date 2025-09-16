@@ -40,7 +40,7 @@ const Projects = () => {
       />
 
       <motion.section
-        className="relative w-full min-h-screen bg-gray-50 py-20 px-4 md:px-16 overflow-hidden"
+        className="relative w-full min-h-screen bg-gray-50 p-4  overflow-hidden"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -172,7 +172,7 @@ const Project = ({ project, index, onImageClick }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.1 }}
     >
-      <div className="overlay absolute inset-0 bg-gray-500/50 opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center space-y-4 z-50">
+      <div className="overlay absolute inset-0 bg-gray-500/50 opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center space-y-4 z-30">
         <h3 className="text-white text-xl font-bold">{project.title}</h3>
         <div className="flex justify-between gap-16 relative -bottom-18">
           <a

@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
+import { Link } from "react-router-dom";
 
 const GrowthSection = () => {
   const formRef = useRef();
@@ -41,8 +42,8 @@ const GrowthSection = () => {
   };
 
   return (
-    <section className="py-16 bg-white">
-      <div className="container mx-auto grid md:grid-cols-2 gap-10 px-4 md:px-8">
+    <section className="py-16">
+      <div className="w-[90%] mx-auto grid md:grid-cols-2 gap-10">
         {/* Left Content */}
         <article className="flex flex-col justify-center">
           <h2 className="h2 text-left">
@@ -57,14 +58,14 @@ const GrowthSection = () => {
           </p>
 
           <div className="flex gap-4 mt-6">
-            <a
-              href="#pricing"
+            <Link
+              to="/contact"
               className="px-6 py-3 bg-primary text-white font-medium rounded-full hover:bg-secondary transition"
             >
-              Buy Now
-            </a>
+              Let's discuss
+            </Link>
             <a
-              href="https://wa.me/your-number"
+              href="https://wa.me/2348165257534"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center px-6 py-3 border rounded-full text-gray-700 hover:bg-gray-100 transition"
@@ -75,7 +76,7 @@ const GrowthSection = () => {
         </article>
 
         {/* Right Form */}
-        <aside className="bg-white shadow-lg rounded-lg p-6 ">
+        <aside className=" shadow-lg rounded-lg p-6 ">
           <h3 className="text-xl font-semibold text-primary mb-4">
             Get Your Custom Growth Plan
           </h3>

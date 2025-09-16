@@ -87,7 +87,7 @@ const NavBar = () => {
                   onMouseEnter={() => setShowDropdown(true)}
                   onMouseLeave={() => setShowDropdown(false)}
                 >
-                  <div className="flex items-center gap-1">
+                  <div className="flex justify-center items-center gap-1">
                     <Link
                       to={link.path}
                       className="transition-colors duration-300 hover:text-secondary font-bold text-lg text-gray-600"
@@ -97,7 +97,7 @@ const NavBar = () => {
                     <button type="button">
                       <ChevronDown
                         size={24}
-                        className={`transition-transform duration-200 ${
+                        className={`transition-transform scroll-smooth duration-500 ${
                           showDropdown ? "rotate-180" : ""
                         }`}
                       />
@@ -105,7 +105,7 @@ const NavBar = () => {
                   </div>
 
                   {showDropdown && (
-                    <div className="absolute top-7 -left-18 mt-2 min-w-4xl bg-white shadow-lg rounded-lg border border-gray-100 py-4 px-6 z-50">
+                    <div className="absolute top-7 -left-72 mt-2 min-w-4xl bg-white shadow-lg rounded-lg border border-gray-100 py-4 px-6 z-50">
                       <div className="px-4 pb-2">
                         <h3 className="text-primary font-semibold text-sm uppercase tracking-wide">
                           SERVICES
@@ -199,7 +199,7 @@ const NavBar = () => {
                               setIsOpen(false);
                               setShowDropdown(false);
                             }}
-                            className="block py-2 px-3 text-gray-600 hover:text-orange-500 transition-colors duration-200 text-sm bg-secondary shadow-2xl m-2 text-center rounded-md"
+                            className="block py-2 px-3 text-black font-bold hover:text-orange-500 transition-colors duration-200 text-sm bg-secondary shadow-2xl m-2 text-center rounded-md"
                           >
                             {service.name}
                           </Link>
@@ -220,7 +220,7 @@ const NavBar = () => {
             ))}
 
             {/* Mobile phone number */}
-            <li className="flex items-center gap-2 mt-4">
+            <li className="flex items-center gap- mt-4">
               <FaPhoneAlt className="text-orange-500" />
               <span className="text-sm font-medium">+2348165257534</span>
             </li>
