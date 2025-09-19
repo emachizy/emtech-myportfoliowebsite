@@ -84,7 +84,7 @@ const Footer = () => {
           <span className="text-secondary font-medium">Emtech</span>. All rights
           reserved.
         </p>
-        <div className="text-sm text-gray-500 mt-4">
+        <div className="text-sm text-gray-500">
           <a href="/terms" className="hover:text-primary">
             Terms & Conditions
           </a>
