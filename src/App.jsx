@@ -21,6 +21,8 @@ import InstagramGrowth from "./pages/services/InstagramGrowth";
 import DigitalMarketing from "./pages/services/DigitalMarketing";
 import ProjectManagement from "./pages/services/ProjectManagement";
 import LegacyMigration from "./pages/services/LegacyMigration";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -75,6 +77,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/terms" element={<TermsAndConditions />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
           </Routes>
 
           <Footer />

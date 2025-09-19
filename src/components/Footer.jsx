@@ -84,6 +84,15 @@ const Footer = () => {
           <span className="text-secondary font-medium">Emtech</span>. All rights
           reserved.
         </p>
+        <div className="text-sm text-gray-500 mt-4">
+          <a href="/terms" className="hover:text-blue-600">
+            Terms & Conditions
+          </a>
+          {" | "}
+          <a href="/privacy" className="hover:text-blue-600">
+            Privacy Policy
+          </a>
+        </div>
       </motion.div>
     </footer>
   );
