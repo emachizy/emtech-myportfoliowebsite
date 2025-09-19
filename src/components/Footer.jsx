@@ -71,7 +71,7 @@ const Footer = () => {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="absolute inset-0 z-20 flex md:flex-row flex-col items-center justify-center md:justify-between px-4 py-8 space-y-6 md:space-y-4 text-center"
+        className="absolute inset-0 z-20 flex md:flex-row flex-col items-center justify-center md:justify-between px-4 py-14 md:py-8 space-y-6 md:space-y-4 text-center"
       >
         {/* Social links */}
         <div className="flex flex-wrap justify-center gap-6 text-sm md:text-base">
