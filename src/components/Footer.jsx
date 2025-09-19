@@ -85,11 +85,11 @@ const Footer = () => {
           reserved.
         </p>
         <div className="text-sm text-gray-500 mt-4">
-          <a href="/terms" className="hover:text-blue-600">
+          <a href="/terms" className="hover:text-primary">
             Terms & Conditions
           </a>
           {" | "}
-          <a href="/privacy" className="hover:text-blue-600">
+          <a href="/privacy" className="hover:text-primary">
             Privacy Policy
           </a>
         </div>
