@@ -115,7 +115,7 @@ const ModernHomePage = () => {
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           pagination={{ clickable: true }}
           loop
-          className="h-[85vh]"
+          className="h-[85vh] md:h-screen"
         >
           {heroSlides.map((slide) => (
             <SwiperSlide key={slide.id}>
