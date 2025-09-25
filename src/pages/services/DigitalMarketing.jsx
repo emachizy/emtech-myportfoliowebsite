@@ -93,13 +93,13 @@ const DigitalMarketing = () => {
       {/* Main Content Section */}
       <div className="w-[90%] mx-auto my-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="text-center md:text-left">
-          <h2 className="h2 text-black text-center md:text-left">
+          <h2 className="h2 text-black text-left">
             <span className="text-primary">
               Lagos Digital Marketing <br />
             </span>
             Company
           </h2>
-          <p className="p">
+          <p className="p text-left">
             In today's digital age, having a strong online presence is crucial
             for businesses of all sizes. Digital marketing encompasses a range
             of strategies and techniques designed to promote products or
@@ -108,7 +108,7 @@ const DigitalMarketing = () => {
             creation, digital marketing offers a cost-effective way to reach a
             wider audience and drive business growth.
           </p>
-          <p className="p">
+          <p className="p text-left">
             At Emtech, we specialize in creating tailored digital marketing
             strategies that align with your business goals. Our team of experts
             leverages the latest tools and technologies to deliver measurable

@@ -80,11 +80,11 @@ const WebDesign = () => {
       {/* Main Content Section */}
       <div className="w-[90%] mx-auto my-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="text-center md:text-left">
-          <h2 className="h2 text-black text-center md:text-left">
+          <h2 className="h2 text-black text-left">
             <span className="text-primary">Lagos Web Design</span> and
             Development Company
           </h2>
-          <p className="p">
+          <p className="p text-left">
             Today, professional website design and development services in
             Nigeria are more important than ever. Effective design improves
             search rankings and conversion rates, supporting sustained business
@@ -92,7 +92,7 @@ const WebDesign = () => {
             image but also streamlines the sales process, contributing
             significantly to long-term profitability.
           </p>
-          <p className="p">
+          <p className="p text-left">
             As a leading web design company in Nigeria, we provide a competitive
             edge through our SEO-friendly website design services. Our team
             leverages over 10 years of combined experience to help you make a

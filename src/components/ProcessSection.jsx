@@ -55,7 +55,7 @@ const ProcessSection = () => {
         {steps.map((step) => (
           <div
             key={step.id}
-            className="relative bg-white p-8 rounded-lg shadow-md group overflow-hidden"
+            className="relative bg-white p-8 rounded-lg shadow-m group overflow-hidden"
           >
             {/* Hover Borders (simultaneous animation) */}
             <span className="absolute top-0 right-0 w-0 h-[3px] bg-primary transition-all duration-500 group-hover:w-full" />

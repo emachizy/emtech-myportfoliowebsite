@@ -107,11 +107,11 @@ const ProjectManagement = () => {
       {/* Main Content Section */}
       <div className="w-[90%] mx-auto my-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="text-center md:text-left">
-          <h2 className="h2 text-black text-center md:text-left">
+          <h2 className="h2 text-black text-left">
             <span className="text-primary">Lagos Project </span>Management
             Company
           </h2>
-          <p className="p">
+          <p className="p text-left">
             In today's fast-paced business environment, effective project
             management is crucial for the successful execution of initiatives.
             Project management involves planning, organizing, and overseeing
@@ -120,7 +120,7 @@ const ProjectManagement = () => {
             efficiently, on time, and within budget while meeting quality
             standards.
           </p>
-          <p className="p">
+          <p className="p text-left">
             At Emtech, we offer comprehensive project management services in
             Lagos that cater to businesses of all sizes. Our team of experienced
             project managers utilizes industry best practices and methodologies

@@ -117,13 +117,13 @@ const Ecommerce = () => {
         breadcrumbs={["Services", "E-commerce"]}
       />
       {/* Main Content Section */}
-      <div className="w-[90%] mx-auto my-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="w-[90%] mx-auto my-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center text-left">
         <div className="text-center md:text-left">
-          <h2 className="h2 text-black text-center md:text-left">
+          <h2 className="h2 text-black text-left">
             <span className="text-primary">Lagos E-commerce </span>Development
             Company
           </h2>
-          <p className="p">
+          <p className="p text-left">
             In today's digital age, e-commerce has become a vital component of
             business success. E-commerce development involves creating online
             platforms that facilitate buying and selling products or services
@@ -131,7 +131,7 @@ const Ecommerce = () => {
             enhances user experience but also drives sales and fosters customer
             loyalty.
           </p>
-          <p className="p">
+          <p className="p text-left">
             At Emtech, we specialize in e-commerce development services in
             Lagos. Our team of skilled developers and designers work closely
             with clients to create customized e-commerce solutions that align

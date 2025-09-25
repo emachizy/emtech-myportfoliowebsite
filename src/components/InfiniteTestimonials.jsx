@@ -73,7 +73,7 @@ export const InfiniteTestimonials = () => {
               transition={{ duration: 0.8 }}
               key={idx}
               whileHover={{ scale: 1.05 }}
-              className="bg-white backdrop-blur-md p-2 md:p-4 rounded-2xl min-w-[300px] max-w-sm text-center shadow-2xl"
+              className="bg-white backdrop-blur-md p-2 md:p-4 rounded-2xl min-w-[300px] max-w-sm text-center"
             >
               <img
                 src={item.image}

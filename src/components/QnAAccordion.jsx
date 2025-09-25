@@ -27,7 +27,7 @@ function AccordionItem({ id, open, handleOpen, question, answer }) {
           }`}
         />
       </AccordionHeader>
-      <AccordionBody className="pt-0 text-sm font-normal text-gray-900 transition-all duration-700">
+      <AccordionBody className="pt-0 text-sm font-normal text-gray-900 transition-all duration-700 text-left">
         {answer}
       </AccordionBody>
     </Accordion>

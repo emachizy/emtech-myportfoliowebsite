@@ -14,34 +14,14 @@ import { funFacts } from "../assets/assets";
 import { InfiniteTestimonials } from "../components/InfiniteTestimonials";
 import NewsLetter from "../components/NewsLetter";
 import ProcessSection from "../components/ProcessSection";
-
 import { useInView } from "react-intersection-observer";
 import CountUp from "react-countup";
 import LatestBlog from "../components/LatestBlog";
-
-// const services = [
-//   {
-//     icon: Code,
-//     title: "Web Development",
-//     description:
-//       "Modern, responsive websites built with the latest technologies",
-//     features: ["React & Next.js", "Performance Optimized", "SEO Ready"],
-//   },
-//   {
-//     icon: Palette,
-//     title: "UI/UX Design",
-//     description:
-//       "Beautiful, user-centered designs that convert visitors to customers",
-//     features: ["Modern Design", "User Research", "Prototyping"],
-//   },
-//   {
-//     icon: Zap,
-//     title: "E-commerce Solutions",
-//     description:
-//       "Complete online stores that drive sales and grow your business",
-//     features: ["Payment Integration", "Inventory Management", "Analytics"],
-//   },
-// ];
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, EffectFade } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
 
 const ModernHomePage = () => {
   const qaRef = useRef(null);
@@ -97,153 +77,126 @@ const ModernHomePage = () => {
     },
   ];
 
+  // Slides data
+  const heroSlides = [
+    {
+      id: 1,
+      image: "/images/slider-img/slider1.jpg",
+      title: "Building Digital",
+      highlight: "Experiences",
+      subtitle:
+        "I'm a passionate web developer & designer in Lagos, creating beautiful, functional websites that help businesses grow and succeed online.",
+    },
+    {
+      id: 2,
+      image: "/images/slider-img/slider2.jpg",
+      title: "Crafting Modern",
+      highlight: "Websites",
+      subtitle:
+        "From portfolio sites to full e-commerce solutions, I deliver high-performing digital products tailored to your brand.",
+    },
+    {
+      id: 3,
+      image: "/images/slider-img/slider3.jpg",
+      title: "Designing for",
+      highlight: "Impact",
+      subtitle:
+        "Clean, user-friendly designs that don’t just look good, but help you achieve real results online.",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* Hero Section */}
-      <section
-        className="relative min-h-screen flex items-center justify-center px-4 responsive-grid"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(0,0,0,0.08) 1px, transparent 0.1px),
-            linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 0.1px)
-          `,
-          backgroundColor: "#f9fafb",
-        }}
-      >
-        {/* Responsive background-size */}
-        <style>
-          {`
-            section.responsive-grid {
-              background-size: 20px 20px; /* tighter on mobile */
-            }
-            @media (min-width: 640px) {
-              section.responsive-grid {
-                background-size: 30px 30px; /* small screens */
-              }
-            }
-            @media (min-width: 1024px) {
-              section.responsive-grid {
-                background-size: 50px 50px; /* larger on desktop */
-                
-              }
-            }
-          `}
-        </style>
-
-        <div className="relative z-10 text-center max-w-6xl mx-auto">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={staggerChildren}
-          >
-            <motion.div variants={fadeInUp} className="mb-6">
-              <span className="inline-block px-4 py-2 bg-blue-100 text-blue-800 text-sm font-semibold rounded-full mb-4 animate-bounce">
-                👋 Welcome to EmTech
-              </span>
-            </motion.div>
-
-            <motion.h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight">
-              <motion.span
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.3 }}
-                className="block"
-              >
-                Building Digital
-              </motion.span>
-              <motion.span
-                initial={{ opacity: 0, scale: 0.5, rotateX: -90 }}
-                animate={{ opacity: 1, scale: 1, rotateX: 0 }}
-                transition={{
-                  duration: 1,
-                  delay: 0.8,
-                  type: "spring",
-                  stiffness: 100,
+      {/* Hero Section with Slider */}
+      <section className="relative min-h-screen">
+        <Swiper
+          modules={[Autoplay, Pagination, EffectFade]}
+          effect="fade"
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
+          pagination={{ clickable: true }}
+          loop
+          className="h-screen"
+        >
+          {heroSlides.map((slide) => (
+            <SwiperSlide key={slide.id}>
+              <div
+                className="relative h-screen flex items-center justify-center text-center px-4"
+                style={{
+                  backgroundImage: `url(${slide.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
                 }}
-                className="block bg-gradient-to-r from-black via-yellow-600 to-yellow-800 bg-clip-text text-transparent"
               >
-                Experiences
-              </motion.span>
-              <motion.span
-                initial={{ opacity: 0, x: -100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{
-                  duration: 0.8,
-                  delay: 1.3,
-                  type: "spring",
-                  bounce: 0.4,
-                }}
-                className="block"
-              >
-                That
-                <motion.span
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    duration: 0.6,
-                    delay: 1.8,
-                    type: "spring",
-                    stiffness: 200,
-                  }}
-                  className="inline-block ml-2 relative"
-                >
-                  Matter
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/50" />
+
+                {/* Content */}
+                <div className="relative z-10 max-w-5xl mx-auto text-white">
                   <motion.div
-                    initial={{ width: 0 }}
-                    animate={{ width: "100%" }}
-                    transition={{ duration: 0.8, delay: 2.3 }}
-                    className="absolute bottom-2 left-0 h-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full"
-                  />
-                </motion.span>
-              </motion.span>
-            </motion.h1>
+                    initial="hidden"
+                    animate="visible"
+                    variants={staggerChildren}
+                  >
+                    <motion.h1
+                      className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
+                      variants={fadeInUp}
+                    >
+                      {slide.title}{" "}
+                      <span className="bg-gradient-to-r from-yellow-400 to-orange-600 bg-clip-text text-transparent">
+                        {slide.highlight}
+                      </span>
+                    </motion.h1>
 
-            <motion.p
-              variants={fadeInUp}
-              className="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
-            >
-              I'm a passionate web developer & designer in Lagos, creating
-              beautiful, functional websites that help businesses grow and
-              succeed online.
-            </motion.p>
+                    <motion.p
+                      variants={fadeInUp}
+                      className="text-lg md:text-2xl mb-8 text-white max-w-3xl mx-auto leading-relaxed"
+                    >
+                      {slide.subtitle}
+                    </motion.p>
 
-            <motion.div
-              variants={fadeInUp}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-            >
-              <button
-                onClick={scrollToQA}
-                className="group bg-gradient-to-r from-yellow-600 to-yellow-900 hover:from-yellow-900 hover:to-yellow-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors duration-300 transform flex items-center gap-2"
-              >
-                Start Your Project
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
-              <Link
-                to="/projects"
-                className="text-gray-700 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/50 transition-all duration-300 backdrop-blur-sm border border-white/20"
-              >
-                View Portfolio
-              </Link>
-            </motion.div>
-          </motion.div>
+                    <motion.div
+                      variants={fadeInUp}
+                      className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+                    >
+                      <button
+                        onClick={scrollToQA}
+                        className="group bg-gradient-to-r from-yellow-600 to-yellow-900 hover:from-yellow-900 hover:to-yellow-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors duration-300 transform flex items-center gap-2"
+                      >
+                        Start Your Project
+                        <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                      </button>
+                      <Link
+                        to="/projects"
+                        className="text-white/90 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all duration-300 backdrop-blur-sm border border-white/20"
+                      >
+                        View Portfolio
+                      </Link>
+                    </motion.div>
+                  </motion.div>
+                </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 1 }}
-            className="absolute -bottom-10 left-1/2 transform -translate-x-1/2"
-          >
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              onClick={scrollToQA}
-              className="cursor-pointer"
-            >
-              <ChevronDown className="w-8 h-8 text-gray-400 hover:text-gray-600 transition-colors" />
-            </motion.div>
-          </motion.div>
-        </div>
+                {/* Scroll Down Icon */}
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 1.5, duration: 1 }}
+                  className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+                >
+                  {/* <motion.div
+                    animate={{ y: [0, 10, 0] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                    onClick={scrollToQA}
+                    className="cursor-pointer"
+                  >
+                    <ChevronDown className="w-8 h-8 text-white hover:text-yellow-400 transition-colors" />
+                  </motion.div> */}
+                </motion.div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </section>
+
       {/* Interactive Q&A Section */}
       <section
         ref={qaRef}
@@ -252,7 +205,9 @@ const ModernHomePage = () => {
       >
         <InteractiveQA />
       </section>
+
       <ProcessSection />
+
       {/* Services Section */}
       <section className="py-20 px-4">
         <motion.div
@@ -283,7 +238,7 @@ const ModernHomePage = () => {
                 <motion.div
                   key={index}
                   variants={fadeInUp}
-                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:transform hover:-translate-y-2 border border-white/20"
+                  className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 transition-all duration-300 hover:transform hover:-translate-y-2 border border-white/20"
                 >
                   <div className="bg-gradient-to-r from-black to-yellow-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
                     <Icon className="w-8 h-8 text-white" />
@@ -314,7 +269,7 @@ const ModernHomePage = () => {
         {funFacts.map((fact) => (
           <div
             key={fact.id}
-            className="flex flex-col items-center justify-center py-10 px-6 bg-white rounded-lg shadow-md hover:shadow-primary transition-shadow duration-300"
+            className="flex flex-col items-center justify-center py-10 px-6 bg-white rounded-lg hover:shadow-primary transition-shadow duration-300"
           >
             <div className="text-4xl text-secondary py-4">
               {React.createElement(fact.icon)}
@@ -336,14 +291,13 @@ const ModernHomePage = () => {
           whileInView="visible"
           viewport={{ once: true }}
           variants={staggerChildren}
-          className=""
         >
           <InfiniteTestimonials />
         </motion.div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4">
+      <section className="py-1 px-4">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -374,7 +328,6 @@ const ModernHomePage = () => {
       </section>
 
       <LatestBlog />
-
       <NewsLetter />
     </div>
   );

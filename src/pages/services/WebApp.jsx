@@ -124,13 +124,13 @@ const WebApp = () => {
       {/* Main Content Section */}
       <div className="w-[90%] mx-auto my-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="text-center md:text-left">
-          <h2 className="h2 text-black text-center md:text-left">
+          <h2 className="h2 text-black text-left">
             <span className="text-primary">
               Lagos Web Application <br />
             </span>
             Development Company
           </h2>
-          <p className="p">
+          <p className="p text-left">
             Web application development enables your business to establish a
             strong online presence across all user devices. Cross-platform
             compatibility ensures a seamless browsing experience for your
@@ -138,7 +138,7 @@ const WebApp = () => {
             users efficiently. An app-ready business model positions your
             business to reach a wider audience and overcome market challenges.
           </p>
-          <p className="p">
+          <p className="p text-left">
             At Emtech, we develop customized web applications with a focus on
             cost efficiency. Our services in Lagos emphasize robust database
             integration, an enhanced user experience, and reliable browser

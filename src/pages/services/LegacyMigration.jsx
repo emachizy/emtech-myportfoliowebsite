@@ -94,11 +94,11 @@ const LegacyMigration = () => {
       {/* Main Content Section */}
       <div className="w-[90%] mx-auto my-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="text-center md:text-left">
-          <h2 className="h2 text-black text-center md:text-left">
+          <h2 className="h2 text-black text-left">
             <span className="text-primary">Lagos Legacy System </span>Migration
             Company
           </h2>
-          <p className="p">
+          <p className="p text-left">
             In today's rapidly evolving technological landscape, businesses must
             adapt to stay competitive. Legacy system migration is the process of
             transitioning from outdated software or hardware to modern, more
@@ -106,7 +106,7 @@ const LegacyMigration = () => {
             operational efficiency, enhancing security, and enabling
             scalability.
           </p>
-          <p className="p">
+          <p className="p text-left">
             At Emtech, we specialize in legacy system migration services. Our
             team of experts works closely with clients to assess their existing
             systems, identify potential challenges, and develop a tailored

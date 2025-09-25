@@ -37,6 +37,7 @@
     "react-toastify": "^11.0.5",
     "react-use": "^17.6.0",
     "react-visibility-sensor": "^5.1.1",
+    "swiper": "^12.0.2",
     "tailwindcss": "^4.1.8",
     "yet-another-react-lightbox": "^3.23.2"
   },
