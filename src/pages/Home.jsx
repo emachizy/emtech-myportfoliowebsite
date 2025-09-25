@@ -115,7 +115,7 @@ const ModernHomePage = () => {
           autoplay={{ delay: 5000, disableOnInteraction: false }}
           pagination={{ clickable: true }}
           loop
-          className="h-[85vh] md:h-screen"
+          className="h-screen"
         >
           {heroSlides.map((slide) => (
             <SwiperSlide key={slide.id}>
@@ -182,14 +182,14 @@ const ModernHomePage = () => {
                   transition={{ delay: 1.5, duration: 1 }}
                   className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
                 >
-                  {/* <motion.div
+                  <motion.div
                     animate={{ y: [0, 10, 0] }}
                     transition={{ duration: 2, repeat: Infinity }}
                     onClick={scrollToQA}
                     className="cursor-pointer"
                   >
                     <ChevronDown className="w-8 h-8 text-white hover:text-yellow-400 transition-colors" />
-                  </motion.div> */}
+                  </motion.div>
                 </motion.div>
               </div>
             </SwiperSlide>
