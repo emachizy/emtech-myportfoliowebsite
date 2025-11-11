@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import HeroBanner from "../../components/HeroBanner";
 import LazyImage from "../../components/LazyLoading";
 import ServicesGrid from "../../components/ServicesGrid";
@@ -17,6 +17,7 @@ import AccordionSection from "../../components/AccordionSection";
 
 import accordion from "/images/accordion.png";
 import accordion1 from "/images/accordion1.png";
+import QuoteModal from "../../components/QuoteModal";
 
 const webAppServices = [
   { label: "Zend Development", color: "bg-blue-500" },
@@ -112,6 +113,7 @@ const faqItems = [
 ];
 
 const WebApp = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <section>
       {/* Web Design Example */}
@@ -180,9 +182,9 @@ const WebApp = () => {
             Convert your idea to architecture
           </h2>
           <div className="flex justify-center items-center gap-4 mt-6 bg-secondary w-fit mx-auto px-6 py-3 rounded-full text-white hover:bg-white hover:text-secondary transition-colors duration-300 cursor-pointer">
-            <Link to="/contact" className="uppercase ">
+            <span onClick={() => setIsModalOpen(true)} className="uppercase ">
               Request a Quote{" "}
-            </Link>
+            </span>
             <FaArrowAltCircleRight size="1em" />
           </div>
         </div>
@@ -196,6 +198,8 @@ const WebApp = () => {
         mainImage={accordion}
         overlayImage={accordion1}
       />
+
+      <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   );
 };

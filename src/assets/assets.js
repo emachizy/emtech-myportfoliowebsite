@@ -76,6 +76,7 @@ export const projectCategories = [
   "Blog",
   "Multi-Page Website",
   "Fullstack",
+  "WordPress",
 ];
 
 export const projects = [
@@ -134,6 +135,14 @@ export const projects = [
     category: "Portfolio",
     demo: "https://dunke-portfolio.vercel.app/",
     code: "https://github.com/emachizy/dunke-portfolio",
+  },
+  {
+    id: 8,
+    title: "Piliers Vert Limited",
+    image: "/images/piliersvert-desktop.jpg",
+    category: ["WordPress", "Multi-Page Website"],
+    demo: "https://piliersvert.com/",
+    code: "",
   },
 ];
 

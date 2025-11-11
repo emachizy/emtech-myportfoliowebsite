@@ -93,6 +93,22 @@ const Footer = () => {
           </a>
         </div>
       </motion.div>
+      <div className="flex justify-center items-center w-20 m-auto py-10">
+        <a
+          href="//www.dmca.com/Protection/Status.aspx?ID=9e50e0f2-3651-4ed5-b03e-01ccace21818"
+          title="DMCA.com Protection Status"
+          class="dmca-badge"
+        >
+          {" "}
+          <img
+            src="https://images.dmca.com/Badges/DMCA_logo-200w_b.png?ID=9e50e0f2-3651-4ed5-b03e-01ccace21818"
+            alt="DMCA.com Protection Status"
+          />
+        </a>{" "}
+        <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js">
+          {" "}
+        </script>
+      </div>
     </footer>
   );
 };

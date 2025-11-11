@@ -297,7 +297,7 @@ const ModernHomePage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-1 px-4">
+      <section className="py-16 px-4">
         <motion.div
           initial="hidden"
           whileInView="visible"

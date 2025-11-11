@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import HeroBanner from "../../components/HeroBanner";
 import LazyImage from "../../components/LazyLoading";
 import { motion } from "framer-motion";
@@ -14,6 +14,7 @@ import ServicesCards from "../../components/ServicesCards";
 import accordion from "/images/accordion.png";
 import accordion1 from "/images/accordion1.png";
 import AccordionSection from "../../components/AccordionSection";
+import QuoteModal from "../../components/QuoteModal";
 
 const faqItems = [
   {
@@ -49,6 +50,7 @@ const faqItems = [
 ];
 
 const WebDesign = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   // Web development services data
   const webDevServices = [
     { label: "Graphic Design", color: "bg-blue-500" },
@@ -76,7 +78,6 @@ const WebDesign = () => {
         backgroundImage="/images/hero-img/web-dev-hero.jpg"
         breadcrumbs={["Services", "Web Design"]}
       />
-
       {/* Main Content Section */}
       <div className="w-[90%] mx-auto my-16 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="text-center md:text-left">
@@ -108,7 +109,6 @@ const WebDesign = () => {
           />
         </div>
       </div>
-
       {/* Services Grid - Now using reusable component */}
       <ServicesGrid
         services={webDevServices}
@@ -117,7 +117,6 @@ const WebDesign = () => {
         gridCols="grid-cols-1 sm:grid-cols-3 md:grid-cols-4"
         showAnimation={true}
       />
-
       {/* Services Cards - Now using reusable component */}
       <ServicesCards
         services={services}
@@ -126,7 +125,6 @@ const WebDesign = () => {
         cardLayout="horizontal"
         showHeader={true}
       />
-
       {/* Call to Action Banner */}
       <div className="bg-primary mb-24 py-10">
         <div className="w-[90%] mx-auto text-center">
@@ -134,14 +132,13 @@ const WebDesign = () => {
             Create a performance-driven website
           </h2>
           <div className="flex justify-center items-center gap-4 mt-6 bg-secondary w-fit mx-auto px-6 py-3 rounded-full text-white hover:bg-white hover:text-secondary transition-colors duration-300 cursor-pointer">
-            <Link to="/contact" className="uppercase ">
+            <span onClick={() => setIsModalOpen(true)} className="uppercase ">
               Request a Quote{" "}
-            </Link>
+            </span>
             <FaArrowAltCircleRight size="1em" />
           </div>
         </div>
       </div>
-
       {/* Accordion Component */}
       <AccordionSection
         subtitle="FAQ"
@@ -150,7 +147,6 @@ const WebDesign = () => {
         mainImage={accordion}
         overlayImage={accordion1}
       />
-
       {/* Final Call to Action */}
       <div className="bg-primary mb-24 py-10">
         <div className="w-[90%] mx-auto text-center">
@@ -167,13 +163,16 @@ const WebDesign = () => {
             and one of our strategist will get back to you within 12 hours.
           </p>
           <div className="flex justify-center items-center gap-4 mt-6 bg-secondary w-fit mx-auto px-6 py-3 rounded-full text-white hover:bg-white hover:text-secondary transition-colors duration-300 cursor-pointer">
-            <Link to="/contact" className="uppercase ">
+            <span onClick={() => setIsModalOpen(true)} className="uppercase ">
               Request a Quote{" "}
-            </Link>
+            </span>
             <FaArrowAltCircleRight size="1em" />
           </div>
         </div>
       </div>
+      {/* modal */}
+
+      <QuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </motion.section>
   );
 };
