@@ -1,8 +1,7 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
-import { useClickAway } from "react-use";
 import Waves from "../components/utils/Waves";
 import { projectCategories, projects } from "../assets/assets";
 import LazyImage from "../components/LazyLoading";
@@ -15,10 +14,9 @@ const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("All");
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
-
-  // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
-  const projectsPerPage = 6; // adjust as needed
+
+  const projectsPerPage = 6;
 
   const filteredProjects =
     activeFilter === "All"
@@ -29,7 +27,6 @@ const Projects = () => {
             : project.category === activeFilter
         );
 
-  // Calculate pagination
   const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
   const startIndex = (currentPage - 1) * projectsPerPage;
   const currentProjects = filteredProjects.slice(
@@ -37,30 +34,24 @@ const Projects = () => {
     startIndex + projectsPerPage
   );
 
-  const handleImageClick = (index) => {
-    setLightboxIndex(index);
-    setLightboxOpen(true);
-  };
-
   return (
     <>
       <HeroBanner
         title="Our Projects"
-        subtitle="A showcase of our diverse portfolio, highlighting our expertise and commitment to excellence in every project we undertake."
+        subtitle="A curated selection of work that reflects our design thinking, engineering precision, and attention to detail."
         backgroundImage="/images/hero-img/project-img.webp"
         breadcrumbs={["Projects"]}
       />
 
       <motion.section
-        className="relative w-full min-h-screen bg-gray-50 p-4 overflow-hidden"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        exit={{ opacity: 0, y: -20 }}
+        className="relative min-h-screen bg-gray-50 overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
       >
         <Waves
           lineColor="#c49102"
-          backgroundColor="rgba(252, 252, 252, 0.2)"
+          backgroundColor="rgba(255,255,255,0.2)"
           waveSpeedX={0.02}
           waveSpeedY={0.01}
           waveAmpX={40}
@@ -72,93 +63,104 @@ const Projects = () => {
           yGap={36}
         />
 
-        <div className="relative w-full max-w-[95vw] mx-auto rounded-4xl bg-gray-100 pt-10 pb-24 px-4 md:px-16 shadow-lg">
-          {/* Mobile Dropdown */}
-          <div className="block md:hidden mb-8 py-10 max-w-xs mx-auto">
-            <Listbox value={activeFilter} onChange={setActiveFilter}>
-              <div className="relative">
-                <div className="flex justify-end mx-auto">
-                  <Listbox.Button className="ml-auto max-w-sm rounded-lg border border-gray-300 bg-white px-4 py-2 text-left shadow focus:outline-none focus:ring-2 focus:ring-secondary">
+        <div className="relative max-w-7xl mx-auto px-6 md:px-14 py-20">
+          <div className="rounded-3xl bg-white/80 backdrop-blur-xl border border-gray-200 shadow-xl px-6 md:px-12 py-16">
+            {/* Mobile Filter */}
+            <div className="block md:hidden mb-12 max-w-xs mx-auto">
+              <Listbox
+                value={activeFilter}
+                onChange={(val) => {
+                  setActiveFilter(val);
+                  setCurrentPage(1);
+                }}
+              >
+                <div className="relative">
+                  <Listbox.Button className="w-full rounded-full border border-gray-300 bg-white px-5 py-2 text-left shadow-sm focus:outline-none">
                     <span className="block truncate">{activeFilter}</span>
                   </Listbox.Button>
+
+                  <Listbox.Options className="absolute z-10 mt-2 w-full rounded-xl border border-gray-200 bg-white shadow-lg">
+                    {projectCategories.map((filter) => (
+                      <Listbox.Option
+                        key={filter}
+                        value={filter}
+                        className={({ active }) =>
+                          clsx(
+                            "cursor-pointer px-4 py-2",
+                            active && "bg-gray-100"
+                          )
+                        }
+                      >
+                        {({ selected }) => (
+                          <div className="flex justify-between items-center">
+                            <span>{filter}</span>
+                            {selected && (
+                              <CheckIcon className="h-4 w-4 text-secondary" />
+                            )}
+                          </div>
+                        )}
+                      </Listbox.Option>
+                    ))}
+                  </Listbox.Options>
                 </div>
-                <Listbox.Options className="absolute right-0 z-10 mt-2 max-w-lg rounded-lg border border-gray-200 bg-white shadow-lg focus:outline-none">
-                  {projectCategories.map((filter) => (
-                    <Listbox.Option
-                      key={filter}
-                      value={filter}
-                      className={({ active, selected }) =>
-                        clsx(
-                          "cursor-pointer select-none px-4 py-2",
-                          active
-                            ? "bg-secondary/10 text-secondary"
-                            : "text-gray-800",
-                          selected && "bg-secondary/20 font-semibold"
-                        )
-                      }
-                    >
-                      {({ selected }) => (
-                        <div className="flex items-center justify-between">
-                          <span>{filter}</span>
-                          {selected && (
-                            <CheckIcon className="h-4 w-4 text-secondary" />
-                          )}
-                        </div>
-                      )}
-                    </Listbox.Option>
-                  ))}
-                </Listbox.Options>
+              </Listbox>
+            </div>
+
+            {/* Desktop Filters */}
+            <div className="hidden md:flex justify-center gap-4 mb-14 flex-wrap">
+              {projectCategories.map((filter) => (
+                <button
+                  key={filter}
+                  onClick={() => {
+                    setActiveFilter(filter);
+                    setCurrentPage(1);
+                  }}
+                  className={clsx(
+                    "px-5 py-2 rounded-full text-sm font-medium transition-all",
+                    activeFilter === filter
+                      ? "bg-secondary text-white shadow-md"
+                      : "bg-white border border-gray-300 text-gray-700 hover:bg-gray-100"
+                  )}
+                >
+                  {filter}
+                </button>
+              ))}
+            </div>
+
+            {/* Projects Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+              {currentProjects.map((project, index) => (
+                <ProjectCard
+                  key={project.id}
+                  project={project}
+                  index={index}
+                  onOpen={() => {
+                    setLightboxIndex(startIndex + index);
+                    setLightboxOpen(true);
+                  }}
+                />
+              ))}
+            </div>
+
+            {/* Pagination */}
+            {totalPages > 1 && (
+              <div className="flex justify-center gap-3 mt-16">
+                {Array.from({ length: totalPages }).map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrentPage(i + 1)}
+                    className={clsx(
+                      "h-10 w-10 rounded-full text-sm font-medium transition",
+                      currentPage === i + 1
+                        ? "bg-secondary text-white"
+                        : "bg-white border border-gray-300 text-gray-700 hover:bg-gray-100"
+                    )}
+                  >
+                    {i + 1}
+                  </button>
+                ))}
               </div>
-            </Listbox>
-          </div>
-
-          {/* Desktop Buttons */}
-          <div className="hidden md:flex flex-wrap gap-4 mb-8 justify-center py-10">
-            {projectCategories.map((filter) => (
-              <button
-                key={filter}
-                onClick={() => {
-                  setActiveFilter(filter);
-                  setCurrentPage(1); // reset to first page when filter changes
-                }}
-                className={`px-4 py-2 rounded-lg transition-colors duration-300 ${
-                  activeFilter === filter
-                    ? "bg-secondary text-white"
-                    : "bg-gray-200 text-gray-800 hover:bg-secondary/10"
-                }`}
-              >
-                {filter}
-              </button>
-            ))}
-          </div>
-
-          {/* Projects Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {currentProjects.map((project, index) => (
-              <Project
-                key={project.id}
-                project={project}
-                index={index}
-                onImageClick={handleImageClick}
-              />
-            ))}
-          </div>
-
-          {/* Pagination Controls */}
-          <div className="flex justify-center mt-10 space-x-2">
-            {Array.from({ length: totalPages }, (_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrentPage(i + 1)}
-                className={`px-3 py-1 rounded-md ${
-                  currentPage === i + 1
-                    ? "bg-secondary text-white"
-                    : "bg-gray-200 text-gray-800 hover:bg-secondary/10"
-                }`}
-              >
-                {i + 1}
-              </button>
-            ))}
+            )}
           </div>
         </div>
 
@@ -175,64 +177,51 @@ const Projects = () => {
   );
 };
 
-const Project = ({ project, index, onImageClick }) => {
-  const [showOverlay, setShowOverlay] = useState(false);
-  const ref = useRef(null);
-  const isTouchDevice = window.matchMedia("(hover: none)").matches;
-
-  useClickAway(ref, () => {
-    if (isTouchDevice) {
-      setShowOverlay(false);
-    }
-  });
-
-  const handleClick = () => {
-    if (isTouchDevice) {
-      setShowOverlay(true);
-    }
-  };
-
+const ProjectCard = ({ project, index, onOpen }) => {
   return (
-    <motion.div
-      ref={ref}
-      onClick={handleClick}
-      className={`project relative group overflow-hidden shadow-lg cursor-pointer ${
-        isTouchDevice && showOverlay ? "show-overlay" : ""
-      }`}
-      whileHover={{ scale: 1.03 }}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.1 }}
+    <motion.article
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.05 }}
+      className="group relative overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-xl transition-shadow"
     >
-      <div className="overlay absolute inset-0 bg-gray-500/50 opacity-0 transition-opacity duration-300 flex flex-col justify-center items-center space-y-4 z-30">
-        <h3 className="text-white text-xl font-bold">{project.title}</h3>
-        <div className="flex justify-between gap-16 relative -bottom-18">
+      <div className="relative h-64 overflow-hidden">
+        <LazyImage
+          src={project.image}
+          alt={project.title}
+          onClick={onOpen}
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      </div>
+
+      <div className="absolute inset-0 flex flex-col justify-end p-6">
+        <h3 className="text-white text-lg font-semibold mb-4 opacity-0 group-hover:opacity-100 transition-opacity">
+          {project.title}
+        </h3>
+
+        <div className="flex gap-4 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
           <a
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-primary px-4 py-2 text-white rounded-lg hover:bg-secondary transition"
+            className="px-4 py-2 text-sm rounded-full bg-white text-gray-900 font-medium hover:bg-secondary hover:text-white transition"
           >
-            Demo
+            Live Demo
           </a>
           <a
             href={project.code}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gray-800 px-4 py-2 text-white rounded-lg hover:bg-gray-900 transition"
+            className="px-4 py-2 text-sm rounded-full bg-black/70 text-white hover:bg-black transition"
           >
-            Codebase
+            Code
           </a>
         </div>
       </div>
-      <LazyImage
-        src={project.image}
-        alt={project.title}
-        placeholderClassName="w-full h-60 object-cover rounded-none"
-        onClick={() => onImageClick(index)}
-        className="w-full h-60 object-cover rounded-none"
-      />
-    </motion.div>
+    </motion.article>
   );
 };
 
