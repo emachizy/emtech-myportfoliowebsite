@@ -81,11 +81,43 @@ export const projectCategories = [
 
 export const projects = [
   {
+    id: 8,
+    title: "Piliers Vert Limited",
+    image: "/images/piliersvert-desktop.jpg",
+    category: ["WordPress", "Multi-Page Website"],
+    demo: "https://piliersvert.com/",
+    code: "",
+  },
+  {
     id: 1,
     title: "FetchMonie",
     image: "/images/fetchMonie.webp",
     category: ["Landing Page", "Multi-Page Website", "Fullstack"],
     demo: "https://fetchmonie.com/",
+  },
+  {
+    id: 9,
+    title: "Tomorrow is a girl",
+    image: "/images/morrowisgirl.png",
+    category: ["React", "Multi-Page Website"],
+    demo: "https://www.tomorrowisagirl.org/index.php",
+    code: "",
+  },
+  {
+    id: 10,
+    title: "ClosesellerTv",
+    image: "/images/closeseller.png",
+    category: ["React", "Multi-Page Website"],
+    demo: "https://closesellertv.com.ng/",
+    code: "",
+  },
+  {
+    id: 11,
+    title: "Healthy Smart Children",
+    image: "/images/healthychildren.png",
+    category: ["React", "Multi-Page Website"],
+    demo: "https://www.healthysmartchildren.org/",
+    code: "",
   },
 
   {
@@ -135,14 +167,6 @@ export const projects = [
     category: "Portfolio",
     demo: "https://dunke-portfolio.vercel.app/",
     code: "https://github.com/emachizy/dunke-portfolio",
-  },
-  {
-    id: 8,
-    title: "Piliers Vert Limited",
-    image: "/images/piliersvert-desktop.jpg",
-    category: ["WordPress", "Multi-Page Website"],
-    demo: "https://piliersvert.com/",
-    code: "",
   },
 ];
 
