@@ -16,6 +16,10 @@ const Projects = () => {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
+  // Pagination state
+  const [currentPage, setCurrentPage] = useState(1);
+  const projectsPerPage = 6; // adjust as needed
+
   const filteredProjects =
     activeFilter === "All"
       ? projects
@@ -24,6 +28,14 @@ const Projects = () => {
             ? project.category.includes(activeFilter)
             : project.category === activeFilter
         );
+
+  // Calculate pagination
+  const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
+  const startIndex = (currentPage - 1) * projectsPerPage;
+  const currentProjects = filteredProjects.slice(
+    startIndex,
+    startIndex + projectsPerPage
+  );
 
   const handleImageClick = (index) => {
     setLightboxIndex(index);
@@ -40,7 +52,7 @@ const Projects = () => {
       />
 
       <motion.section
-        className="relative w-full min-h-screen bg-gray-50 p-4  overflow-hidden"
+        className="relative w-full min-h-screen bg-gray-50 p-4 overflow-hidden"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
@@ -105,7 +117,10 @@ const Projects = () => {
             {projectCategories.map((filter) => (
               <button
                 key={filter}
-                onClick={() => setActiveFilter(filter)}
+                onClick={() => {
+                  setActiveFilter(filter);
+                  setCurrentPage(1); // reset to first page when filter changes
+                }}
                 className={`px-4 py-2 rounded-lg transition-colors duration-300 ${
                   activeFilter === filter
                     ? "bg-secondary text-white"
@@ -119,13 +134,30 @@ const Projects = () => {
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {filteredProjects.map((project, index) => (
+            {currentProjects.map((project, index) => (
               <Project
                 key={project.id}
                 project={project}
                 index={index}
                 onImageClick={handleImageClick}
               />
+            ))}
+          </div>
+
+          {/* Pagination Controls */}
+          <div className="flex justify-center mt-10 space-x-2">
+            {Array.from({ length: totalPages }, (_, i) => (
+              <button
+                key={i}
+                onClick={() => setCurrentPage(i + 1)}
+                className={`px-3 py-1 rounded-md ${
+                  currentPage === i + 1
+                    ? "bg-secondary text-white"
+                    : "bg-gray-200 text-gray-800 hover:bg-secondary/10"
+                }`}
+              >
+                {i + 1}
+              </button>
             ))}
           </div>
         </div>

@@ -119,6 +119,14 @@ export const projects = [
     demo: "https://www.healthysmartchildren.org/",
     code: "",
   },
+  {
+    id: 12,
+    title: "Lifinfinity",
+    image: "/images/lifinfinity.png",
+    category: ["React", "Multi-Page Website"],
+    demo: "https://lifinfinity.com/index.php",
+    code: "",
+  },
 
   {
     id: 3,
