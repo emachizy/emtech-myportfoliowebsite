@@ -24,14 +24,14 @@ const Projects = () => {
       : projects.filter((project) =>
           Array.isArray(project.category)
             ? project.category.includes(activeFilter)
-            : project.category === activeFilter
+            : project.category === activeFilter,
         );
 
   const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
   const startIndex = (currentPage - 1) * projectsPerPage;
   const currentProjects = filteredProjects.slice(
     startIndex,
-    startIndex + projectsPerPage
+    startIndex + projectsPerPage,
   );
 
   return (
@@ -87,7 +87,7 @@ const Projects = () => {
                         className={({ active }) =>
                           clsx(
                             "cursor-pointer px-4 py-2",
-                            active && "bg-gray-100"
+                            active && "bg-gray-100",
                           )
                         }
                       >
@@ -119,7 +119,7 @@ const Projects = () => {
                     "px-5 py-2 rounded-full text-sm font-medium transition-all",
                     activeFilter === filter
                       ? "bg-secondary text-white shadow-md"
-                      : "bg-white border border-gray-300 text-gray-700 hover:bg-gray-100"
+                      : "bg-white border border-gray-300 text-gray-700 hover:bg-gray-100",
                   )}
                 >
                   {filter}
@@ -153,7 +153,7 @@ const Projects = () => {
                       "h-10 w-10 rounded-full text-sm font-medium transition",
                       currentPage === i + 1
                         ? "bg-secondary text-white"
-                        : "bg-white border border-gray-300 text-gray-700 hover:bg-gray-100"
+                        : "bg-white border border-gray-300 text-gray-700 hover:bg-gray-100",
                     )}
                   >
                     {i + 1}
@@ -178,13 +178,43 @@ const Projects = () => {
 };
 
 const ProjectCard = ({ project, index, onOpen }) => {
+  // Track whether the overlay is revealed (used for touch devices)
+  const [isRevealed, setIsRevealed] = useState(false);
+
+  const handleCardClick = (e) => {
+    // Only intercept on touch/non-hover devices
+    const isTouch = window.matchMedia("(hover: none)").matches;
+
+    if (isTouch) {
+      if (!isRevealed) {
+        // First tap: reveal the overlay instead of opening lightbox
+        e.preventDefault();
+        setIsRevealed(true);
+      }
+      // Second tap (already revealed) falls through — individual buttons handle their own actions
+    }
+  };
+
+  const handleBlur = () => {
+    // Collapse overlay when focus leaves the card (e.g. tap outside on mobile)
+    setIsRevealed(false);
+  };
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.05 }}
-      className="group relative overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-xl transition-shadow"
+      // `group` still drives hover on desktop; `is-revealed` drives touch state
+      className={clsx(
+        "group relative overflow-hidden rounded-2xl bg-white border border-gray-200 shadow-sm hover:shadow-xl transition-shadow",
+        isRevealed && "is-revealed",
+      )}
+      onClick={handleCardClick}
+      onBlur={handleBlur}
+      // Make the article focusable so onBlur fires when user taps elsewhere
+      tabIndex={0}
     >
       <div className="relative h-64 overflow-hidden">
         <LazyImage
@@ -194,19 +224,39 @@ const ProjectCard = ({ project, index, onOpen }) => {
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        {/* Overlay — visible on hover (desktop) OR when isRevealed (touch) */}
+        <div
+          className={clsx(
+            "absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent transition-opacity duration-500",
+            isRevealed ? "opacity-100" : "opacity-0 group-hover:opacity-100",
+          )}
+        />
       </div>
 
       <div className="absolute inset-0 flex flex-col justify-end p-6">
-        <h3 className="text-white text-lg font-semibold mb-4 opacity-0 group-hover:opacity-100 transition-opacity">
+        <h3
+          className={clsx(
+            "text-white text-lg font-semibold mb-4 transition-opacity",
+            isRevealed ? "opacity-100" : "opacity-0 group-hover:opacity-100",
+          )}
+        >
           {project.title}
         </h3>
 
-        <div className="flex gap-4 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+        <div
+          className={clsx(
+            "flex gap-4 transition-all duration-500",
+            isRevealed
+              ? "translate-y-0 opacity-100"
+              : "translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100",
+          )}
+        >
           <a
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
+            // Stop propagation so tapping "Live Demo" doesn't bubble up to the card's onClick
+            onClick={(e) => e.stopPropagation()}
             className="px-4 py-2 text-sm rounded-full bg-white text-gray-900 font-medium hover:bg-secondary hover:text-white transition"
           >
             Live Demo
@@ -215,6 +265,7 @@ const ProjectCard = ({ project, index, onOpen }) => {
             href={project.code}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
             className="px-4 py-2 text-sm rounded-full bg-black/70 text-white hover:bg-black transition"
           >
             Code
