@@ -83,9 +83,9 @@ const NavBar = () => {
         {/* Logo */}
         <Link to="/" className=" ">
           <img
-            src="/images/emtechLogo.webp"
+            src="/images/emtech_logo.png"
             alt="logo"
-            className="w-20 md:w-28"
+            className="w-20 md:w-28 ml-8"
           />
         </Link>
 
@@ -152,7 +152,7 @@ const NavBar = () => {
               ) : (
                 <Link
                   to={link.path}
-                  className="transition-colors duration-300 hover:text-orange-500 font-bold text-[16px] text-gray-600"
+                  className="transition-colors duration-300 hover:text-[#6EDC6E] font-bold text-[16px] text-gray-600"
                 >
                   {link.name}
                 </Link>
@@ -258,7 +258,7 @@ const NavBar = () => {
                   <Link
                     to={link.path}
                     onClick={() => handleNavClick(link.path)}
-                    className="transition-colors duration-300 hover:text-orange-500 text-lg"
+                    className="transition-colors duration-300 hover:text-primary text-lg"
                   >
                     {link.name}
                   </Link>

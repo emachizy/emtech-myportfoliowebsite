@@ -142,7 +142,7 @@ const ModernHomePage = () => {
                       variants={fadeInUp}
                     >
                       {slide.title}{" "}
-                      <span className="bg-gradient-to-r from-yellow-400 to-orange-600 bg-clip-text text-transparent">
+                      <span className="bg-gradient-to-r from-primary to-[#6EDC6E] bg-clip-text text-transparent">
                         {slide.highlight}
                       </span>
                     </motion.h1>
@@ -160,7 +160,7 @@ const ModernHomePage = () => {
                     >
                       <button
                         onClick={scrollToQA}
-                        className="group bg-gradient-to-r from-yellow-600 to-yellow-900 hover:from-yellow-900 hover:to-yellow-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors duration-300 transform flex items-center gap-2"
+                        className="group bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors duration-300 transform flex items-center gap-2"
                       >
                         Start Your Project
                         <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -188,7 +188,7 @@ const ModernHomePage = () => {
                     onClick={scrollToQA}
                     className="cursor-pointer"
                   >
-                    <ChevronDown className="w-8 h-8 text-white hover:text-yellow-400 transition-colors" />
+                    <ChevronDown className="w-8 h-8 text-white hover:text-[#6EDC6E] transition-colors" />
                   </motion.div>
                 </motion.div>
               </div>

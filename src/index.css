@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #ffbd59; /* SculptArtFitness brand color */
-  --color-secondary: #c49102; /* Secondary color for accents */
+  --color-primary: #285aaa; /* Emtech brand color */
+  --color-secondary: #1f2d43; /* Secondary color for accents */
 }
 
 @layer utilities {

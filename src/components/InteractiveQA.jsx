@@ -212,7 +212,7 @@ const InteractiveQA = () => {
 
     if (serviceType === "ecommerce") {
       recommendations.push(
-        "E-commerce platform integration (Shopify, WooCommerce)"
+        "E-commerce platform integration (Shopify, WooCommerce)",
       );
       recommendations.push("Payment gateway setup");
       recommendations.push("Inventory management system");
@@ -248,7 +248,7 @@ const InteractiveQA = () => {
       if (selectedCount === 0) return "Select features...";
       if (selectedCount === 1) {
         const option = currentQuestion.options.find(
-          (opt) => opt.value === selectedValue[0]
+          (opt) => opt.value === selectedValue[0],
         );
         return option?.label || "1 selected";
       }
@@ -256,7 +256,7 @@ const InteractiveQA = () => {
     }
 
     const option = currentQuestion.options.find(
-      (opt) => opt.value === selectedValue
+      (opt) => opt.value === selectedValue,
     );
     return option?.label || "Select an option...";
   };
@@ -371,7 +371,7 @@ const InteractiveQA = () => {
               <Link
                 to="/contact"
                 onClick={() => handleNavClick("/contact")}
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg flex items-center justify-center"
+                className="bg-gradient-to-r from-primary to-[#6EDC6E] hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg flex items-center justify-center"
               >
                 Get Your Free Quote
                 <ArrowRight className="w-5 h-5 ml-2" />
@@ -410,7 +410,7 @@ const InteractiveQA = () => {
             </span>
             <Sparkles className="w-8 h-8 text-yellow-500 ml-3 animate-spin" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-primary via-secondary to-[#6EDC6E] bg-clip-text text-transparent mb-4">
             🎯 Get Your Perfect Website Quote in 60 Seconds!
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-6">
@@ -493,7 +493,7 @@ const InteractiveQA = () => {
               >
                 {getSelectedOptionLabel(
                   currentQuestion.id,
-                  currentQuestion.type === "multiple"
+                  currentQuestion.type === "multiple",
                 )}
               </span>
               <ChevronDown
@@ -511,7 +511,7 @@ const InteractiveQA = () => {
                   const isSelected =
                     currentQuestion.type === "multiple"
                       ? (answers[currentQuestion.id] || []).includes(
-                          option.value
+                          option.value,
                         )
                       : answers[currentQuestion.id] === option.value;
 
@@ -522,7 +522,7 @@ const InteractiveQA = () => {
                         handleAnswer(
                           currentQuestion.id,
                           option.value,
-                          currentQuestion.type === "multiple"
+                          currentQuestion.type === "multiple",
                         )
                       }
                       className={`p-6 cursor-pointer transition-all duration-200 hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 border-b border-gray-100 last:border-b-0 transform hover:scale-[1.01] ${
@@ -583,7 +583,7 @@ const InteractiveQA = () => {
                 <div className="flex flex-wrap gap-2">
                   {answers[currentQuestion.id].map((feature) => {
                     const option = currentQuestion.options.find(
-                      (opt) => opt.value === feature
+                      (opt) => opt.value === feature,
                     );
                     return (
                       <span
