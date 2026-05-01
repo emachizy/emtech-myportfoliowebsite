@@ -13,6 +13,7 @@ const steps = [
     title: "Understanding Your Needs",
     description:
       "Understand client needs, goals, and target audience to define project scope.",
+    bgColor: "#CAC7A7",
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ const steps = [
     title: "Strategizing and Planning",
     description:
       "Develop a detailed strategy, structure, and timeline for efficient execution.",
+    bgColor: "#DFB4B5",
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ const steps = [
     title: "Design and Development",
     description:
       "Design, develop, and implement solutions based on the agreed strategy.",
+    bgColor: "#B8E0D2",
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ const steps = [
     title: "Testing, Launch, and Support",
     description:
       "Test, launch the site, and provide ongoing support for updates and maintenance.",
+    bgColor: "#EED7C2",
   },
 ];
 
@@ -56,12 +60,13 @@ const ProcessSection = () => {
           <div
             key={step.id}
             className="relative bg-white p-8 rounded-lg shadow-m group overflow-hidden"
+            style={{ background: step.bgColor }}
           >
             {/* Hover Borders (simultaneous animation) */}
-            <span className="absolute top-0 right-0 w-0 h-[3px] bg-primary transition-all duration-500 group-hover:w-full" />
-            <span className="absolute top-0 right-0 h-0 w-[3px] bg-primary transition-all duration-500 group-hover:h-full" />
-            <span className="absolute bottom-0 left-0 w-0 h-[3px] bg-primary transition-all duration-500 group-hover:w-full" />
-            <span className="absolute bottom-0 left-0 h-0 w-[3px] bg-primary transition-all duration-500 group-hover:h-full" />
+            <span className="absolute top-0 right-0 w-0 h-[4px] bg-primary transition-all duration-500 group-hover:w-full" />
+            <span className="absolute top-0 right-0 h-0 w-[4px] bg-primary transition-all duration-500 group-hover:h-full" />
+            <span className="absolute bottom-0 left-0 w-0 h-[4px] bg-primary transition-all duration-500 group-hover:w-full" />
+            <span className="absolute bottom-0 left-0 h-0 w-[4px] bg-primary transition-all duration-500 group-hover:h-full" />
 
             {/* Step Content */}
             <div className="mb-4 flex justify-center relative z-10">
@@ -75,7 +80,7 @@ const ProcessSection = () => {
             </p>
 
             {/* Step Number in Background */}
-            <span className="absolute top-4 left-4 text-6xl font-bold text-gray-100 z-0">
+            <span className="absolute top-4 left-4 text-6xl font-bold text-white z-0">
               {String(step.id).padStart(2, "0")}
             </span>
           </div>
