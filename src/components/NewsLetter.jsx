@@ -23,7 +23,7 @@ function NewsLetter() {
         import.meta.env.VITE_EMAILJS_SERVICE_ID,
         import.meta.env.VITE_EMAILJS_NEWSLETTER_TEMPLATE_ID,
         templateParams,
-        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       )
       .then(
         () => {
@@ -35,7 +35,7 @@ function NewsLetter() {
           console.error("FAILED...", error);
           toast.error("Subscription failed. Please try again.");
           setStatus("❌ Something went wrong. Please try again.");
-        }
+        },
       );
   };
 
@@ -77,7 +77,7 @@ function NewsLetter() {
           />
           <button
             type="submit"
-            className="w-full md:w-auto group bg-gradient-to-r from-yellow-600 to-yellow-900 hover:from-yellow-900 hover:to-yellow-700 text-white px-6 py-2 rounded-xl font-semibold text-lg transition-colors duration-300 transform flex items-center gap-2 justify-center cursor-pointer"
+            className="w-full md:w-auto group bg-gradient-to-r from-primary to-[#6EDC6E] hover:from-[#6EDC6E] hover:to-primary text-white px-6 py-2 rounded-xl font-semibold text-lg transition-colors duration-300 transform flex items-center gap-2 justify-center cursor-pointer"
           >
             Subscribe
           </button>

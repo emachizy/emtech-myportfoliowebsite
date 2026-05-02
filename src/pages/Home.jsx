@@ -240,7 +240,7 @@ const ModernHomePage = () => {
                   variants={fadeInUp}
                   className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 transition-all duration-300 hover:transform hover:-translate-y-2 border border-white/20"
                 >
-                  <div className="bg-gradient-to-r from-black to-yellow-600 w-16 h-16 rounded-xl flex items-center justify-center mb-6">
+                  <div className="bg-gradient-to-r from-primary to-[#6EDC6E] w-16 h-16 rounded-xl flex items-center justify-center mb-6">
                     <Icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 mb-4">
@@ -285,7 +285,7 @@ const ModernHomePage = () => {
       </div>
 
       {/* Testimonials Section */}
-      <section className="py-10 bg-gradient-to-r from-black to-yellow-600">
+      <section className="py-10 bg-gradient-to-r from-primary to-[#6EDC6E]">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -320,7 +320,7 @@ const ModernHomePage = () => {
 
           <button
             onClick={scrollToQA}
-            className="bg-gradient-to-r from-black to-yellow-600 hover:from-yellow-700 hover:to-black text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors duration-300 transform hover:shadow-2xl mt-6"
+            className="bg-gradient-to-r from-primary to-[#6EDC6E] hover:from-[#6EDC6E] hover:to-primary text-white px-8 py-4 rounded-xl font-semibold text-lg transition-colors duration-300 transform hover:shadow-2xl mt-6"
           >
             Get Started Now
           </button>

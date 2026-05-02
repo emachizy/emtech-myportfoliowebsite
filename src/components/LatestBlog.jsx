@@ -81,7 +81,7 @@ const LatestBlog = () => {
                   </svg>
                   {new Date(post.fields.publishedDate).toLocaleDateString(
                     "en-US",
-                    { year: "numeric", month: "short", day: "numeric" }
+                    { year: "numeric", month: "short", day: "numeric" },
                   )}
                 </div>
 
@@ -125,7 +125,7 @@ const LatestBlog = () => {
         <div className="text-center mt-12">
           <Link
             to="/blog"
-            className="px-6 py-3 bg-gradient-to-r from-black to-yellow-600 hover:from-yellow-700 hover:to-black text-white rounded-full font-medium hover:bg-secondary transition-colors duration-300"
+            className="px-6 py-3 bg-gradient-to-r from-primary to-[#6EDC6E] hover:from-[#6EDC6E] hover:to-primary text-white rounded-full font-medium hover:bg-secondary transition-colors duration-300"
           >
             View All Blogs
           </Link>
