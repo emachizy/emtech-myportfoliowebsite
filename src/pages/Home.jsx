@@ -81,7 +81,7 @@ const ModernHomePage = () => {
   const heroSlides = [
     {
       id: 1,
-      image: "/images/slider-img/slider1.jpg",
+      image: "/images/slider-img/slider1.webp",
       title: "Building Digital",
       highlight: "Experiences",
       subtitle:
@@ -89,7 +89,7 @@ const ModernHomePage = () => {
     },
     {
       id: 2,
-      image: "/images/slider-img/slider2.jpg",
+      image: "/images/slider-img/slider2.webp",
       title: "Crafting Modern",
       highlight: "Websites",
       subtitle:
@@ -97,7 +97,7 @@ const ModernHomePage = () => {
     },
     {
       id: 3,
-      image: "/images/slider-img/slider3.jpg",
+      image: "/images/slider-img/slider3.webp",
       title: "Designing for",
       highlight: "Impact",
       subtitle:

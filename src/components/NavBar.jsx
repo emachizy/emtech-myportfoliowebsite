@@ -83,7 +83,7 @@ const NavBar = () => {
         {/* Logo */}
         <Link to="/" className=" ">
           <img
-            src="/images/emtech_logo.png"
+            src="/images/emtech_logo.webp"
             alt="logo"
             className="w-20 md:w-28 ml-8"
           />
