@@ -4,7 +4,7 @@ const NotFound = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-black animate-fade-in">
       <h1 className="text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600 drop-shadow-lg animate-bounce">
-        404
+        404 👱🏾‍♂️
       </h1>
       <h2 className="mt-4 text-3xl font-bold text-white animate-fade-in-slow">
         Page Not Found
