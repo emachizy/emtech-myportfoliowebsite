@@ -3,6 +3,9 @@ import seo_icon from "./seo-icon.svg";
 import web_development_icon from "./web-development-icon.svg";
 import mobile_app_icon from "./mobile-app-icon.svg";
 import ui_ux_design_icon from "./ui-ux-design-icon.svg";
+import data from "/images/data.svg";
+import ecom_functionality from "/images/ecom_functionality.svg";
+import cms from "/images/cms.svg";
 import { PiWatch } from "react-icons/pi";
 import { CiHeart } from "react-icons/ci";
 import { IoMdStarOutline } from "react-icons/io";
@@ -55,16 +58,19 @@ export const services = [
     title: "Database Integration",
     description:
       "We provide seamless database integration services tailored to your needs. From basic to advanced solutions, we'll recommend and implement the perfect database structure based on your business requirements.",
+    icon: data,
   },
   {
     title: "Ecommerce Functionality",
     description:
       "Transform your website into a powerful online store. We implement comprehensive e-commerce solutions with secure payment processing, inventory management, and sales monitoring through an intuitive dashboard.",
+    icon: ecom_functionality,
   },
   {
     title: "Content Management System",
     description:
       "Enhance your content strategy with a custom CMS solution. We build flexible, scalable systems that match your specific needs, whether you need a standard, advanced, or enterprise-level platform.",
+    icon: cms,
   },
 ];
 

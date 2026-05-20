@@ -13,6 +13,8 @@ import mobile_app_icon from "../../assets/mobile-app-icon.svg";
 // import ecommerce from "/images/ecommerce.svg";
 import cms from "../../assets/cms.svg";
 import { CiSearch } from "react-icons/ci";
+import research from "/images/research.svg";
+import migration_icon from "/images/migration_icon.svg";
 
 import AccordionSection from "../../components/AccordionSection";
 
@@ -71,7 +73,7 @@ const Ecommerce = () => {
       title: "Extensive research",
       description:
         "To create a competitive advantage for your business, we brainstorm powerful strategies by better understanding your customer behavior and their purchasing habits. As a result, you mitigate risks and deliver intuitive shopping experience to your customers.",
-      icon: <CiSearch size={40} className="text-primary mb-4" />,
+      icon: research,
     },
     {
       title: "Mobile Friendly",
@@ -95,6 +97,7 @@ const Ecommerce = () => {
       title: "Website Migration",
       description:
         "We provide no-stress ecommerce website migration. The team joins you to develop a to-do checklist. We create a step by step plan to smoothly transit your website, without losing your hard-earned SEO Rankings.",
+      icon: migration_icon,
     },
     {
       title: "Continuous Support",

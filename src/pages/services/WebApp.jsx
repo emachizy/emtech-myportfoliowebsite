@@ -9,6 +9,7 @@ import web_development_icon from "../../assets/web-development-icon.svg";
 import mobile_app_icon from "../../assets/mobile-app-icon.svg";
 import ui_ux_design_icon from "../../assets/ui-ux-design-icon.svg";
 import ecommerce from "/images/ecommerce.svg";
+import data from "/images/data.svg";
 import cms from "../../assets/cms.svg";
 // import mobile_interface from "/images/mobile-interface.svg";
 import { FaArrowAltCircleRight } from "react-icons/fa";
@@ -57,6 +58,7 @@ const services = [
     title: "Database Integration",
     description:
       "We provide seamless database integration services tailored to your needs. From basic to advanced solutions, we'll recommend and implement the perfect database structure based on your business requirements.",
+    icon: data,
   },
   {
     title: "Ecommerce Functionality",
